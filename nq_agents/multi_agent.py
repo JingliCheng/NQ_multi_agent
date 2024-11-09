@@ -90,7 +90,7 @@ class BaseAgentSystem:
             'example_id': example['example_id'],
             'long_answer': {'start_byte': -1, 'end_byte': -1, 'start_token': -1, 'end_token': -1},
             'long_answer_score': -1,
-            'short_answers': [{'start_byte': -1, 'end_byte': -1, 'start_token': -1, 'end_token': -1}],
+            'short_answers': [{'start_byte': -1, 'end_byte': -1, 'start_token': -2, 'end_token': -1}],
             'short_answers_score': -1,
             'yes_no_answer': 'NONE',
             'prediction': prediction

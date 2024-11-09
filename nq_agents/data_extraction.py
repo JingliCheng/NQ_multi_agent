@@ -9,14 +9,27 @@ DEV_FILE = '.local_data/v1.0-simplified_nq-dev-all.jsonl'
 
 
 def count_lines(file_path):
-    """Count the number of lines in a large file."""
+    """Count the number of effective lines in a large file, accounting for an optional final newline."""
     def blocks(file, size=65536):
         while True:
             b = file.read(size)
-            if not b: break
+            if not b:
+                break
             yield b
-    with open(file_path, "r",encoding="utf-8",errors='ignore') as f:
-        return sum(bl.count("\n") for bl in blocks(f))
+
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        # Sum all newlines
+        line_count = sum(bl.count("\n") for bl in blocks(f))
+        
+        # Check if the file ends without a newline
+        f.seek(0, 2)  # Go to the end of the file
+        if f.tell() > 0:  # File is non-empty
+            f.seek(f.tell() - 1)  # Move back one character from the end
+            last_char = f.read(1)
+            if last_char != "\n":
+                line_count += 1  # Count the last line if it doesn't end with a newline
+
+    return line_count
 
 def read_first_lines(file_path, num_lines=5):
     """Read the first num_lines lines from a file."""
