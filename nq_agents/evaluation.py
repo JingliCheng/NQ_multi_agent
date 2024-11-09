@@ -2,8 +2,6 @@ from collections import defaultdict
 from typing import List, Dict, Any
 from nq_agents import google_eval_utils
 from nq_agents import google_nq_eval
-# import google_eval_utils
-# import google_nq_eval
 import gzip
 
 

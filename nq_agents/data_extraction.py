@@ -32,14 +32,6 @@ def list_to_jsonl(data_list, output_file):
             json_line = json.dumps(item, ensure_ascii=False)
             file.write(json_line + '\n')
 
-def parse_first_lines(file_path, num_lines=5):
-    output = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for _ in range(num_lines):
-            data = json.loads(file.readline().strip())
-            output.append(data)
-    return output
-
 def write_jsonl(examples, output_path):
     """Write examples to a jsonl file."""
     with open(output_path, 'w', encoding='utf-8') as f:
