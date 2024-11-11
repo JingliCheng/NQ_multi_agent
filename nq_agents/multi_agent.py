@@ -54,7 +54,7 @@ class BaseAgentSystem:
         if text_index == -1:
             return -1, -1
         start_token = document_text[:text_index].count(' ')
-        end_token = start_token + len(seq.split(' ')) - 1
+        end_token = start_token + len(seq.split(' '))
         return start_token, end_token
 
     def format_prediction(self, example: Dict, prediction: str, score: float) -> Dict:
@@ -245,7 +245,7 @@ answer that can answer the question:"}
             refined_answer = self._refine_answer(example['question_text'], cut_answer)
             if verbose:
                 print("Refined answer:", refined_answer)
-        
+
         score = 50
         if verbose:
             print('- '*10)
