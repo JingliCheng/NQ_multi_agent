@@ -225,10 +225,10 @@ def score_answers(gold_annotation_dict, pred_dict):
     long_answer_stats: List of scores for long answers.
     short_answer_stats: List of scores for short answers.
   """
-  gold_id_set = set(gold_annotation_dict.keys())
-  pred_id_set = set(pred_dict.keys())
+  gold_id_set = gold_annotation_dict.keys()
+  pred_id_set = pred_dict.keys()
 
-  if gold_id_set.symmetric_difference(pred_id_set):
+  if set(gold_annotation_dict.keys()).symmetric_difference(set(pred_dict.keys())):
     raise ValueError('ERROR: the example ids in gold annotations and example '
                      'ids in the prediction are not equal.')
 
@@ -243,10 +243,12 @@ def score_answers(gold_annotation_dict, pred_dict):
     short_answer_stats.append(score_short_answer(gold, pred))
 
   # use the 'score' column, which is last
-  long_answer_stats.sort(key=lambda x: x[-1], reverse=True)
-  short_answer_stats.sort(key=lambda x: x[-1], reverse=True)
+  # long_answer_stats.sort(key=lambda x: x[-1], reverse=True)
+  # short_answer_stats.sort(key=lambda x: x[-1], reverse=True)
+  sorted_short_answer_stats = sorted(short_answer_stats, key=lambda x: x[-1], reverse=True)
 
-  return long_answer_stats, short_answer_stats
+
+  return sorted_short_answer_stats, short_answer_stats
 
 
 def compute_f1(answer_stats, prefix=''):

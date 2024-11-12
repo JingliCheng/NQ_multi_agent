@@ -101,3 +101,31 @@ def sample_short_ans_examples(file_path, output_path=None, k=100, seed=42):
     output = sample_examples(temp_path, output_path, k, seed)
     os.remove(temp_path)
     return output
+
+def keep_short_ans_examples_exclude_yes_no(file_path, output_path=None):
+    """Keep examples with short answer but exclude yes_no_answer."""
+    output = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        # Initialize tqdm without a total count
+        for line in tqdm(file, desc="Filtering Short Answer Examples", unit="line"):
+            data = json.loads(line.strip())
+            if data['annotations'][0]['short_answers']:
+                output.append(data)
+                
+    # Set the output path if not provided
+    if output_path is None:
+        output_path = file_path.replace('.jsonl', '_short_ans.jsonl')
+    
+    # Write the filtered output to the output JSONL file
+    write_jsonl(output, output_path)
+    return output
+
+def sample_short_ans_examples_exclude_yes_no(file_path, output_path=None, k=100, seed=42):
+    """Sample k examples with short answer(exclude yes_no_answer) from input jsonl and write to output jsonl."""
+    temp_path = file_path.replace('.jsonl', '_temp.jsonl')
+    keep_short_ans_examples_exclude_yes_no(file_path, temp_path)
+    if output_path is None:
+        output_path = file_path.replace('.jsonl', f'_sample{k}_seed{seed}.jsonl')
+    output = sample_examples(temp_path, output_path, k, seed)
+    os.remove(temp_path)
+    return output
