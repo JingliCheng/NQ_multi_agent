@@ -3,3 +3,6 @@ tqdm
 openai
 natural-questions
 ipykernel
+autogen-agentchat~=0.2
+ratelimit
+tiktoken
