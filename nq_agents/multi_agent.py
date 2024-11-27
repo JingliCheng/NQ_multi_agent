@@ -4,6 +4,7 @@ import datetime
 import json
 from natural_questions import text_utils
 from abc import ABC, abstractmethod
+import tiktoken
 
 
 def strip_end_punctuation(text):
@@ -40,7 +41,7 @@ def get_short_answers(nq_example):
                 short_answers.append(short_answer_text)
     return short_answers
 
-
+        
 class BaseAgentSystem:
     def __init__(self):
         pass
@@ -116,6 +117,7 @@ class BaseAgentSystem:
                 example = text_utils.simplify_nq_example(raw_example)
             else:
                 example = raw_example
+            
             pred_str, score = self.predict(example, verbose)
             pred_dict = self.format_prediction(example, pred_str, score)
             predictions['predictions'].append(pred_dict)
