@@ -101,7 +101,10 @@ class WorkflowAutogen(BaseAgentSystem):
     def predict(self, example: Dict, verbose: bool = False) -> Tuple[str, float]:
 
         # Add a new key "docuement_indexed" to the example
-        indexed_example = indexing.convert_to_indexed_format(example)
+        # distance=10 is the distance between two <wd_index<>>
+        # model_name="llama". Current only support llama, by using gpt2 tokenizer.
+        # Adjust max_tokens and overlap to control the chunk size.
+        indexed_example = indexing.convert_to_indexed_format(example, distance=10, model_name="llama", max_tokens=1000, overlap=100)
         retrieved_candidates = chunk_and_retrieve.retrieve(indexed_example)
 
         # Use the begin and end index to retrieve the grounded candidates
