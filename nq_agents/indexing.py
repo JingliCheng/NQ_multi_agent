@@ -1,4 +1,4 @@
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List
 import re
 
 import tiktoken
@@ -114,7 +114,27 @@ def convert_to_indexed_format(example, distance=10, model_name="llama", max_toke
 
     return example
 
+def extract_text_from_indexes(document: str, indexes: Dict, offset=0) -> str:
+    begin_index = indexes["begin_index"]
+    end_index = indexes["end_index"]
+    document_list = document.split(" ")
+    # Offset is the number of words to include before and after the chunk
+    output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
+    return output
 
-def answer2indexed(answer: str) -> Tuple[int, int]:
+def grounding(retrieved_candidates: List[Dict], example: Dict) -> List[Dict]:
+    document = example["document_text"]
 
-    return (0, 1)
+    output = []
+    candidate_index = 0
+    for candidate in retrieved_candidates:
+        candidate["grounded_text"] = extract_text_from_indexes(document, candidate["indexes"])
+        candidate["id"] = candidate_index
+
+        output.append({
+            "relevant_content": candidate["grounded_text"],
+            "id": candidate["id"],
+        })
+        candidate_index += 1
+
+    return output

@@ -108,7 +108,7 @@ class WorkflowAutogen(BaseAgentSystem):
         retrieved_candidates = chunk_and_retrieve.retrieve(indexed_example)
 
         # Use the begin and end index to retrieve the grounded candidates
-        grounded_candidates = indexing.grounding(retrieved_candidates)
+        grounded_candidates = indexing.grounding(retrieved_candidates, example)
         ranked_candidates = rank.rank(indexed_example, grounded_candidates)
 
         # Refine the ranked candidates
