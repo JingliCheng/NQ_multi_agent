@@ -13,7 +13,7 @@ class OllamaAgent:
         self.api_url = api_url
         self.model = model
 
-    def send_request(self, question, long_answer, temperature=0.7, max_tokens=256):
+    def send_request(self, question, long_answer, temperature=0.0, max_tokens=512):
         """
         send request to Ollama API to generate short answer
         """
@@ -139,20 +139,23 @@ class OllamaAgent:
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Failed to connect to Ollama API: {e}")
 
+def refine(question: str, long_answer: str) -> str:
+    agent = OllamaAgent()
+    try:
+        short_answer = agent.send_request(question, long_answer)
+        return short_answer
+    except Exception as e:
+        return e
 
 # Simple test with main
 if __name__ == "__main__":
-    agent = OllamaAgent()
-    
     question = "what is the widest highway in north america"
     long_answer = """
     King's Highway 401, commonly referred to as Highway 401 and also known by its official name as the Macdonald–Cartier Freeway or colloquially as the four-oh-one,[3] is a controlled-access400-series highway in the Canadian province of Ontario. It stretches 828.0 kilometres (514.5 mi) from Windsor in the west to the Ontario–Quebec border in the east. The part of Highway 401 that passes through Toronto is North America's busiest highway,[4][5] and one of the widest.[6][7] Together with Quebec Autoroute 20, it forms the road transportation backbone of the Quebec City–Windsor Corridor, along which over half of Canada's population resides and is also a Core Route in the National Highway System of Canada. The route is maintained by the Ministry of Transportation of Ontario (MTO) and patrolled by the Ontario Provincial Police. The speed limit is 100 km/h (62 mph) throughout its length, unless posted otherwise.
     """
-    try:
-        short_answer = agent.send_request(question, long_answer)
-        print("Short Answer:", short_answer)
-    except Exception as e:
-        print("Error:", e)
+    print("short answer:", refine(question, long_answer))
+
+
 
 
 
@@ -172,3 +175,19 @@ if __name__ == "__main__":
 
 # def refine(agent, ranked_candidates, question) -> Tuple[str, float]:
 #     return ('', 0.5)
+
+# def refine(agent, long_answer: str, question: str) -> Tuple[str, float]:
+    
+#     """
+#     Uses the RefineAnswerAgent to generate a concise short answer from a long answer and a question.
+
+#     Args:
+#         agent: The RefineAnswerAgent created by create_refine_answer_agent.
+#         long_answer (str): The detailed answer.
+#         question (str): The question to be answered.
+
+#     Returns:
+#         str: The refined short answer.
+#     """
+#     if not long_answer or not question:
+#         return ("Invalid input. Please provide both a long answer and a question.", 0.5)
