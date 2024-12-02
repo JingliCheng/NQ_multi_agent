@@ -117,7 +117,7 @@ class WorkflowAutogen(BaseAgentSystem):
         
         # Retrieve candidates
         context["retrieved_candidates"] = chunk_and_retrieve.retrieve(
-            context, example=context["indexed_example"], verbose=True
+            context, example=context["example"], verbose=True
         )
         
         # Ground the retrieved candidates
@@ -127,12 +127,12 @@ class WorkflowAutogen(BaseAgentSystem):
         
         # Rank the candidates
         context["ranked_candidates"] = rank.rank(
-            context, context["indexed_example"], context["grounded_candidates"]
+            context, context["example"], context["grounded_candidates"]
         )
         
         # Refine the ranked candidates
         answer, score = refine.refine(
-            context, context["indexed_example"], context["ranked_candidates"]
+            context, context["example"], context["ranked_candidates"]
         )
 
         context["indexed_answer"] = indexing.answer2index(answer)

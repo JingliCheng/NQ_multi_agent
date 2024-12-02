@@ -136,7 +136,7 @@ You **MUST**:
         human_input_mode="NEVER",
     )
 
-def retrieve(example, verbose=False):
+def retrieve(context, example, verbose=False):
     all_candidates = []  # To collect all candidates from subqueries or original query
     final_output = {"found": False, "candidates": []}
 
@@ -259,7 +259,7 @@ def retrieveWithQuestion(example, question, verbose=False):
     if verbose:
         print(f"Final consolidated output: {json.dumps(final_output, indent=2)}")
 
-    return final_output
+    return final_output["candidates"]
 
 def extract_content(agent, chunk, question):
     input_message = f"[Question] {question}\n[Context] {chunk}"
