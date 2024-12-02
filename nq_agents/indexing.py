@@ -115,9 +115,7 @@ def convert_to_indexed_format(context, distance=10, model_name="llama", max_toke
     chucks = split_document(indexed_text, model_name=model_name, max_tokens=max_tokens, overlap=overlap)
     return chucks
 
-def extract_text_from_indexes(document: str, indexes: Dict, offset=0) -> str:
-    begin_index = indexes["begin_index"]
-    end_index = indexes["end_index"]
+def extract_text_from_indexes(document: str, begin_index, end_index, offset=50) -> str:
     document_list = document.split(" ")
     # Offset is the number of words to include before and after the chunk
     output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
@@ -131,7 +129,7 @@ def grounding(context) -> List[Dict]:
     output = []
     candidate_index = 0
     for candidate in retrieved_candidates:
-        grounded_text, begin_index = extract_text_from_indexes(document, candidate["indexes"])
+        grounded_text, begin_index = extract_text_from_indexes(document, candidate["begin_index"], candidate["end_index"])
         reasoning = candidate["reasoning"]
 
         output.append({
