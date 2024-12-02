@@ -58,7 +58,7 @@ class BaseAgentSystem:
         end_token = start_token + len(seq.split(' '))
         return start_token, end_token
 
-    def format_prediction(self, example: Dict, prediction: str, score: float) -> Dict:
+    def format_prediction(self, example: Dict, prediction: List, score: float) -> Dict:
         """
         Format the prediction into the format of Natural Questions evaluation
         
@@ -87,6 +87,7 @@ class BaseAgentSystem:
             }, ... ]
         }
         """
+        pred_str = ' '.join(example['document_text'].split(" ")[prediction[0]:prediction[1]])
         prediction_dict = {
             'example_id': example['example_id'],
             'long_answer': {'start_byte': -1, 'end_byte': -1, 'start_token': -1, 'end_token': -1},
@@ -94,13 +95,12 @@ class BaseAgentSystem:
             'short_answers': [{'start_byte': -1, 'end_byte': -1, 'start_token': -2, 'end_token': -1}],
             'short_answers_score': -1,
             'yes_no_answer': 'NONE',
-            'prediction': prediction
+            'prediction': pred_str
         }
         
         if prediction in example['document_text']:
-            start_token, end_token = self._find_seq_index(example['document_text'], prediction)
-            prediction_dict['short_answers'][0]['start_token'] = start_token
-            prediction_dict['short_answers'][0]['end_token'] = end_token
+            prediction_dict['short_answers'][0]['start_token'] = prediction[0]
+            prediction_dict['short_answers'][0]['end_token'] = prediction[1]
             prediction_dict['short_answers_score'] = score
 
         return prediction_dict
@@ -118,8 +118,8 @@ class BaseAgentSystem:
             else:
                 example = raw_example
             
-            pred_str, score = self.predict(example, verbose)
-            pred_dict = self.format_prediction(example, pred_str, score)
+            pred_index, score = self.predict(example, verbose)
+            pred_dict = self.format_prediction(example, pred_index, score)
             predictions['predictions'].append(pred_dict)
         time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         if save_path is None:

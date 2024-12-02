@@ -101,7 +101,7 @@ def split_document(document, model_name="gpt-4", max_tokens=1000, overlap=100):
 
     return chunks
 
-def convert_to_indexed_format(example, distance=10, model_name="llama", max_tokens=1000, overlap=100) -> Dict:
+def convert_to_indexed_format(context, distance=10, model_name="llama", max_tokens=1000, overlap=100) -> Dict:
     """
     Convert the document text to indexed format and split into chunks.
     Output:
@@ -110,36 +110,44 @@ def convert_to_indexed_format(example, distance=10, model_name="llama", max_toke
         "indexed_chunks": ["chunk1", "chunk2", ...]
     }
     """
+    example = context["example"]
     indexed_text = text2indexed_fixed_distance(example["document_text"], distance=distance)
     chucks = split_document(indexed_text, model_name=model_name, max_tokens=max_tokens, overlap=overlap)
-    example["indexed_chunks"] = chucks
+    return chucks
 
-    return example
-
-def extract_text_from_indexes(document: str, indexes: Dict, offset=0) -> str:
-    begin_index = indexes["begin_index"]
-    end_index = indexes["end_index"]
+def extract_text_from_indexes(document: str, begin_index, end_index, offset=50) -> str:
     document_list = document.split(" ")
     # Offset is the number of words to include before and after the chunk
     output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
-    return output
+    return output, begin_index-offset
 
-def grounding(retrieved_candidates: List[Dict], example: Dict) -> List[Dict]:
+def grounding(context) -> List[Dict]:
+    retrieved_candidates = context['retrieved_candidates']
+    example = context['example']
     document = example["document_text"]
 
     output = []
     candidate_index = 0
     for candidate in retrieved_candidates:
-        candidate["grounded_text"] = extract_text_from_indexes(document, candidate["indexes"])
-        candidate["id"] = candidate_index
+        grounded_text, begin_index = extract_text_from_indexes(document, candidate["begin_index"], candidate["end_index"])
+        reasoning = candidate["reasoning"]
 
         output.append({
-            "relevant_content": candidate["grounded_text"],
-            "id": candidate["id"],
+            "relevant_content": grounded_text,
+            "reasoning": reasoning,
+            "id": candidate_index,
+            "begin_index": begin_index,
         })
         candidate_index += 1
 
     return output
+
+
+def find_long(context):
+    top1_index = context['ranked_candidates']
+    long_content = context['grounded_candidates'][top1_index]
+    return long_content
+
 
 def fuzz_process(query: str, content_list: List[str], match_length: int):
     substrings = [" ".join(content_list[i:i+match_length]) for i in range(len(content_list)-match_length+1)]
@@ -165,3 +173,14 @@ def fuzzy_search(query: str, content: str):
     end_index = begin_index + len(top_1[0].split(" "))
 
     return begin_index, end_index
+
+
+def answer2index(context):
+    short_answer = context['short_answer']
+    inner_begin_index, inner_end_index = fuzzy_search(short_answer, context['top1_long'])
+    chuck_begin = context['grounded_candidates'][context['ranked_candidates']]['begin_index']
+    final_begin_index = chuck_begin + inner_begin_index
+    final_end_index = chuck_begin + inner_end_index
+
+    return final_begin_index, final_end_index
+
