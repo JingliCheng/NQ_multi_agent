@@ -99,27 +99,49 @@ class WorkflowAutogen(BaseAgentSystem):
 
 
     def predict(self, example: Dict, verbose: bool = False) -> Tuple[str, float]:
-
-        # Add a new key "docuement_indexed" to the example
-        # distance=10 is the distance between two <wd_index<>>
-        # model_name="llama". Current only support llama, by using gpt2 tokenizer.
-        # Adjust max_tokens and overlap to control the chunk size.
-        indexed_example = indexing.convert_to_indexed_format(example, distance=10, model_name="llama", max_tokens=1000, overlap=100)
-
-        retrieved_candidates = chunk_and_retrieve.retrieve(example=indexed_example, verbose=False)
-
-        # Use the begin and end index to retrieve the grounded candidates
-        grounded_candidates = indexing.grounding(retrieved_candidates, example)
-        ranked_candidates = rank.rank(indexed_example, grounded_candidates)
-
+        # Initialize context as a dictionary
+        context = {
+            "example": example,  # Original example
+            "indexed_chunks": None,
+            "retrieved_candidates": None,
+            "grounded_candidates": None,
+            "ranked_candidates": None,
+            "top1_long": None,
+            "short_answer": None,
+            "short_answer_index": None,
+            "score": None
+        }
+        
+        # Add indexed document
+        context["indexed_chunks"] = indexing.convert_to_indexed_format(
+            context, distance=10, model_name="llama", max_tokens=1000, overlap=100
+        )
+        
+        # Retrieve candidates
+        context["retrieved_candidates"] = chunk_and_retrieve.retrieve(
+            context, example=context["example"], verbose=True
+        )
+        
+        # Ground the retrieved candidates
+        context["grounded_candidates"] = indexing.grounding(context)
+        
+        # Rank the candidates
+        context["ranked_candidates"] = rank.rank(
+         context["grounded_candidates"], context['example']['question_text']
+        )
+        
+        # Get the top1 long answer
+        context['top1_long'] = indexing.find_long(context)
+        
         # Refine the ranked candidates
-        answer, score = refine.refine(indexed_example, ranked_candidates)
+        context['short_answer'] = refine.refine(
+            context['example']['question_text'], context['top1_long']
+        )
 
-        # Convert the answer to the indexed format
-        indexed_answer = indexing.answer2index(answer)
-
-        return indexed_answer, score
-
+        context["short_answer_index"] = indexing.answer2index(context)
+        context["score"] = 0.5
+        
+        return context["short_answer_index"], context["score"]
     
     
     
