@@ -123,7 +123,9 @@ def extract_text_from_indexes(document: str, indexes: Dict, offset=0) -> str:
     output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
     return output
 
-def grounding(retrieved_candidates: List[Dict], example: Dict) -> List[Dict]:
+def grounding(context) -> List[Dict]:
+    retrieved_candidates = context['retrieved_candidates']
+    example = context['example']
     document = example["document_text"]
 
     output = []
@@ -164,3 +166,9 @@ def fuzzy_search(query: str, content: str):
     end_index = begin_index + len(top_1[0].split(" "))
 
     return begin_index, end_index
+
+
+def find_long(context):
+    top1_index = context['ranked_candidates']
+    long_content = context['grounded_candidates'][top1_index]
+    return long_content

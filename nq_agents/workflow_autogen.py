@@ -108,7 +108,7 @@ class WorkflowAutogen(BaseAgentSystem):
             "ranked_candidates": None,
             "top1_long": None,
             "short_answer": None,
-            "indexed_answer": None,
+            "short_answer_index": None,
             "score": None
         }
         
@@ -123,24 +123,25 @@ class WorkflowAutogen(BaseAgentSystem):
         )
         
         # Ground the retrieved candidates
-        context["grounded_candidates"] = indexing.grounding(
-            context, context["retrieved_candidates"], context["example"]
-        )
+        context["grounded_candidates"] = indexing.grounding(context)
         
         # Rank the candidates
         context["ranked_candidates"] = rank.rank(
             context, context["example"], context["grounded_candidates"]
         )
         
+        # Get the top1 long answer
+        context['top1_long'] = indexing.find_long(context)
+        
         # Refine the ranked candidates
         context['short_answer'] = refine.refine(
             context['example']['question_text'], context['top1_long']
         )
 
-        context["indexed_answer"] = indexing.answer2index(answer)
-        context["score"] = score
+        context["short_answer_index"] = indexing.answer2index(context)
+        context["score"] = 0.5
         
-        return context["indexed_answer"], context["score"]
+        return context["short_answer_index"], context["score"]
     
     
     
