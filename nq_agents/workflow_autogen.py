@@ -138,7 +138,7 @@ class WorkflowAutogen(BaseAgentSystem):
             context['example']['question_text'], context['top1_long']
         )
 
-        context["short_answer_index"] = indexing.answer2index(context)
+        context["short_answer_index"] = indexing.answer2index(context, verbose=True)
         context["score"] = 0.5
         
         return context["short_answer_index"], context["score"]
