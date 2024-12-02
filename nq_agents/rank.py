@@ -21,32 +21,48 @@ class RankAgent:
         """
         # Define the prompt
         prompt_template = """
-        You are an intelligent assistant tasked with good reasoning ability. Now I have a task for you it is related to the answer of a natural question. I would like you to do this: First, please read the "Question" and
-        then rank the relevant_candidate based on reasoning which is the reason of the answer and also the relevant_candidate itself. For your information, the input is a list of candidate answers, and
-        in each candidate, it contains the relevant_candidate, reasoning, and ID of the content. I am not asking for code, but the natural answer.
+        You are an intelligent assistant with excellent reasoning skills. Your task is to analyze a question and evaluate a list of up to 100 candidate answers to select the most relevant one based on the provided reasoning and content.
+
+        For each candidate, you will consider:
+        1. The relevance of the content to the question.
+        2. The quality and logic of the reasoning provided.
+
+        **Instructions**:
+        - Carefully review the "Question" and the list of "Candidates."
+        - Evaluate each candidate's "Content" and its corresponding "Reasoning" to determine the best match.
+        - Select only one candidate as the top-ranked answer.
+        - Provide the ID of the top-ranked candidate in the following format: `ID: <number>` (e.g., `ID: 1`).
+        - After the ID, briefly explain your reasoning for selecting this candidate (e.g., why it is the most relevant).
 
         **Question**:
         {question}
 
         **Candidates**:
         {candidates}
-        
-        **Reasoning**:
-        {reasoning}
-        
+
         **Output Format**:
-        The ID of the top-ranked candidate as a single number, for example: 1;
+        - First, provide the ID of the top-ranked candidate in the format: `ID: <number>` (e.g., `ID: 1`).
+        - Then, provide a concise explanation (e.g., "This candidate is the most relevant because...").
         """
 
-        # Format the candidates for the prompt
+
+        # Format the candidates for the prompt, including reasoning for each
         candidates_formatted = "\n".join(
-            [f"- ID: {c['id']}, Content: {c['relevant_content']}" for c in candidates]
+            [
+                f"- ID: {c['id']}, Content: {c['relevant_content']}, Reasoning: {c['reasoning']}"
+                for c in candidates
+            ]
         )
+
         # Use a default reasoning if not explicitly required
-        reasoning = "Please evaluate reasoning quality based on the answer content."
+        reasoning = "Please evaluate the relevance and reasoning quality based on the content provided for each candidate."
 
         # Fill the prompt template
-        prompt = prompt_template.format(question=question, candidates=candidates_formatted, reasoning=reasoning)
+        prompt = prompt_template.format(
+            question=question,
+            candidates=candidates_formatted,
+            reasoning=reasoning
+        )
 
         # Construct API request payload
         payload = {
@@ -72,7 +88,6 @@ class RankAgent:
                     pass
 
             return "".join(result).strip()  # Extract the ID as a single number
-
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Failed to connect to the API: {e}")
 
@@ -95,10 +110,13 @@ def rank(extracted_contents: List[Dict], question: str) -> Dict:
     print(f"Raw Response from LLM:\n{raw_response}")
     print("================================================")
 
-    # Extract the top candidate ID from the response
-    match = re.search(r"ID:\s*(\d+)", raw_response)
+    # Updated part of the rank function
+    match = re.search(r"(\d+)", raw_response)  # Modified regex to capture any standalone number
     if not match:
-        raise ValueError("Unable to extract top candidate ID from LLM response.")
+        raise ValueError(f"Unable to extract top candidate ID from LLM response: {raw_response}")
+
+    # Convert the top candidate ID to an integer
+    top_candidate_id = int(match.group(1))
 
     # Convert the top candidate ID to an integer
     top_candidate_id = int(match.group(1))
@@ -122,9 +140,9 @@ def rank(extracted_contents: List[Dict], question: str) -> Dict:
 if __name__ == "__main__":
     question = "What is the capital of France?"
     candidates = [
-        {"relevant_content": "Paris is the capital of France.","reasoning":"test", "id": 5},
-        {"relevant_content": "Marseille is a big city in France","reasoning":"test", "id": 1},
-        {"relevant_content": "Paris has many different district","reasoning":"test", "id": 2}
+        {"id": 1, "relevant_content": "Paris is the capital of France.", "reasoning": "Paris is the political and cultural hub of France."},
+        {"id": 2, "relevant_content": "Berlin is the capital of Germany.", "reasoning": "Berlin is a major European city but not the capital of France."},
+        {"id": 3, "relevant_content": "Lyon is a city in France.", "reasoning": "Lyon is significant but not the capital."}
     ]
 
     # Initialize the RankAgent
