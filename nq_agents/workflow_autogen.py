@@ -105,7 +105,8 @@ class WorkflowAutogen(BaseAgentSystem):
         # model_name="llama". Current only support llama, by using gpt2 tokenizer.
         # Adjust max_tokens and overlap to control the chunk size.
         indexed_example = indexing.convert_to_indexed_format(example, distance=10, model_name="llama", max_tokens=1000, overlap=100)
-        retrieved_candidates = chunk_and_retrieve.retrieve(indexed_example)
+
+        retrieved_candidates = chunk_and_retrieve.retrieve(example=indexed_example, verbose=True)
 
         # Use the begin and end index to retrieve the grounded candidates
         grounded_candidates = indexing.grounding(retrieved_candidates, example)
