@@ -142,7 +142,7 @@ def retrieve(context, example, verbose=False):
 
     # Case 1: Query transformation is disabled
     if not ENABLE_QUERY_TRANSFORMATION:
-        result = retrieveWithQuestion(example, example.get("question_text", ""), verbose)
+        result = retrieveWithQuestion(context, example, example.get("question_text", ""), verbose)
         all_candidates.extend(result.get("candidates", []))
     
     # Case 2: Query transformation is enabled
@@ -153,12 +153,12 @@ def retrieve(context, example, verbose=False):
             print("subqueries", subqueries)
         # Step 2: Process each subquery
         for subquery in subqueries:
-            subquery_result = retrieveWithQuestion(example, subquery, verbose)
+            subquery_result = retrieveWithQuestion(context, example, subquery, verbose)
             if subquery_result.get("found", False):
                 all_candidates.extend(subquery_result.get("candidates", []))
 
     if verbose:
-        print(f"Extracted candidates: {all_candidates}")
+        print(f"All candidates: {all_candidates}")
 
     processed_candidates = process_candidates(all_candidates)    
 
@@ -170,19 +170,20 @@ def retrieve(context, example, verbose=False):
     if verbose:
         print(f"Final output: {json.dumps(final_output, indent=2)}")
     
-    return final_output
+    return final_output["candidates"]
 
 
-def retrieveWithQuestion(example, question, verbose=False):
+def retrieveWithQuestion(context, example, question, verbose=False):
     """
     Perform extraction for all indexed chunks in the example using an agent.
     Consolidates the results into the specified JSON format with `found` and `candidates`.
     """
     # Extract indexed chunks from the example
-    question = example.get("question_text", "")
     document = example.get("document_text", "")
+    if verbose:
+        print("execute extract content for document:", document, "question:", question)
 
-    indexed_chunks = example.get("indexed_chunks", [])
+    indexed_chunks = context.get("indexed_chunks", [])
     if not indexed_chunks:
         return {"found": False, "candidates": []}
     # TODO: remove
@@ -247,8 +248,8 @@ def retrieveWithQuestion(example, question, verbose=False):
                 except Exception as e:
                     if verbose:
                         print(f"Error processing candidate: {e}")
-    
-    print("extract candidates", extract_candidates)
+    if verbose:
+        print("extract candidates", extract_candidates)
     
     final_output = {
         "found": len(extract_candidates) > 0,
@@ -259,7 +260,7 @@ def retrieveWithQuestion(example, question, verbose=False):
     if verbose:
         print(f"Final consolidated output: {json.dumps(final_output, indent=2)}")
 
-    return final_output["candidates"]
+    return final_output
 
 def extract_content(agent, chunk, question):
     input_message = f"[Question] {question}\n[Context] {chunk}"
@@ -414,7 +415,7 @@ def process_candidates(candidates: List[Dict]) -> List[Dict]:
     """
     processed_candidates = []
     seen_indices = set()  # To track (begin_index, end_index) pairs
-    candidate_id = 0
+    # candidate_id = 0
 
     for candidate in candidates:
         begin_index = candidate.get("begin_index")
@@ -430,8 +431,8 @@ def process_candidates(candidates: List[Dict]) -> List[Dict]:
             continue
 
         # Assign a unique ID and mark these indices as seen
-        candidate["id"] = candidate_id
-        candidate_id += 1
+        # candidate["id"] = candidate_id
+        # candidate_id += 1
         seen_indices.add((begin_index, end_index))
 
         processed_candidates.append(candidate)
