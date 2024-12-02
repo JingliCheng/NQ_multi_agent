@@ -20,6 +20,9 @@ OPENAI_TOKEN_LIMIT = 20480 # OpenAI GPT-4 Turbo model token limit
 LLM_PROVIDER = "ollama"
 LLM_PROVIDERS = ["ollama", "openai"]
 
+ENABLE_QUERY_TRANSFORMATION = True
+
+
 def get_llm_config(llm_provider=LLM_PROVIDER):
     """
     Returns the LLM configuration based on the selected provider.
@@ -134,6 +137,43 @@ You **MUST**:
     )
 
 def retrieve(example, verbose=False):
+    all_candidates = []  # To collect all candidates from subqueries or original query
+    final_output = {"found": False, "candidates": []}
+
+    # Case 1: Query transformation is disabled
+    if not ENABLE_QUERY_TRANSFORMATION:
+        result = retrieveWithQuestion(example, example.get("question_text", ""), verbose)
+        all_candidates.extend(result.get("candidates", []))
+    
+    # Case 2: Query transformation is enabled
+    else:
+        # Step 1: Retrieve subqueries from the original query
+        subqueries = generate_sub_queries(example, example.get("question_text", ""), verbose)
+        if verbose:
+            print("subqueries", subqueries)
+        # Step 2: Process each subquery
+        for subquery in subqueries:
+            subquery_result = retrieveWithQuestion(example, subquery, verbose)
+            if subquery_result.get("found", False):
+                all_candidates.extend(subquery_result.get("candidates", []))
+
+    if verbose:
+        print(f"Extracted candidates: {all_candidates}")
+
+    processed_candidates = process_candidates(all_candidates)    
+
+    # Finalize output
+    if processed_candidates and len(processed_candidates) > 0:
+        final_output["found"] = True
+        final_output["candidates"] = processed_candidates
+
+    if verbose:
+        print(f"Final output: {json.dumps(final_output, indent=2)}")
+    
+    return final_output
+
+
+def retrieveWithQuestion(example, question, verbose=False):
     """
     Perform extraction for all indexed chunks in the example using an agent.
     Consolidates the results into the specified JSON format with `found` and `candidates`.
@@ -142,13 +182,13 @@ def retrieve(example, verbose=False):
     question = example.get("question_text", "")
     document = example.get("document_text", "")
 
-    print(question)
     indexed_chunks = example.get("indexed_chunks", [])
     if not indexed_chunks:
         return {"found": False, "candidates": []}
     # TODO: remove
-    print(f"Extracting content from {len(indexed_chunks)} indexed chunks\n")
-    print(f"Example.indexed_chunks: {indexed_chunks}")
+    if verbose:
+        print(f"Extracting content from {len(indexed_chunks)} indexed chunks\n")
+        print(f"Example.indexed_chunks: {indexed_chunks}")
 
     # Step 1: Create ExtractContentAgent for each chunk
     extract_agents = [create_extract_content_agent() for _ in indexed_chunks]
@@ -166,10 +206,6 @@ def retrieve(example, verbose=False):
     # Step 3: Extract content from each chunk
     extracted_contents = []
     with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_REQUESTS) as executor:
-        print("Submitting extraction tasks")
-        print("question", question)
-        print("document", indexed_chunks)
-        # print("\n\n\n")
         future_to_chunk = {
             executor.submit(
                 extract_content_with_rate_limit, agent, chunk, question
@@ -186,7 +222,6 @@ def retrieve(example, verbose=False):
                 if verbose:
                     print(f"Error during extraction: {e}")
                 extracted_contents.append({"found": False, "candidates": []})
-
 # Consolidate results into final JSON format
     extract_candidates = []
 
@@ -212,8 +247,8 @@ def retrieve(example, verbose=False):
                     if verbose:
                         print(f"Error processing candidate: {e}")
     
-    print("final candidates", extract_candidates)
-
+    print("extract candidates", extract_candidates)
+    
     final_output = {
         "found": len(extract_candidates) > 0,
         "candidates": extract_candidates,
@@ -230,8 +265,8 @@ def extract_content(agent, chunk, question):
     response = agent.generate_reply(
         messages=[{"content": input_message, "role": "user"}]
     )
-    print("\n\n\nRaw Response:", response)
-    print("------------------")
+    # print("\n\n\nRaw Response:", response)
+    # print("------------------")
 
     try:
 
@@ -243,8 +278,8 @@ def extract_content(agent, chunk, question):
         else:
             raise ValueError("Unexpected response format. Expected dict or JSON string.")
 
-        print("*"*100)
-        print("response_json", response_json)
+        # print("*"*100)
+        # print("response_json", response_json)
         
         # Check if relevant content was found
         if response_json.get("found", False):
@@ -280,3 +315,124 @@ def extract_text_from_indexes(document_text, begin_index, end_index):
     except Exception as e:
         print(f"Error while extracting text from indexes: {e}")
         return ""
+    
+
+
+ENABLE_QUERY_TRANSFORMATION = True
+
+def create_query_transformation_agent():
+    """
+    Creates an agent responsible for splitting a query into subqueries.
+    """
+    llm_config = get_llm_config()
+    return ConversableAgent(
+        name="QueryTransformationAgent",
+        system_message="""
+# Role
+
+You are an intelligent assistant designed to analyze and transform complex queries into multiple simpler subqueries. Your primary task is to split the provided query into smaller, focused subqueries that retain the original query's intent.
+
+# Instruction
+
+1. Analyze the given query carefully.
+2. Split the query into meaningful subqueries. Each subquery should address a specific aspect of the original query.
+3. Do not lose the intent of the original query.
+4. Your response must include a reasoning for each subquery and a list of subqueries in JSON format.
+
+# Input Format
+[Query] Original Query Text
+
+# Output Format
+{
+    "reasoning": "Explain how you split the query.",
+    "subqueries": [
+        "Subquery 1",
+        "Subquery 2",
+        "Subquery 3",
+        "Subquery 4",
+        "Subquery 5",
+        "Subquery 6"
+    ]
+}
+
+# Example
+
+**Input:**
+[Query] How does email marketing compare to search engine marketing, and what are its cost benefits?
+
+**Output:**
+{
+    "reasoning": "The query can be divided into two aspects: comparison to search engine marketing and cost benefits.",
+    "subqueries": [
+        "How does email marketing compare to search engine marketing",
+        "What are the cost benefits of email marketing",
+        "What is the concept of email marketing"
+        "What are the similarities between email marketing and search engine marketing?",
+        "What are the differences between email marketing and search engine marketing?",
+        "What are the general cost benefits of email marketing?",
+        "How do the cost benefits of email marketing specifically impact small businesses?",
+        "What tools and platforms are commonly used for email marketing?",
+        "What is the definition and overall concept of email marketing?"
+    ]
+}
+        """,
+        llm_config=llm_config,
+        human_input_mode="NEVER",
+    )
+
+def generate_sub_queries(example: Dict, original_question: str, verbose: bool = True):
+    query_agent = create_query_transformation_agent()
+    transformation_input = f"[Query] {original_question}"
+    try:
+        transformation_response = query_agent.generate_reply(
+            messages=[{"content": transformation_input, "role": "user"}]
+        )
+        transformation_json = json.loads(transformation_response)
+        subqueries = transformation_json.get("subqueries", [])
+        if not isinstance(subqueries, list):
+            #raise ValueError("Expected 'subqueries' to be a list.")
+            return [original_question]
+        if verbose:
+            print(f"Generated subqueries: {subqueries}")
+        return subqueries
+    except Exception as e:
+        if verbose:
+            print(f"Error during query transformation: {e}")
+        subqueries = [] 
+
+def process_candidates(candidates: List[Dict]) -> List[Dict]:
+    """
+    Processes the candidates list to merge duplicates with the same indices 
+    and assign unique IDs.
+
+    Args:
+        candidates (List[Dict]): The list of candidates to process.
+
+    Returns:
+        List[Dict]: Processed list of candidates with unique IDs.
+    """
+    processed_candidates = []
+    seen_indices = set()  # To track (begin_index, end_index) pairs
+    candidate_id = 0
+
+    for candidate in candidates:
+        begin_index = candidate.get("begin_index")
+        end_index = candidate.get("end_index")
+        
+        # Skip duplicates based on seen indices
+        if (begin_index, end_index) in seen_indices:
+            continue
+
+        # Handle cases where begin_index == end_index (e.g., invalid range)
+        if begin_index == end_index:
+            # Optionally, you could modify or combine logic here.
+            continue
+
+        # Assign a unique ID and mark these indices as seen
+        candidate["id"] = candidate_id
+        candidate_id += 1
+        seen_indices.add((begin_index, end_index))
+
+        processed_candidates.append(candidate)
+
+    return processed_candidates
