@@ -2,6 +2,8 @@ from typing import Dict, Tuple, List
 import re
 
 import tiktoken
+from rapidfuzz import fuzz, process
+
 # from transformers import LlamaTokenizer
 
 
@@ -138,3 +140,28 @@ def grounding(retrieved_candidates: List[Dict], example: Dict) -> List[Dict]:
         candidate_index += 1
 
     return output
+
+def fuzz_process(query: str, content_list: List[str], match_length: int):
+    substrings = [" ".join(content_list[i:i+match_length]) for i in range(len(content_list)-match_length+1)]
+    top_matches = process.extract(query, substrings, scorer=fuzz.ratio)
+    best_score = top_matches[0][1]
+    best_matches = [match for match in top_matches if match[1] == best_score]
+    return best_matches
+
+def fuzzy_search(query: str, content: str):
+    query_length = len(query.split(" "))
+    content_list = content.split(" ")
+
+    pool = []
+    for match_length in range(max(1, query_length-2), min(query_length+4, len(content_list))):
+        best_matches = fuzz_process(query, content_list, match_length)
+        pool.extend(best_matches)
+    
+    # Sort the pool by score
+    pool.sort(key=lambda x: x[1], reverse=True)
+    top_1 = pool[0]
+    prefix = content[:top_1[2]]
+    begin_index = len(prefix.split(" "))
+    end_index = begin_index + len(top_1[0].split(" "))
+
+    return begin_index, end_index
