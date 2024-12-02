@@ -9,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor
 from abc import ABC
 # from autogen import ConversableAgent
 # Import BaseAgentSystem from Original Repo
-from nq_agents.multi_agent import BaseAgentSystem
+from nq_agents.multi_agent import BaseAgentSystem, get_short_answers
 
 from nq_agents import indexing
 from nq_agents import chunk_and_retrieve
@@ -47,8 +47,8 @@ class WorkflowAutogen(BaseAgentSystem):
         llm_provider="ollama",
         api_key=None,
         max_tokens=20480,
-        max_qps=2,
-        max_concurrent_requests=2,
+        max_qps=MAX_QPS,
+        max_concurrent_requests=MAX_CONCURRENT_REQUESTS,
     ):
         """
         Initialize the multi-agent autogen system.
@@ -124,6 +124,8 @@ class WorkflowAutogen(BaseAgentSystem):
         
         # Ground the retrieved candidates
         context["grounded_candidates"] = indexing.grounding(context)
+        print('==============================================')
+        print(f'candidates length: {len(context["grounded_candidates"])}')
         
         # Rank the candidates
         context["ranked_candidates"] = rank.rank(
@@ -137,9 +139,13 @@ class WorkflowAutogen(BaseAgentSystem):
         context['short_answer'] = refine.refine(
             context['example']['question_text'], context['top1_long']
         )
+        print("short_answer", context['short_answer'])
 
         context["short_answer_index"] = indexing.answer2index(context, verbose=True)
         context["score"] = 0.5
+
+        print('question_text', context['example']['question_text'])
+        print('grounded_truth', get_short_answers(context['example']))
         
         return context["short_answer_index"], context["score"]
     

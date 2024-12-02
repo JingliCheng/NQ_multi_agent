@@ -98,10 +98,9 @@ class BaseAgentSystem:
             'prediction': pred_str
         }
         
-        if prediction in example['document_text']:
-            prediction_dict['short_answers'][0]['start_token'] = prediction[0]
-            prediction_dict['short_answers'][0]['end_token'] = prediction[1]
-            prediction_dict['short_answers_score'] = score
+        prediction_dict['short_answers'][0]['start_token'] = prediction[0]
+        prediction_dict['short_answers'][0]['end_token'] = prediction[1]
+        prediction_dict['short_answers_score'] = score
 
         return prediction_dict
 
