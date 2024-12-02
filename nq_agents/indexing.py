@@ -145,7 +145,7 @@ def grounding(context) -> List[Dict]:
 
 def find_long(context):
     top1_index = context['ranked_candidates']
-    long_content = context['grounded_candidates'][top1_index]
+    long_content = context['grounded_candidates'][top1_index]['relevant_content']
     return long_content
 
 
@@ -175,12 +175,18 @@ def fuzzy_search(query: str, content: str):
     return begin_index, end_index
 
 
-def answer2index(context):
-    short_answer = context['short_answer']
-    inner_begin_index, inner_end_index = fuzzy_search(short_answer, context['top1_long'])
+def answer2index(context, verbose=False):
+    inner_begin_index, inner_end_index = fuzzy_search(context['short_answer'], context['top1_long'])
     chuck_begin = context['grounded_candidates'][context['ranked_candidates']]['begin_index']
     final_begin_index = chuck_begin + inner_begin_index
     final_end_index = chuck_begin + inner_end_index
 
+    if verbose:
+        text = context['example']['document_text']
+        cut_text = ' '.join(text.split(" ")[final_begin_index:final_end_index])
+        print(f"Short answer: {context['short_answer']}")
+        print(f"index cut: {cut_text}")
+        print(f"Final begin index: {final_begin_index}, Final end index: {final_end_index}")
+        
     return final_begin_index, final_end_index
 
