@@ -106,6 +106,8 @@ class WorkflowAutogen(BaseAgentSystem):
             "retrieved_candidates": None,
             "grounded_candidates": None,
             "ranked_candidates": None,
+            "top1_long": None,
+            "short_answer": None,
             "indexed_answer": None,
             "score": None
         }
@@ -131,8 +133,8 @@ class WorkflowAutogen(BaseAgentSystem):
         )
         
         # Refine the ranked candidates
-        answer, score = refine.refine(
-            context, context["example"], context["ranked_candidates"]
+        context['short_answer'] = refine.refine(
+            context['example']['question_text'], context['top1_long']
         )
 
         context["indexed_answer"] = indexing.answer2index(answer)
