@@ -139,7 +139,7 @@ class OllamaAgent:
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Failed to connect to Ollama API: {e}")
 
-def refine(question: str, long_answer: str) -> str:
+def refine(question: str, long_answer: str):
     agent = OllamaAgent()
     try:
         short_answer = agent.send_request(question, long_answer)
