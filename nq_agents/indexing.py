@@ -121,7 +121,7 @@ def extract_text_from_indexes(document: str, indexes: Dict, offset=0) -> str:
     document_list = document.split(" ")
     # Offset is the number of words to include before and after the chunk
     output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
-    return output
+    return output, begin_index-offset
 
 def grounding(context) -> List[Dict]:
     retrieved_candidates = context['retrieved_candidates']
@@ -131,16 +131,25 @@ def grounding(context) -> List[Dict]:
     output = []
     candidate_index = 0
     for candidate in retrieved_candidates:
-        candidate["grounded_text"] = extract_text_from_indexes(document, candidate["indexes"])
-        candidate["id"] = candidate_index
+        grounded_text, begin_index = extract_text_from_indexes(document, candidate["indexes"])
+        reasoning = candidate["reasoning"]
 
         output.append({
-            "relevant_content": candidate["grounded_text"],
-            "id": candidate["id"],
+            "relevant_content": grounded_text,
+            "reasoning": reasoning,
+            "id": candidate_index,
+            "begin_index": begin_index,
         })
         candidate_index += 1
 
     return output
+
+
+def find_long(context):
+    top1_index = context['ranked_candidates']
+    long_content = context['grounded_candidates'][top1_index]
+    return long_content
+
 
 def fuzz_process(query: str, content_list: List[str], match_length: int):
     substrings = [" ".join(content_list[i:i+match_length]) for i in range(len(content_list)-match_length+1)]
@@ -168,7 +177,12 @@ def fuzzy_search(query: str, content: str):
     return begin_index, end_index
 
 
-def find_long(context):
-    top1_index = context['ranked_candidates']
-    long_content = context['grounded_candidates'][top1_index]
-    return long_content
+def answer2index(context):
+    short_answer = context['short_answer']
+    inner_begin_index, inner_end_index = fuzzy_search(short_answer, context['top1_long'])
+    chuck_begin = context['grounded_candidates'][context['ranked_candidates']]['begin_index']
+    final_begin_index = chuck_begin + inner_begin_index
+    final_end_index = chuck_begin + inner_end_index
+
+    return final_begin_index, final_end_index
+
