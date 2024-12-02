@@ -101,7 +101,7 @@ def split_document(document, model_name="gpt-4", max_tokens=1000, overlap=100):
 
     return chunks
 
-def convert_to_indexed_format(example, distance=10, model_name="llama", max_tokens=1000, overlap=100) -> Dict:
+def convert_to_indexed_format(context, distance=10, model_name="llama", max_tokens=1000, overlap=100) -> Dict:
     """
     Convert the document text to indexed format and split into chunks.
     Output:
@@ -110,11 +110,10 @@ def convert_to_indexed_format(example, distance=10, model_name="llama", max_toke
         "indexed_chunks": ["chunk1", "chunk2", ...]
     }
     """
+    example = context["example"]
     indexed_text = text2indexed_fixed_distance(example["document_text"], distance=distance)
     chucks = split_document(indexed_text, model_name=model_name, max_tokens=max_tokens, overlap=overlap)
-    example["indexed_chunks"] = chucks
-
-    return example
+    return chucks
 
 def extract_text_from_indexes(document: str, indexes: Dict, offset=0) -> str:
     begin_index = indexes["begin_index"]

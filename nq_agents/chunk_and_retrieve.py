@@ -238,7 +238,8 @@ def retrieveWithQuestion(example, question, verbose=False):
                     if begin_index >= 0 and end_index > begin_index and end_index <= len(document.split()):
                         # Extract grounded text from document
                         grounded_text = extract_text_from_indexes(document, begin_index, end_index)
-                        candidate["grounded_text"] = grounded_text
+                        # TODO: remove grounded_text
+                        # candidate["grounded_text"] = grounded_text
                         extract_candidates.append(candidate)
                     else:
                         if verbose:
