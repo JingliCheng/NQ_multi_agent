@@ -148,9 +148,16 @@ def retrieve(context, example, verbose=False):
     # Case 2: Query transformation is enabled
     else:
         # Step 1: Retrieve subqueries from the original query
-        subqueries = generate_sub_queries(example, example.get("question_text", ""), verbose)
+        try:
+            subqueries = generate_sub_queries(example, example.get("question_text", ""), verbose)
+        except Exception as e:
+            if verbose:
+                print(f"Error during query transformation: {e}")
+        if not subqueries or len(subqueries) == 0:
+            subqueries = [example.get("question_text", "Fallback question text")]
         if verbose:
             print("subqueries", subqueries)
+            print("example:", example)
         # Step 2: Process each subquery
         for subquery in subqueries:
             subquery_result = retrieveWithQuestion(context, example, subquery, verbose)
