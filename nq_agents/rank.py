@@ -93,7 +93,7 @@ class RankAgent:
 
 
 
-def rank(extracted_contents: List[Dict], question: str) -> Dict:
+def rank(extracted_contents: List[Dict], question: str, failed_questions: List[Dict]) -> Dict:
     """
     Rank the candidates and return only the top-ranked candidate.
     
@@ -103,37 +103,74 @@ def rank(extracted_contents: List[Dict], question: str) -> Dict:
     :return: Top-ranked candidate (as a dictionary)
     """
     rank_agent = RankAgent()
-    # Get the raw response from the LLM
-    raw_response = rank_agent.rank_candidates(question, extracted_contents)
+    retries = 5
+    # # Get the raw response from the LLM
+    # raw_response = rank_agent.rank_candidates(question, extracted_contents)
 
-    # Debug: print the raw response from the LLM
-    print(f"Raw Response from LLM:\n{raw_response}")
+    # # Debug: print the raw response from the LLM
+    # print(f"Raw Response from LLM:\n{raw_response}")
+    # print("================================================")
+
+    # # Updated part of the rank function
+    # match = re.search(r"(\d+)", raw_response)  # Modified regex to capture any standalone number
+    # if not match:
+    #     raise ValueError(f"Unable to extract top candidate ID from LLM response: {raw_response}")
+
+        # # Convert the top candidate ID to an integer
+    # top_candidate_id = int(match.group(1))
+    # # Find and return the top-ranked candidate
+    # top_candidate = next(candidate for candidate in extracted_contents if candidate['id'] == top_candidate_id)
+    # # Extract the relevant content of the top-ranked candidate
+    # top_candidate_content = top_candidate['relevant_content']
+
+
+    # # Debug: Print the top candidate ID
+    # print(f"Top Candidate ID (Debug): {top_candidate_id}")
+    # print("================================================")
+    # # Debug output
+    # print(f"Top Candidate (Parsed): {top_candidate}")
+    # print("================================================")
+    # print(f"Print answer string:.{top_candidate_content}")
+    # return top_candidate_id
+    for attempt in range(retries):
+        try:
+            raw_response = rank_agent.rank_candidates(question, extracted_contents)
+            print(f"Raw Response from LLM (Attempt {attempt + 1}):\n{raw_response}")
+            
+            # Check if the response contains a valid ID
+            match = re.search(r"ID: (\d+)", raw_response)
+            if match:
+                top_candidate_id = int(match.group(1))
+                top_candidate = next(
+                    candidate for candidate in extracted_contents if candidate['id'] == top_candidate_id
+                )
+                print(f"Top Candidate ID: {top_candidate_id}")
+                #print(f"Top Candidate Content: {top_candidate['relevant_content']}")
+                return top_candidate_id
+            else:
+                print("Invalid format. Reinforcing prompt...")
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+        if attempt < retries - 1:
+            print(f"Retrying... (Attempt {attempt + 2}/{retries})")
     print("================================================")
 
-    # Updated part of the rank function
-    match = re.search(r"(\d+)", raw_response)  # Modified regex to capture any standalone number
-    if not match:
-        raise ValueError(f"Unable to extract top candidate ID from LLM response: {raw_response}")
+    # If all retries fail, log the failed question and candidates
+    print("Max retries reached. Logging failed question.")
+    failed_entry = {"question": question, "candidates": extracted_contents}
+    failed_questions.append(failed_entry)
 
-    # Convert the top candidate ID to an integer
-    top_candidate_id = int(match.group(1))
+    # Optionally, log to a file
+    with open("failed_questions_log.json", "a") as log_file:
+        json.dump(failed_entry, log_file)
+        log_file.write("\n")
 
-    # Convert the top candidate ID to an integer
-    top_candidate_id = int(match.group(1))
-    # Find and return the top-ranked candidate
-    top_candidate = next(candidate for candidate in extracted_contents if candidate['id'] == top_candidate_id)
-    # Extract the relevant content of the top-ranked candidate
-    top_candidate_content = top_candidate['relevant_content']
+    return {"id": 0, "relevant_content": "No valid response", "reasoning": "Skipped due to invalid responses."}
 
 
-    # Debug: Print the top candidate ID
-    print(f"Top Candidate ID (Debug): {top_candidate_id}")
-    print("================================================")
-    # Debug output
-    print(f"Top Candidate (Parsed): {top_candidate}")
-    print("================================================")
-    print(f"Print answer string:.{top_candidate_content}")
-    return top_candidate_id
+
 
 
 # Main function for standalone testing
@@ -146,9 +183,18 @@ if __name__ == "__main__":
     ]
 
     # Initialize the RankAgent
+    # List to store failed questions
+    failed_questions = []
 
+    ranked_candidate_id = rank(candidates, question, failed_questions)
 
-    # Test the rank function
-    ranked_candidates = rank(candidates, question)
-    print("Ranked Candidates:", ranked_candidates)
+    if ranked_candidate_id != 0:
+        print(f"Top-ranked candidate ID: {ranked_candidate_id}")
+    else:
+        print("No valid candidate could be ranked.")
+
+    # Print logged failed questions
+    if failed_questions:
+        print("Failed Questions Log:")
+        print(json.dumps(failed_questions, indent=4))
 
