@@ -1,200 +1,191 @@
-import requests
-import json
 import re
+import json
 from typing import List, Dict
+from concurrent.futures import ThreadPoolExecutor
+from autogen import ConversableAgent
 
+LLM_PROVIDER = "ollama"
+LLM_PROVIDERS = ["ollama", "openai"]
 
-class RankAgent:
-    def __init__(self, api_url="http://127.0.0.1:11434/api/generate", model="llama3.2:latest"):
-        """
-        Initialize the RankAgent.
-        
-        :param api_url: API address for the LLM
-        :param model: Model name
-        """
-        self.api_url = api_url
-        self.model = model
-
-    def rank_candidates(self, question, candidates, temperature=0.0, max_tokens=512):
-        """
-        Send a request to rank candidates and return the ID of the top-ranked candidate.
-        """
-        # Define the prompt
-        prompt_template = """
-        You are an intelligent assistant with excellent reasoning skills. Your task is to analyze a question and evaluate a list of up to 100 candidate answers to select the most relevant one based on the provided reasoning and content.
-
-        For each candidate, you will consider:
-        1. The relevance of the content to the question.
-        2. The quality and logic of the reasoning provided.
-
-        **Instructions**:
-        - Carefully review the "Question" and the list of "Candidates."
-        - Evaluate each candidate's "Content" and its corresponding "Reasoning" to determine the best match.
-        - Select only one candidate as the top-ranked answer.
-        - Provide the ID of the top-ranked candidate in the following format: `ID: <number>` (e.g., `ID: 1`).
-        - After the ID, briefly explain your reasoning for selecting this candidate (e.g., why it is the most relevant).
-
-        **Question**:
-        {question}
-
-        **Candidates**:
-        {candidates}
-
-        **Output Format**:
-        - First, provide the ID of the top-ranked candidate in the format: `ID: <number>` (e.g., `ID: 1`).
-        - Then, provide a concise explanation (e.g., "This candidate is the most relevant because...").
-        """
-
-
-        # Format the candidates for the prompt, including reasoning for each
-        candidates_formatted = "\n".join(
-            [
-                f"- ID: {c['id']}, Content: {c['relevant_content']}, Reasoning: {c['reasoning']}"
-                for c in candidates
+def get_llm_config(llm_provider=LLM_PROVIDER):
+    """
+    Returns the LLM configuration based on the selected provider.
+    """
+    llm_configs = {
+        "ollama": {
+            "config_list": [
+                {
+                    "model": "llama3.2:latest",
+                    "api_key": "ollama",  # Replace with actual key if necessary
+                    "base_url": "http://localhost:11434/v1",
+                    "temperature": 0.7,  # Use 0.0 for deterministic results
+                }
             ]
-        )
+        },
+        "openai": {
+            "config_list": [
+                {
+                    "model": "gpt-4o",
+                    "api_key": "your_openai_api_key",  # Replace with actual API key
+                    "base_url": "https://api.openai.com/v1",
+                    "temperature": 0.7,  # Set temperature for OpenAI
+                }
+            ]
+        },
+    }
 
-        # Use a default reasoning if not explicitly required
-        reasoning = "Please evaluate the relevance and reasoning quality based on the content provided for each candidate."
-
-        # Fill the prompt template
-        prompt = prompt_template.format(
-            question=question,
-            candidates=candidates_formatted,
-            reasoning=reasoning
-        )
-
-        # Construct API request payload
-        payload = {
-            "model": self.model,
-            "prompt": prompt,
-            "temperature": temperature,
-            "max_tokens": max_tokens
-        }
-
-        try:
-            response = requests.post(self.api_url, json=payload)
-            response.raise_for_status()
-
-            # Parse the response to extract the top candidate ID
-            lines = response.text.splitlines()
-            result = []
-            for line in lines:
-                try:
-                    json_line = json.loads(line)
-                    if "response" in json_line:
-                        result.append(json_line["response"])
-                except json.JSONDecodeError:
-                    pass
-
-            return "".join(result).strip()  # Extract the ID as a single number
-        except requests.exceptions.RequestException as e:
-            raise RuntimeError(f"Failed to connect to the API: {e}")
-
-
-
-def rank(extracted_contents: List[Dict], question: str, failed_questions: List[Dict]) -> Dict:
-    """
-    Rank the candidates and return only the top-ranked candidate.
+    if llm_provider not in llm_configs:
+        raise ValueError(f"Unsupported LLM provider: {llm_provider}")
     
-    :param agent: RankAgent instance
-    :param extracted_contents: List of candidates with 'relevant_content' and 'id'
-    :param question: The question to rank answers for
-    :return: Top-ranked candidate (as a dictionary)
+    return llm_configs[llm_provider]
+
+def create_rank_agent():
+    llm_config = get_llm_config()
+    return ConversableAgent(
+        name="RankAgent",
+        system_message="""
+# Role
+You are an assistant tasked with selecting the best candidate from a provided list based on a given question. You will be given no more than 5 candidates, please read it carefully and give me the ID of the best candidate.
+
+# Task
+1. Evaluate the relevance of each candidate's content to the question.
+2. Choose the best candidate from the provided list of candidate IDs.
+3. Your output must only be a single integer representing the ID of the best candidate.
+4. Do not create new IDs, add explanations, or include any extra text—only return the selected ID.
+
+# Input Format
+Question: <question_text>
+Candidates:
+- ID: <candidate_id>, Content: <candidate_content>, Reasoning: <candidate_reasoning>
+
+# Output Format
+<integer>
+
+# Example
+**Input:**
+Question: What is the capital of France?
+Candidates:
+        {"id": 1, "relevant_content": "Nice is a city in southern France.", "reasoning": "Not the capital."},
+        {"id": 2, "relevant_content": "Berlin is the capital of Germany.", "reasoning": "Irrelevant to the question."},
+        {"id": 3, "relevant_content": "Lyon is a city in France.", "reasoning": "Not the capital but relevant."},
+        {"id": 4, "relevant_content": "Madrid is the capital of Spain.", "reasoning": "Not relevant to France."},
+        {"id": 5, "relevant_content": "Marseille is a major city in France.", "reasoning": "Not the capital."},
+
+**Output:**
+1
+        """,
+        llm_config=llm_config,
+        human_input_mode="NEVER",
+    )
+
+def rank_candidates_with_agent(agent, question: str, candidates: List[Dict], max_retries: int = 3) -> int:
     """
-    rank_agent = RankAgent()
-    retries = 5
-    # # Get the raw response from the LLM
-    # raw_response = rank_agent.rank_candidates(question, extracted_contents)
+    Use the RankAgent to select the best candidate, with retries for invalid outputs.
 
-    # # Debug: print the raw response from the LLM
-    # print(f"Raw Response from LLM:\n{raw_response}")
-    # print("================================================")
+    :param agent: The RankAgent instance.
+    :param question: The question to evaluate candidates against.
+    :param candidates: List of candidate dictionaries with 'id', 'relevant_content', and 'reasoning'.
+    :param max_retries: Maximum number of retries for invalid outputs.
+    :return: The ID of the selected top candidate as an integer, or None if retries fail.
+    """
+    input_data = {
+        "question": question,
+        "candidates": candidates
+    }
 
-    # # Updated part of the rank function
-    # match = re.search(r"(\d+)", raw_response)  # Modified regex to capture any standalone number
-    # if not match:
-    #     raise ValueError(f"Unable to extract top candidate ID from LLM response: {raw_response}")
+    input_message = json.dumps(input_data)
+    messages = [{"role": "user", "content": input_message}]
 
-        # # Convert the top candidate ID to an integer
-    # top_candidate_id = int(match.group(1))
-    # # Find and return the top-ranked candidate
-    # top_candidate = next(candidate for candidate in extracted_contents if candidate['id'] == top_candidate_id)
-    # # Extract the relevant content of the top-ranked candidate
-    # top_candidate_content = top_candidate['relevant_content']
+    for attempt in range(max_retries):
+        response = agent.generate_reply(messages)
 
+        # 打印原始响应以调试问题
+        print(f"Attempt {attempt + 1}/{max_retries}, Raw response from LLM: {response}")
 
-    # # Debug: Print the top candidate ID
-    # print(f"Top Candidate ID (Debug): {top_candidate_id}")
-    # print("================================================")
-    # # Debug output
-    # print(f"Top Candidate (Parsed): {top_candidate}")
-    # print("================================================")
-    # print(f"Print answer string:.{top_candidate_content}")
-    # return top_candidate_id
-    for attempt in range(retries):
         try:
-            raw_response = rank_agent.rank_candidates(question, extracted_contents)
-            print(f"Raw Response from LLM (Attempt {attempt + 1}):\n{raw_response}")
-            
-            # Check if the response contains a valid ID
-            match = re.search(r"ID: (\d+)", raw_response)
-            if match:
-                top_candidate_id = int(match.group(1))
-                top_candidate = next(
-                    candidate for candidate in extracted_contents if candidate['id'] == top_candidate_id
-                )
-                print(f"Top Candidate ID: {top_candidate_id}")
-                #print(f"Top Candidate Content: {top_candidate['relevant_content']}")
-                return top_candidate_id
+            # 提取整数 ID
+            int_match = re.search(r"\d+", response)
+            if int_match:
+                top_candidate_id = int(int_match.group(0))
+
+                # 验证 ID 是否在候选列表中
+                if any(candidate["id"] == top_candidate_id for candidate in candidates):
+                    return top_candidate_id
+                else:
+                    print(f"Invalid ID {top_candidate_id} not in batch. Retrying ({attempt + 1}/{max_retries})...")
             else:
-                print("Invalid format. Reinforcing prompt...")
-
+                print(f"No valid integer ID found in response. Retrying ({attempt + 1}/{max_retries})...")
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error parsing LLM response: {e}. Retrying ({attempt + 1}/{max_retries})...")
 
-        if attempt < retries - 1:
-            print(f"Retrying... (Attempt {attempt + 2}/{retries})")
-    print("================================================")
+    # 如果尝试次数用尽，返回 None 并打印最终无效响应
+    print(f"Failed to get a valid ID after {max_retries} attempts. Final response: {response}")
+    return None
+def process_batch(rank_agent, question, batch):
+    """
+    Process a single batch of candidates to select the top one.
+    """
+    try:
+        top_candidate_id = rank_candidates_with_agent(rank_agent, question, batch)
+        print(f"Top candidate ID: {top_candidate_id}")
+        print(f"Candidate IDs in batch: {[candidate['id'] for candidate in batch]}")
 
-    # If all retries fail, log the failed question and candidates
-    print("Max retries reached. Logging failed question.")
-    failed_entry = {"question": question, "candidates": extracted_contents}
-    failed_questions.append(failed_entry)
+        # 确保 top_candidate_id 在 batch 中存在
+        if any(candidate["id"] == top_candidate_id for candidate in batch):
+            return next(candidate for candidate in batch if candidate["id"] == top_candidate_id)
+        else:
+            print(f"Warning: Invalid ID {top_candidate_id} returned by LLM. Skipping this batch.")
+            return None  # 返回 None 表示跳过该批次
+    except Exception as e:
+        print(f"Error processing batch: {e}")
+        return None
+    
+def rank(question: str, candidates: List[Dict], batch_size: int = 5) -> int:
+    rank_agent = create_rank_agent()
+    round_number = 1
 
-    # Optionally, log to a file
-    with open("failed_questions_log.json", "a") as log_file:
-        json.dump(failed_entry, log_file)
-        log_file.write("\n")
+    while len(candidates) > 1:
+        print(f"Round {round_number}: {len(candidates)} candidates remaining.")
+        next_round_candidates = []
 
-    return {"id": 0, "relevant_content": "No valid response", "reasoning": "Skipped due to invalid responses."}
+        with ThreadPoolExecutor() as executor:
+            futures = [
+                executor.submit(process_batch, rank_agent, question, candidates[i:i + batch_size])
+                for i in range(0, len(candidates), batch_size)
+            ]
+            for future in futures:
+                result = future.result()
+                if result:  # 过滤掉 None
+                    next_round_candidates.append(result)
+
+        if not next_round_candidates:
+            print("Error: All batches were skipped due to invalid LLM outputs.")
+            return None  # 或者抛出异常
+
+        candidates = next_round_candidates
+        round_number += 1
+
+    return candidates[0]["id"] if candidates else None
 
 
-
-
-
-# Main function for standalone testing
 if __name__ == "__main__":
     question = "What is the capital of France?"
     candidates = [
-        {"id": 1, "relevant_content": "Paris is the capital of France.", "reasoning": "Paris is the political and cultural hub of France."},
-        {"id": 2, "relevant_content": "Berlin is the capital of Germany.", "reasoning": "Berlin is a major European city but not the capital of France."},
-        {"id": 3, "relevant_content": "Lyon is a city in France.", "reasoning": "Lyon is significant but not the capital."}
+        {"id": 1, "relevant_content": "Nice is a city in southern France.", "reasoning": "Not the capital."},
+        {"id": 2, "relevant_content": "Berlin is the capital of Germany.", "reasoning": "Irrelevant to the question."},
+        {"id": 3, "relevant_content": "Lyon is a city in France.", "reasoning": "Not the capital but relevant."},
+        {"id": 4, "relevant_content": "Madrid is the capital of Spain.", "reasoning": "Not relevant to France."},
+        {"id": 5, "relevant_content": "Marseille is a major city in France.", "reasoning": "Not the capital."},
+        {"id": 6, "relevant_content": "Paris is home to the Eiffel Tower.", "reasoning": "Relevant but not directly answering."},
+        {"id": 7, "relevant_content": "Rome is the capital of Italy.", "reasoning": "Irrelevant to the question."},
+        {"id": 8, "relevant_content": "Nice is a city in southern France.", "reasoning": "Not the capital."},
+        {"id": 19, "relevant_content": "Paris has been the capital since the Middle Ages.", "reasoning": "Accurate and directly relevant."},
+        {"id": 10, "relevant_content": "Paris is the political hub of France.", "reasoning": "Relevant and concise."},
+        {"id": 11, "relevant_content": "Paris is the capital of France.", "reasoning": "Accurate and concise."},
+        {"id": 12, "relevant_content": "Paris has been the capital since the Middle Ages.", "reasoning": "Accurate and directly relevant."},
+        {"id": 13, "relevant_content": "Paris is the political hub of France.", "reasoning": "Relevant and concise."},
     ]
 
-    # Initialize the RankAgent
-    # List to store failed questions
-    failed_questions = []
+    best_candidate_id = rank(question, candidates)
 
-    ranked_candidate_id = rank(candidates, question, failed_questions)
-
-    if ranked_candidate_id != 0:
-        print(f"Top-ranked candidate ID: {ranked_candidate_id}")
-    else:
-        print("No valid candidate could be ranked.")
-
-    # Print logged failed questions
-    if failed_questions:
-        print("Failed Questions Log:")
-        print(json.dumps(failed_questions, indent=4))
-
+    print(f"The top-ranked candidate ID: {best_candidate_id}")
