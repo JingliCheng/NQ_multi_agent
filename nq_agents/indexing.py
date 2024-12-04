@@ -180,10 +180,12 @@ def answer2index(context, verbose=False):
     chuck_begin = context['grounded_candidates'][context['ranked_candidates']]['begin_index']
     final_begin_index = chuck_begin + inner_begin_index
     final_end_index = chuck_begin + inner_end_index
+    text = context['example']['document_text']
+    cut_text = ' '.join(text.split(" ")[final_begin_index:final_end_index])
+    context['cut_answer'] = cut_text
+    context['final_index'] = (final_begin_index, final_end_index)
 
     if verbose:
-        text = context['example']['document_text']
-        cut_text = ' '.join(text.split(" ")[final_begin_index:final_end_index])
         print(f"Short answer: {context['short_answer']}")
         print(f"index cut: {cut_text}")
         print(f"Final begin index: {final_begin_index}, Final end index: {final_end_index}")
