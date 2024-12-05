@@ -20,7 +20,7 @@ OPENAI_TOKEN_LIMIT = 20480 # OpenAI GPT-4 Turbo model token limit
 LLM_PROVIDER = "ollama"
 LLM_PROVIDERS = ["ollama", "openai"]
 
-ENABLE_QUERY_TRANSFORMATION = True
+ENABLE_QUERY_TRANSFORMATION = False
 
 
 def get_llm_config(llm_provider=LLM_PROVIDER):
