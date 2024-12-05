@@ -327,8 +327,6 @@ def extract_text_from_indexes(document_text, begin_index, end_index):
     
 
 
-ENABLE_QUERY_TRANSFORMATION = True
-
 def create_query_transformation_agent():
     """
     Creates an agent responsible for splitting a query into subqueries.
