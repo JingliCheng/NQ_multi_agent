@@ -13,7 +13,7 @@ class OllamaAgent:
         self.api_url = api_url
         self.model = model
 
-    def send_request(self, question, long_answer, temperature=0.0, max_tokens=512):
+    def send_request(self, question, long_answer, wrong_answer, temperature=0.0, max_tokens=512):
         """
         send request to Ollama API to generate short answer
         """
@@ -25,6 +25,7 @@ class OllamaAgent:
         3. Do not summarize or create new words, only locate and extract the answer.
         4. If there is no answer, **Short Answer** should be None
         5. Just give the answer itself
+        6. **Short Answer** should avoid {wrong_answer}.
         
         Here are some examples to learn from:
         **Example 1**
@@ -109,7 +110,11 @@ class OllamaAgent:
         """
 
         # fill template
-        prompt = prompt_template.format(question=question, long_answer=long_answer)
+        prompt = prompt_template.format(
+            question=question, 
+            long_answer=long_answer, 
+            wrong_answer=wrong_answer if wrong_answer else ""
+        )
         
         # construct API request
         payload = {
@@ -139,10 +144,10 @@ class OllamaAgent:
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Failed to connect to Ollama API: {e}")
 
-def refine(question: str, long_answer: str):
+def refine(question: str, long_answer: str, wrong_answer: str = ""):
     agent = OllamaAgent()
     try:
-        short_answer = agent.send_request(question, long_answer)
+        short_answer = agent.send_request(question, long_answer, wrong_answer)
         return short_answer
     except Exception as e:
         return e
@@ -153,7 +158,8 @@ if __name__ == "__main__":
     long_answer = """
     King's Highway 401, commonly referred to as Highway 401 and also known by its official name as the Macdonald–Cartier Freeway or colloquially as the four-oh-one,[3] is a controlled-access400-series highway in the Canadian province of Ontario. It stretches 828.0 kilometres (514.5 mi) from Windsor in the west to the Ontario–Quebec border in the east. The part of Highway 401 that passes through Toronto is North America's busiest highway,[4][5] and one of the widest.[6][7] Together with Quebec Autoroute 20, it forms the road transportation backbone of the Quebec City–Windsor Corridor, along which over half of Canada's population resides and is also a Core Route in the National Highway System of Canada. The route is maintained by the Ministry of Transportation of Ontario (MTO) and patrolled by the Ontario Provincial Police. The speed limit is 100 km/h (62 mph) throughout its length, unless posted otherwise.
     """
-    print("short answer:", refine(question, long_answer))
+    wrong_answer = "401"
+    print("short answer:", refine(question, long_answer, wrong_answer))
 
 
 

@@ -21,8 +21,8 @@ from nq_agents import refine
 os.environ["OPENAI_API_KEY"] = "placeholder" # Replace with your actual API key
 
 # QPS and concurrency limits
-MAX_QPS = 2  # 每秒最多请求数
-MAX_CONCURRENT_REQUESTS = 2  # 最大并发请求数
+MAX_QPS = 15  # 每秒最多请求数
+MAX_CONCURRENT_REQUESTS = 15  # 最大并发请求数
 
 # Token limit for different models
 DEFAULT_TOKEN_LIMIT = 8192  # 默认 Token 限制（8k）
@@ -151,8 +151,10 @@ class WorkflowAutogen(BaseAgentSystem):
         
         # Refine the ranked candidates
         time_logger.start('refining')
+        # If you want to add wrong answer, change this variable
+        wrong_answer = ""
         context['short_answer'] = refine.refine(
-            context['example']['question_text'], context['top1_long']
+            context['example']['question_text'], context['top1_long'], wrong_answer
         )
         time_logger.end('refining')
 
