@@ -9,8 +9,8 @@ from ratelimit import limits, sleep_and_retry
 from ratelimit.exception import RateLimitException
 
 # QPS and concurrency limits
-MAX_QPS = 2  
-MAX_CONCURRENT_REQUESTS = 2  
+MAX_QPS = 10
+MAX_CONCURRENT_REQUESTS = 10
 
 # Token limit for different models
 DEFAULT_TOKEN_LIMIT = 8192  # default token limit）
