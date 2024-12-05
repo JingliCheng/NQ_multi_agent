@@ -9,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor
 from abc import ABC
 # from autogen import ConversableAgent
 # Import BaseAgentSystem from Original Repo
-from nq_agents.multi_agent import BaseAgentSystem, get_short_answers
+from nq_agents.multi_agent import BaseAgentSystem, get_short_answers, TimeLogger
 
 from nq_agents import indexing
 from nq_agents import chunk_and_retrieve
@@ -97,7 +97,6 @@ class WorkflowAutogen(BaseAgentSystem):
         return llm_configs[self.llm_provider]
     
 
-
     def predict(self, example: Dict, verbose: bool = False) -> Tuple[str, float]:
         # Initialize context as a dictionary
         context = {
@@ -109,45 +108,75 @@ class WorkflowAutogen(BaseAgentSystem):
             "top1_long": None,
             "short_answer": None,
             "short_answer_index": None,
+            "cut_answer": None,
             "score": None
         }
+        time_logger = TimeLogger()
         
         # Add indexed document
+        time_logger.start('indexing')
         context["indexed_chunks"] = indexing.convert_to_indexed_format(
             context, distance=10, model_name="llama", max_tokens=1000, overlap=100
         )
+        time_logger.end('indexing')
         
         # Retrieve candidates
+        time_logger.start('retrieving')
         context["retrieved_candidates"] = chunk_and_retrieve.retrieve(
             context, example=context["example"], verbose=True
         )
+        time_logger.end('retrieving')
         
         # Ground the retrieved candidates
+        time_logger.start('grounding')
         context["grounded_candidates"] = indexing.grounding(context)
-        print('==============================================')
-        print(f'candidates length: {len(context["grounded_candidates"])}')
+        time_logger.end('grounding')
+
+        for i in range(len(context['grounded_candidates'])):
+            print(f"retrieved candidate {i}: {context['retrieved_candidates'][i]}")
+            print(f"Grounded candidate {i}: {context['grounded_candidates'][i]}")
+        
         
         # Rank the candidates
+        time_logger.start('ranking')
         context["ranked_candidates"] = rank.rank(
          context["grounded_candidates"], context['example']['question_text']
         )
+        time_logger.end('ranking')
         
         # Get the top1 long answer
+        time_logger.start('finding long')
         context['top1_long'] = indexing.find_long(context)
+        time_logger.end('finding long')
         
         # Refine the ranked candidates
+        time_logger.start('refining')
         context['short_answer'] = refine.refine(
             context['example']['question_text'], context['top1_long']
         )
-        print("short_answer", context['short_answer'])
+        time_logger.end('refining')
 
-        context["short_answer_index"] = indexing.answer2index(context, verbose=True)
+        time_logger.start('answer2index')
+        context["short_answer_index"] = indexing.answer2index(context, verbose=False)
+        time_logger.end('answer2index')
         context["score"] = 0.5
 
-        print('question_text', context['example']['question_text'])
-        print('grounded_truth', get_short_answers(context['example']))
+        # Show prediction stats
+        print('===============Final Stats===================')
+        print(f"Original question           : {context['example']['question_text']}")
+        print(f"# of indexed chunks         : {len(context['indexed_chunks'])}")
+        print(f"# of retrieved candidates   : {len(context['retrieved_candidates'])}")
+        print(f"# of grounded candidates    : {len(context['grounded_candidates'])}")
+        # short answer and cut answer will be printed in answer2index if verbose is True
+        print(f"Top1 long answer            : {context['top1_long']}")
+        print(f"Short answer                : {context['short_answer']}")
+        print(f"cut answer                  : {context['cut_answer']}")
+        print(f"**grounded truth**          : {get_short_answers(context['example'])}")
+        print(f"Final begin index           : {context['final_index'][0]}, Final end index: {context['final_index'][1]}")
+
+        time_logger.show_time()
         
-        return context["short_answer_index"], context["score"]
+        return context["short_answer_index"], context["score"], time_logger.get_log()
     
     
     
