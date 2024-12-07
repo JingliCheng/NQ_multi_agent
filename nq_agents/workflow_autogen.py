@@ -13,7 +13,7 @@ from nq_agents.multi_agent import BaseAgentSystem, get_short_answers, TimeLogger
 
 from nq_agents import indexing
 from nq_agents import chunk_and_retrieve
-from nq_agents import rank
+from nq_agents import rank_v2
 from nq_agents import refine
 
 
@@ -116,14 +116,14 @@ class WorkflowAutogen(BaseAgentSystem):
         # Add indexed document
         time_logger.start('indexing')
         context["indexed_chunks"] = indexing.convert_to_indexed_format(
-            context, distance=10, model_name="llama", max_tokens=1000, overlap=100
+            context, distance=10, model_name="llama", max_tokens=300, overlap=60
         )
         time_logger.end('indexing')
         
         # Retrieve candidates
         time_logger.start('retrieving')
         context["retrieved_candidates"] = chunk_and_retrieve.retrieve(
-            context, example=context["example"], verbose=True
+            context, example=context["example"], verbose=False
         )
         time_logger.end('retrieving')
         
@@ -131,17 +131,10 @@ class WorkflowAutogen(BaseAgentSystem):
         time_logger.start('grounding')
         context["grounded_candidates"] = indexing.grounding(context)
         time_logger.end('grounding')
-
-        for i in range(len(context['grounded_candidates'])):
-            print(f"retrieved candidate {i}: {context['retrieved_candidates'][i]}")
-            print(f"Grounded candidate {i}: {context['grounded_candidates'][i]}")
-        
         
         # Rank the candidates
         time_logger.start('ranking')
-        context["ranked_candidates"] = rank.rank(
-         context["grounded_candidates"], context['example']['question_text']
-        )
+        context["ranked_candidates"] = rank_v2.rank(context)
         time_logger.end('ranking')
         
         # Get the top1 long answer
