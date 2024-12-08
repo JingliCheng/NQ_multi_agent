@@ -173,6 +173,11 @@ def retrieve(context, example, verbose=False):
     if processed_candidates and len(processed_candidates) > 0:
         final_output["found"] = True
         final_output["candidates"] = processed_candidates
+    else:
+        # Fake a candidate
+        print("No candidates, use a fake chunk")
+        final_output["found"] = False
+        final_output["candidates"] = [{"begin_index": 0, "end_index": 100}]
 
     if verbose:
         print(f"Final output: {json.dumps(final_output, indent=2)}")

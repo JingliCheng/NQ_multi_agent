@@ -134,12 +134,35 @@ class BaseAgentSystem:
         prediction_dict['short_answers_score'] = score
 
         return prediction_dict
+    
+    def read_log_and_format(self, log_path: str = None, save_path: str = None) -> List[Dict]:
+        if log_path is None:
+            log_path = self.log_path
+        predictions = {'predictions': []}
+        with open(log_path, 'r') as f:
+            for line in f:
+                context = json.loads(line)
+                pred_index, score = context["short_answer_index"], context["score"]
+                pred_dict = self.format_prediction(context['example'], pred_index, score)
+                predictions['predictions'].append(pred_dict)
 
-    def predict_batch(self, examples: List[Dict], save_path: Optional[str] = None, verbose: bool = False) -> List[str]:
+        if save_path is None:
+            save_path = f"predictions_{self.model}_{time_str}.jsonl"
+        with open(save_path, 'w') as f:
+            f.write(json.dumps(predictions) + '\n')
+
+        return predictions
+
+    def predict_batch(self, examples: List[Dict], log_path: Optional[str] = None, verbose: bool = False) -> List[str]:
         """
         Make predictions for a batch of examples.
         """
         predictions = {'predictions': []}
+        time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.time_str = time_str
+        if log_path is None:
+            log_path = f"{self.model}_{time_str}_log.jsonl"
+        self.log_path = log_path
         for i, raw_example in enumerate(examples):
             if verbose:
                 print(f"\nExample {i+1}/{len(examples)}")
@@ -152,20 +175,15 @@ class BaseAgentSystem:
             print('char length:', len(example['document_text']))
             print('token length:', len(get_nq_tokens(example)))
             context, time_log = self.predict(example, verbose)
-            ids = context['vectorstore'].get()['ids']
-            # print("len(ids): ", len(ids))
-            # print(context['vectorstore'].get())
-            context['vectorstore'].delete(ids=ids)
-            pred_index, score = context["short_answer_index"], context["score"]
-            pred_dict = self.format_prediction(example, pred_index, score)
-            predictions['predictions'].append(pred_dict)
-        time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        if save_path is None:
-            save_path = f"predictions_{self.model}_{time_str}.jsonl"
-        with open(save_path, 'w') as f:
-            json.dump(predictions, f)
-            
-        return predictions
+            if context['vectorstore'] is not None:
+                ids = context['vectorstore'].get()['ids']
+                # print("len(ids): ", len(ids))
+                # print(context['vectorstore'].get())
+                context['vectorstore'].delete(ids=ids)
+            # save prediction context
+            with open(log_path, 'a') as f:
+                f.write(json.dumps(context) + '\n')
+
 
 
 class NQMultiAgent(BaseAgentSystem):

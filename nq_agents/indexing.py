@@ -118,8 +118,10 @@ def convert_to_indexed_format(context, distance=10, model_name="llama", max_toke
 def extract_text_from_indexes(document: str, begin_index, end_index, offset=50) -> str:
     document_list = document.split(" ")
     # Offset is the number of words to include before and after the chunk
-    output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
-    return output, begin_index-offset
+    actual_begin_index = max(0, begin_index-offset)
+    actual_end_index = min(len(document_list), end_index+offset)
+    output = " ".join(document_list[actual_begin_index:actual_end_index])
+    return output, actual_begin_index
 
 def format_retrieved_candidates(retrieved_candidate: str) -> List[Dict]:
     # get the wd_idx<begin_index> at the beginning

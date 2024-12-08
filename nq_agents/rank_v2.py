@@ -117,10 +117,6 @@ def rank_candidates_with_agent(agent, question: str, candidates: List[Dict], max
     return None
 
 def process_batch(rank_agent, question, batch):
-    print("Processing batch: ")
-    for b in batch:
-        print(b)
-    print('batch size: ', len(batch))
     top_candidate_id = rank_candidates_with_agent(rank_agent, question, batch)
     print(f"Top candidate ID: {top_candidate_id}")
     for candidate in batch:
