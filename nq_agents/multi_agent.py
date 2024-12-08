@@ -151,7 +151,12 @@ class BaseAgentSystem:
                 example = raw_example
             print('char length:', len(example['document_text']))
             print('token length:', len(get_nq_tokens(example)))
-            pred_index, score, time_log = self.predict(example, verbose)
+            context, time_log = self.predict(example, verbose)
+            ids = context['vectorstore'].get()['ids']
+            # print("len(ids): ", len(ids))
+            # print(context['vectorstore'].get())
+            context['vectorstore'].delete(ids=ids)
+            pred_index, score = context["short_answer_index"], context["score"]
             pred_dict = self.format_prediction(example, pred_index, score)
             predictions['predictions'].append(pred_dict)
         time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")

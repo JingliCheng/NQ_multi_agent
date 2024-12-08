@@ -18,7 +18,7 @@ from nq_agents import refine
 
 
 # Set up OpenAI API key
-os.environ["OPENAI_API_KEY"] = "placeholder" # Replace with your actual API key
+# os.environ["OPENAI_API_KEY"] = "placeholder" # Replace with your actual API key
 
 # QPS and concurrency limits
 MAX_QPS = 15  # 每秒最多请求数
@@ -39,6 +39,8 @@ SINGLE_ENTRY_FILE= 'data/first_entry_sample.jsonl'
 LLM_PROVIDER = "ollama"
 OLLAMA_API_BASE = "http://localhost:11434/v1"
 MAX_TOKENS = LLAMA_TOKEN_LIMIT if LLM_PROVIDER == "ollama" else OPENAI_TOKEN_LIMIT
+
+VECTORDB_ENABLED = True
 
 
 class WorkflowAutogen(BaseAgentSystem):
@@ -101,6 +103,7 @@ class WorkflowAutogen(BaseAgentSystem):
         # Initialize context as a dictionary
         context = {
             "example": example,  # Original example
+            "vectorstore": None,
             "indexed_chunks": None,
             "retrieved_candidates": None,
             "grounded_candidates": None,
@@ -114,22 +117,32 @@ class WorkflowAutogen(BaseAgentSystem):
         time_logger = TimeLogger()
         
         # Add indexed document
-        time_logger.start('indexing')
-        context["indexed_chunks"] = indexing.convert_to_indexed_format(
-            context, distance=10, model_name="llama", max_tokens=300, overlap=60
-        )
-        time_logger.end('indexing')
-        
+        if VECTORDB_ENABLED:
+            time_logger.start('vectoring')
+            context["indexed_chunks"], context["vectorstore"] = indexing.build_vectordb(
+                context,distance=10, model_name="llama", max_tokens=300, overlap=60
+            )
+            time_logger.end('vectoring')
+        else:
+            time_logger.start('indexing')
+            context["indexed_chunks"] = indexing.convert_to_indexed_format(
+                context, distance=10, model_name="llama", max_tokens=300, overlap=60
+            )
+            time_logger.end('indexing')
         # Retrieve candidates
         time_logger.start('retrieving')
-        context["retrieved_candidates"] = chunk_and_retrieve.retrieve(
-            context, example=context["example"], verbose=False
+        if VECTORDB_ENABLED:
+            context["retrieved_candidates"] = indexing.vector_retrieve(
+                context, k=3
+            )
+        else:
+            context["retrieved_candidates"] = chunk_and_retrieve.retrieve(
+                context, example=context["example"], verbose=True
         )
         time_logger.end('retrieving')
-        
         # Ground the retrieved candidates
         time_logger.start('grounding')
-        context["grounded_candidates"] = indexing.grounding(context)
+        context["grounded_candidates"] = indexing.grounding(context, vector_enabled=VECTORDB_ENABLED)
         time_logger.end('grounding')
         
         # Rank the candidates
@@ -171,7 +184,7 @@ class WorkflowAutogen(BaseAgentSystem):
 
         time_logger.show_time()
         
-        return context["short_answer_index"], context["score"], time_logger.get_log()
+        return context, time_logger.get_log()
     
     
     

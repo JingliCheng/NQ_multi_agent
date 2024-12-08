@@ -44,63 +44,6 @@ class OllamaAgent:
         **Short Answer**:
         Antarctica
         
-         **Example 3**
-        **Question**:
-        where does the last name hogan come from?
-        **Long Answer**:
-        Hogan is an Irish surname . If derived from the Irish Gaelic , Ó hÓgáin , it is diminutive of Og meaning " young " . If it is derived from Cornish , it means " mortal " . This youthful definition of the name is also reflected in the Welsh , where Hogyn means stripling . The word Hogen means high in Dutch .
-        **Short Answer**:
-        None
-        
-        **Example 4**
-        **Question**:
-        who lives in the imperial palace in tokyo?
-        **Long Answer**:
-        The Tokyo Imperial Palace ( 皇居 , Kōkyo , literally " Imperial Residence " ) is the primary residence of the Emperor of Japan . It is a large park - like area located in the Chiyoda ward of Tokyo and contains buildings including the main palace ( 宮殿 , Kyūden ) , the private residences of the Imperial Family , an archive , museums and administrative offices.    
-        **Short Answer**:
-        the Imperial Family
-        
-        **Example 5**
-        **Question**:
-        where is the bowling hall of fame located?
-        **Long Answer**:
-        The World Bowling Writers ( WBW ) International Bowling Hall of Fame was established in 1993 and is located in the International Bowling Museum and Hall of Fame , on the International Bowling Campus in Arlington , Texas.
-        **Short Answer**:
-        Arlington , Texas
-        
-        **Example 6**
-        **Question**:
-        who won the election for mayor of cleveland?
-        **Long Answer**:
-        The 2017 Cleveland mayoral election took place on November 7 , 2017 , to elect the Mayor of Cleveland , Ohio . The election was officially nonpartisan , with the top two candidates from the September 12 primary election advancing to the general election , regardless of party . Incumbent Democratic Mayor Frank G . Jackson won reelection to a fourth term.
-        **Short Answer**:
-        Incumbent Democratic Mayor Frank G . Jackson
-        
-        **Example 7**
-        **Question**:
-        when did the watts riot start and end?
-        **Long Answer**:
-        The Watts riots , sometimes referred to as the Watts Rebellion , took place in the Watts neighborhood of Los Angeles from August 11 to 16 , 1965 .
-        **Short Answer**:
-        August 11 to 16 , 1965
-        
-        **Example 8**
-        **Question**:
-        when did kendrick lamars first album come out?
-        **Long Answer**:
-        On the topic of whether his next project would be an album or a mixtape , Lamar answered : " I treat every project like it's an album anyway . It's not going to be nothing leftover . I never do nothing like that . These are my leftover songs you all can have them . I'm going to put my best out . My best effort . I'm trying to look for an album in 2012 . " In June 2011 , Lamar released " Ronald Reagan Era ( His Evils ) " , a cut from Section . 80 , featuring Wu - Tang Clan leader RZA . On July 2 , 2011 , Lamar released Section . 80 , his first independent album , to critical acclaim . The album features guest appearances from GLC , Colin Munroe , Schoolboy Q , and Ab - Soul , while the production was handled by Top Dawg in - house production team Digi + Phonics as well as Wyldfyer , Terrace Martin and J . Cole . Section . 80 went on to sell 5,300 digital copies in its first week , without any television or radio coverage and received mostly positive reviews .
-        **Short Answer**:
-        July 2 , 2011
-        
-        **Example 9**
-        **Question**:
-        where does the energy in a nuclear explosion come from?
-        **Long Answer**:
-        A nuclear explosion is an explosion that occurs as a result of the rapid release of energy from a high - speed nuclear reaction . The driving reaction may be nuclear fission , nuclear fusion or a multistage cascading combination of the two , though to date all fusion - based weapons have used a fission device to initiate fusion , and a pure fusion weapon remains a hypothetical device .
-        **Short Answer**:
-        high - speed nuclear reaction
-        
-        
         **Current Task**
         **Question**:
         {question}

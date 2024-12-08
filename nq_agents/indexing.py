@@ -82,7 +82,7 @@ def split_document(document, model_name="gpt-4", max_tokens=1000, overlap=100):
         # Adjust token end to avoid splitting mid-marker
         if next_marker_index < len(marker_token_positions):
             token_end = marker_token_positions[next_marker_index]
-        
+
         # Add overlap if not the last chunk
         if next_marker_index < len(marker_token_positions) and overlap > 0:
             token_end = min(token_end + overlap, len(tokens))
@@ -112,8 +112,8 @@ def convert_to_indexed_format(context, distance=10, model_name="llama", max_toke
     """
     example = context["example"]
     indexed_text = text2indexed_fixed_distance(example["document_text"], distance=distance)
-    chucks = split_document(indexed_text, model_name=model_name, max_tokens=max_tokens, overlap=overlap)
-    return chucks
+    chunks = split_document(indexed_text, model_name=model_name, max_tokens=max_tokens, overlap=overlap)
+    return chunks
 
 def extract_text_from_indexes(document: str, begin_index, end_index, offset=50) -> str:
     document_list = document.split(" ")
@@ -121,7 +121,13 @@ def extract_text_from_indexes(document: str, begin_index, end_index, offset=50) 
     output = " ".join(document_list[max(0, begin_index-offset):min(len(document_list), end_index+offset)])
     return output, begin_index-offset
 
-def grounding(context) -> List[Dict]:
+def format_retrieved_candidates(retrieved_candidate: str) -> List[Dict]:
+    # get the wd_idx<begin_index> at the beginning
+    begin_index = int(re.search(r"^\<wd_idx\<(\d+)\>\>", retrieved_candidate).group(1))
+    clear_text = indexed2text(retrieved_candidate)
+    return clear_text, begin_index
+
+def grounding(context, vector_enabled=False) -> List[Dict]:
     retrieved_candidates = context['retrieved_candidates']
     example = context['example']
     document = example["document_text"]
@@ -129,8 +135,14 @@ def grounding(context) -> List[Dict]:
     output = []
     candidate_index = 0
     for candidate in retrieved_candidates:
-        grounded_text, begin_index = extract_text_from_indexes(document, candidate["begin_index"], candidate["end_index"])
-        reasoning = candidate["reasoning"]
+        if vector_enabled:
+            grounded_text, begin_index = format_retrieved_candidates(candidate)
+        else:
+            grounded_text, begin_index = extract_text_from_indexes(document, candidate["begin_index"], candidate["end_index"])
+        if isinstance(candidate, dict):
+            reasoning = candidate.get("reasoning", "")
+        else:
+            reasoning = ""
 
         output.append({
             "relevant_content": grounded_text,
@@ -164,22 +176,25 @@ def fuzzy_search(query: str, content: str):
     for match_length in range(max(1, query_length-2), min(query_length+4, len(content_list))):
         best_matches = fuzz_process(query, content_list, match_length)
         pool.extend(best_matches)
-    
+
     # Sort the pool by score
     pool.sort(key=lambda x: x[1], reverse=True)
     top_1 = pool[0]
-    prefix = content[:top_1[2]]
-    begin_index = len(prefix.split(" "))
+    print("top_1: ", top_1)
+    begin_index = int(top_1[2])
     end_index = begin_index + len(top_1[0].split(" "))
+    print("begin_index: ", begin_index)
+    print("end_index: ", end_index)
+    print("fuzzy search text: ", ' '.join(content.split(" ")[begin_index:end_index]))
 
     return begin_index, end_index
 
 
 def answer2index(context, verbose=False):
     inner_begin_index, inner_end_index = fuzzy_search(context['short_answer'], context['top1_long'])
-    chuck_begin = context['grounded_candidates'][context['ranked_candidates']]['begin_index']
-    final_begin_index = chuck_begin + inner_begin_index
-    final_end_index = chuck_begin + inner_end_index
+    chunks_begin = context['grounded_candidates'][context['ranked_candidates']]['begin_index']
+    final_begin_index = chunks_begin + inner_begin_index
+    final_end_index = chunks_begin + inner_end_index
     text = context['example']['document_text']
     cut_text = ' '.join(text.split(" ")[final_begin_index:final_end_index])
     context['cut_answer'] = cut_text
@@ -189,6 +204,64 @@ def answer2index(context, verbose=False):
         print(f"Short answer: {context['short_answer']}")
         print(f"index cut: {cut_text}")
         print(f"Final begin index: {final_begin_index}, Final end index: {final_end_index}")
-        
+
     return final_begin_index, final_end_index
 
+
+from typing import Dict, List, Tuple
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from chromadb.config import Settings
+
+
+def create_vectorstore(
+        text: str, 
+        chunk_size: int = 500, chunk_overlap: int = 50,
+        model_name: str = "llama",
+        embedding_name: str = "sentence-transformers/all-mpnet-base-v2") -> List[str]:
+    """Create vector store from input text"""
+    embeddings = HuggingFaceEmbeddings(model_name=embedding_name)
+
+    chunks = split_document(text, model_name="llama", max_tokens=chunk_size, overlap=chunk_overlap)
+    text_chunks = list(map(indexed2text, chunks))
+
+    metadatas = []
+    for i, chunk in enumerate(chunks):        
+        metadata = {
+            "chunk_id": i,
+        }
+        metadatas.append(metadata)
+
+    # Create vector store
+    vectorstore = Chroma.from_texts(
+        texts=text_chunks,
+        embedding=embeddings,
+        metadatas=metadatas,
+        client_settings=Settings(
+                anonymized_telemetry=False,
+                is_persistent=False
+            )
+    )
+    return chunks, vectorstore
+
+def build_vectordb(context, distance=10, model_name="llama", max_tokens=1000, overlap=100) -> Dict:
+    example = context["example"]
+    indexed_text = text2indexed_fixed_distance(example["document_text"], distance=distance)
+    chunks, vectorstore = create_vectorstore(
+        indexed_text, chunk_size=max_tokens, chunk_overlap=overlap, model_name=model_name
+        )
+    return chunks, vectorstore
+
+def vector_retrieve(context, k: int = 3) -> List[Dict]:
+    vectorstore = context["vectorstore"]
+    query = context["example"]["question_text"]
+    results = vectorstore.similarity_search(query, k=k)
+
+    # select results based on the id
+    selected_chunks = []
+    # print("results: ", results)
+    for doc in results:
+        chunk_id = doc.metadata["chunk_id"]
+        selected_chunks.append(context["indexed_chunks"][chunk_id])
+
+    return selected_chunks
