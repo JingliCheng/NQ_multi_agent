@@ -1,0 +1,1103 @@
+
+Example 1/10
+simplifying...
+char length: 87220
+token length: 15522
+Round 1: 19 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 10 is the best candidate because it discusses the authority of Congress under the Articles of Confederation, highlighting its limitations and the lack of power to compel states, which is relevant to understanding who had the most governmental power during that period.",
+    "top_id": 10
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 10
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides relevant information about the powers of Congress under the Articles of Confederation, indicating that Congress had significant governmental power, particularly in determining peace and war, entering treaties, and serving as a final court for disputes between states. This aligns with the question regarding who had the most governmental power.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the powers of the national Congress under the Articles of Confederation, indicating that the states retained sovereignty over governmental functions not specifically given to Congress, which had the most governmental power.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 16 is the best candidate because it discusses the structure of government under the Articles of Confederation, specifically mentioning that Congress was the only federal institution and had limited power, which directly relates to the question of who held the most governmental power during that period.",
+    "top_id": 16
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 16
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides context about the limited power of the central government under the Articles of Confederation and mentions the Confederation Congress, which had the most governmental power at that time. However, it does not explicitly state who had the most power. ID 13 and ID 14 discuss the role of the President of Congress but do not clarify the overall power structure. Therefore, ID 12 is the most relevant candidate.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content discusses the authority of Congress under the Articles of Confederation and mentions political leaders like John Jay and Thomas Burke, but it does not directly answer the question of who had the most governmental power. However, it implies that Congress had significant authority, which could be interpreted as a partial answer.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about who had the most governmental power under the Articles of Confederation. However, ID 0 and ID 1 mention the limited powers of the federal government and the role of Congress, which implies that Congress had the most power, but it is not explicitly stated. ID 2 discusses Congress's authority during the Revolutionary War but does not address the Articles of Confederation specifically. Therefore, ID 0 is the closest to providing relevant information about the governmental structure under the Articles.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+Round 2: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content discusses the authority of Congress under the Articles of Confederation and mentions political leaders like John Jay and Thomas Burke, but it does not directly answer the question of who had the most governmental power. However, it implies that Congress had significant authority, which could be interpreted as a partial answer.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the powers of the national Congress under the Articles of Confederation, indicating that the Congress had significant governmental power, while also noting that states retained sovereignty over functions not specifically given to Congress. This directly relates to the question about who had the most governmental power.",
+    "top_id": 3
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 is the best candidate because it discusses the limitations of the central government's power under the Articles of Confederation, specifically mentioning the Confederation Congress and its lack of enforcement powers, which directly relates to the question about who had the most governmental power.",
+    "top_id": 12
+}
+Processing candidates with IDs: [10, 12, 16]
+Top candidate ID: 12
+Round 3: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides a clear explanation of the structure of power under the Articles of Confederation, indicating that the states retained sovereignty over governmental functions not specifically given to the national Congress. This implies that the states had the most governmental power, while the Congress had limited authority. ID 12 also discusses the limitations of the Confederation Congress but does not directly address who had the most power. Therefore, ID 3 is the most relevant to the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 12, 18]
+Top candidate ID: 3
+# of candidates in rank pool: 1
+top_1:  ('the states', 100.0, 53)
+begin_index:  53
+end_index:  55
+fuzzy search text:  the states
+===============Final Stats===================
+Original question           : who had the most governmental power under the articles of confederation
+# of indexed chunks         : 149
+# of retrieved candidates   : 19
+# of grounded candidates    : 19
+Top1 long answer            : February 2 , 1781 </Td> </Tr> </Table> <H2> Article summaries </H2> <P> The Articles of Confederation contain a preamble , thirteen articles , a conclusion , and a signatory section . The individual articles set the rules for current and future operations of the confederation 's central government . Under the Articles , the states retained sovereignty over all governmental functions not specifically relinquished to the national Congress , which was empowered to make war and peace , negotiate diplomatic and commercial agreements with foreign countries , and to resolve disputes between the states . The document also stipulates that its provisions `` shall be inviolably observed by every state '' and that `` the Union shall be perpetual ''
+Short answer                : the states
+cut answer                  : the states
+5
+**grounded truth**          : ['the states', 'the states', 'the states']
+Final begin index           : 1973, Final end index: 1975
+All time: =============================
+indexing time: 8.4481942653656s
+retrieving time: 39.46288824081421s
+grounding time: 0.009999752044677734s
+ranking time: 6.314790964126587s
+finding long time: 0.0s
+refining time: 0.5021636486053467s
+answer2index time: 0.0010001659393310547s
+============================
+
+Example 2/10
+simplifying...
+char length: 41330
+token length: 7088
+Round 1: 19 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides relevant information about the features of muscle contraction that can be determined from an EMG, including the ability to discriminate discharges of individual muscle fibers and the types of activity observed during testing. This directly relates to the question asked.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides a comprehensive explanation of electromyography (EMG) and mentions that the signals can be analyzed to detect activation level and recruitment order, which are features of muscle contraction that can be determined from an EMG.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 provides historical context and mentions the recording of electrical activity during muscle contraction, which relates to the features of muscle contraction that can be determined from an EMG. However, it does not explicitly list the features, making it less direct in answering the question.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 10 is the best candidate because it discusses how EMG can indicate muscle fatigue and describes specific changes in the EMG signal that are relevant to muscle contraction features. This directly relates to the question about features of muscle contraction that can be determined from an EMG.",
+    "top_id": 10
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 10
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 8 is the best candidate because it discusses how EMG can be used to assess muscle activation, including the concept of maximal voluntary contraction (MVC) and the correlation between muscle force and EMG activation, which directly relates to the features of muscle contraction that can be determined from an EMG.",
+    "top_id": 8
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 8
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides a detailed explanation of the muscle action potential and the overall electrical activity evaluated during an EMG, which directly relates to the features of muscle contraction that can be determined from an EMG. It discusses the motor unit action potential (MUAP) and the factors affecting it, making it the most relevant candidate.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 15 provides a detailed explanation of how electromyography (EMG) detects electrical activity in muscles during contraction, including the normal results and the behavior of muscle fibers during voluntary contraction. This directly addresses the features of muscle contraction that can be determined from an EMG.",
+    "top_id": 15
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 15
+Round 2: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 provides historical context and mentions the recording of electrical activity during muscle contraction, which relates to the features of muscle contraction that can be determined from an EMG. However, it does not explicitly list the features, making it less direct in answering the question.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 8 is the best candidate because it discusses how EMG can be used to assess muscle activation through maximal voluntary contraction and correlates muscle force with EMG activation, which directly relates to the features of muscle contraction that can be determined from an EMG.",
+    "top_id": 8
+}
+Processing candidates with IDs: [0, 3, 8]
+Top candidate ID: 8
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 is the best candidate because it discusses the muscle action potential and how EMG is used to monitor changes in frequency related to muscle fatigue, which directly relates to the features of muscle contraction that can be determined from an EMG.",
+    "top_id": 12
+}
+Processing candidates with IDs: [10, 12, 15]
+Top candidate ID: 12
+Round 3: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 8 is the best candidate because it discusses the basic function of EMG in assessing muscle activation through maximal voluntary contraction, which directly relates to features of muscle contraction that can be determined from an EMG.",
+    "top_id": 8
+}
+Processing candidates with IDs: [8, 12, 18]
+Top candidate ID: 8
+# of candidates in rank pool: 1
+top_1:  ('maximal voluntary contraction', 100.0, 69)
+begin_index:  69
+end_index:  72
+fuzzy search text:  maximal voluntary contraction
+===============Final Stats===================
+Original question           : what features of muscle contraction can be determined from an emg (electromyogram)
+# of indexed chunks         : 68
+# of retrieved candidates   : 19
+# of grounded candidates    : 19
+Top1 long answer            : performing EMG of the laryngeal muscles , and subspecialists in urology , obstetrics and gynecology who have had selective training in performing EMG of muscles controlling bowel and bladder function . </P> <H3> Maximal voluntary contraction ( edit ) </H3> <P> One basic function of EMG is to see how well a muscle can be activated . The most common way that can be determined is by performing a maximal voluntary contraction ( MVC ) of the muscle that is being tested . </P> <P> Muscle force , which is measured mechanically , typically correlates highly with measures of EMG activation of muscle . Most commonly this is assessed with surface electrodes , but it should be recognized that these typically only record from muscle fibers in close approximation to the surface . </P> <P> Several analytical methods for determining muscle activation are commonly used depending on the application .
+Short answer                : maximal voluntary contraction
+cut answer                  : maximal voluntary contraction
+5
+**grounded truth**          : ['electric potential generated']
+Final begin index           : 2199, Final end index: 2202
+All time: =============================
+indexing time: 1.662362813949585s
+retrieving time: 18.092607498168945s
+grounding time: 0.0029954910278320312s
+ranking time: 10.17552137374878s
+finding long time: 0.0s
+refining time: 0.44234585762023926s
+answer2index time: 0.0009992122650146484s
+============================
+
+Example 3/10
+simplifying...
+char length: 15506
+token length: 2955
+Round 1: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it explicitly states that the theme song for 'Degrassi: The Next Generation' is performed by Jakalope.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it directly mentions the 'Degrassi Theme Song' and attributes it to the artist Jakalope, which answers the question about who sings the theme song for 'Degrassi: The Next Generation.'",
+    "top_id": 3
+}
+Processing candidates with IDs: [3]
+Top candidate ID: 3
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions that the theme song for 'Degrassi: The Next Generation' is performed by Jakalope, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Jakalope', 100.0, 63)
+begin_index:  63
+end_index:  64
+fuzzy search text:  Jakalope
+===============Final Stats===================
+Original question           : who sings the theme song for degrassi the next generation
+# of indexed chunks         : 35
+# of retrieved candidates   : 4
+# of grounded candidates    : 4
+Top1 long answer            : The Next Generation . It was released as a digital download on 1 November 2005 , following the fourth season , and as a CD on 8 January 2007 . </P> <Table> <Tr> <Th> No . </Th> <Th> Title </Th> <Th> Artist </Th> <Th> Length </Th> </Tr> <Tr> <Td> 1 . </Td> <Td> `` Degrassi : The Next Generation Theme '' </Td> <Td> Jakalope </Td> <Td> 0 : 55 </Td> </Tr> <Tr> <Td> 2 . </Td> <Td> `` Heartbreaker '' </Td> <Td> Tuuli </Td> <Td> 3 : 20 </Td> </Tr> <Tr> <Td> 3 . </Td> <Td> `` Beautifully Undone '' </Td> <Td> Lindy </Td> <Td> 3 : 24 </Td> </Tr>
+Short answer                : Jakalope
+cut answer                  : Jakalope
+5
+**grounded truth**          : ['Jakalope', 'Jakalope', 'Jakalope', 'The Degrassi Junior Strings']
+Final begin index           : 383, Final end index: 384
+All time: =============================
+indexing time: 0.39161038398742676s
+retrieving time: 9.2573881149292s
+grounding time: 0.0s
+ranking time: 2.4130029678344727s
+finding long time: 0.0s
+refining time: 0.5134217739105225s
+answer2index time: 0.0s
+============================
+
+Example 4/10
+simplifying...
+char length: 115128
+token length: 21410
+Round 1: 95 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 provides a detailed account of the events following the fall of Western Rome, including the loss of territories and the rise of various leaders, which directly relates to what happened after its fall.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 19, 20]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides a detailed account of the events following the fall of Western Rome, including military ineffectiveness, starvation, and the sack of Rome, which directly relates to what happened after its fall.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 37 provides a detailed account of the events following the fall of Western Rome, including the actions of Alaric and the consequences for the city, which directly addresses the question about what happened after the fall.",
+    "top_id": 37
+}
+Processing candidates with IDs: [36, 37, 38]
+Top candidate ID: 37
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 provides a detailed account of the aftermath of the fall of Western Rome, discussing the corruption of military discipline, the impact of barbarian invasions, and the overall decline of the Roman world. This directly addresses the question about what happened after the fall of Western Rome.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 67 provides a detailed account of the events following the fall of Western Rome, including the power struggles, the rise of Petronius Maximus, and the subsequent sack of Rome by the Vandals. This content directly addresses what happened to Western Rome after its fall.",
+    "top_id": 67
+}
+Processing candidates with IDs: [66, 67, 68]
+Top candidate ID: 67
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it provides a comprehensive overview of the decline of the Western Roman Empire, mentioning the division into successor polities and various contributing factors to its fall, which directly addresses what happened after it fell.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 83 is the best candidate because it describes the events that occurred after the fall of Western Rome, specifically detailing the abdication of Romulus Augustulus and the actions of Odoacer, which directly relate to the question.",
+    "top_id": 83
+}
+Processing candidates with IDs: [81, 82, 83]
+Top candidate ID: 83
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 27 provides a comprehensive overview of the decline of the Western Roman Empire, detailing the factors that contributed to its fall and the subsequent division of its territory into successor polities. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 27
+}
+Processing candidates with IDs: [27, 28, 29]
+Top candidate ID: 27
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides a detailed account of the events following the fall of Western Rome, including the loss of power, the establishment of barbarian rule, and the cultural continuities that persisted despite the political collapse. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 21 provides a detailed account of the events following the fall of Western Rome, including the civil wars and the power struggles that ensued, which directly relates to what happened after its fall.",
+    "top_id": 21
+}
+Processing candidates with IDs: [21, 22, 23]
+Top candidate ID: 21
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 73 provides a detailed account of the events following the fall of Western Rome, including the rise of Majorian, his military campaigns, and the eventual decline of Roman authority under Ricimer. This directly addresses the question about what happened to Western Rome after its fall.",
+    "top_id": 73
+}
+Processing candidates with IDs: [72, 73, 74]
+Top candidate ID: 73
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 15 provides a detailed account of the decline of local control and the economic and social conditions in Gaul after the fall of Western Rome, which directly relates to the question about what happened to Western Rome after it fell.",
+    "top_id": 15
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 15
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 39 provides a detailed account of the aftermath of the fall of Western Rome, discussing the reactions of Christians and pagans, the debates surrounding the fall, and the implications for the empire. It directly addresses what happened after the fall, making it the most relevant candidate.",
+    "top_id": 39
+}
+Processing candidates with IDs: [39, 40, 41]
+Top candidate ID: 39
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 48 provides a detailed account of the events and changes that occurred in the Western Roman Empire after its fall, including the rise of warlords and the status of the last emperors, making it the most relevant candidate to answer the question.",
+    "top_id": 48
+}
+Processing candidates with IDs: [48, 49, 50]
+Top candidate ID: 48
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 34 provides a detailed account of the events following the fall of Western Rome, including the military struggles and political maneuvers that occurred during that time. It discusses the challenges faced by the Roman leadership and the impact of external pressures, which directly relates to what happened after the fall of Western Rome.",
+    "top_id": 34
+}
+Processing candidates with IDs: [33, 34, 35]
+Top candidate ID: 34
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content discusses the continuity of Roman culture and political legitimacy after the fall of the Western Roman Empire in 476 AD, emphasizing that the end of the empire did not equate to the end of Roman influence. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 51 provides a detailed account of the political instability and fragmentation that occurred in Western Rome after its fall, including the actions of various leaders and the resulting chaos. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 51
+}
+Processing candidates with IDs: [51, 52, 53]
+Top candidate ID: 51
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 45 provides a detailed account of events following the fall of Western Rome, including the actions of Ataulf and the political dynamics involving the Visigoths and the Roman Empire. This content is relevant to understanding what happened to Western Rome after its fall.",
+    "top_id": 45
+}
+Processing candidates with IDs: [45, 46, 47]
+Top candidate ID: 45
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 30 provides a detailed account of the events that occurred after the fall of Western Rome, including revolts, invasions, and the sack of Rome, making it the most relevant candidate to answer the question.",
+    "top_id": 30
+}
+Processing candidates with IDs: [30, 31, 32]
+Top candidate ID: 30
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 62 is the best candidate because it directly addresses the topic of the fall of the Western Roman Empire and mentions the decline and division into successor polities, which relates to what happened after it fell.",
+    "top_id": 62
+}
+Processing candidates with IDs: [60, 61, 62]
+Top candidate ID: 62
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 54 provides a detailed account of the political instability and military actions that occurred in Western Rome after its fall, discussing the roles of various leaders and the challenges faced by the Empire. This content is relevant to the question about what happened to Western Rome after it fell.",
+    "top_id": 54
+}
+Processing candidates with IDs: [54, 55, 56]
+Top candidate ID: 54
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 42 provides a detailed account of the events following the fall of Western Rome, including the internal conflicts, the rise of usurpers, and the eventual decline of centralized Roman authority. This directly addresses the question of what happened to Western Rome after its fall.",
+    "top_id": 42
+}
+Processing candidates with IDs: [42, 43, 44]
+Top candidate ID: 42
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 63 provides a broad overview of the influence and cultural continuities that remained after the fall of the Western Roman Empire, which directly relates to what happened after its fall. It discusses the lack of strength for the Western Empire to rise again, which is relevant to the question.",
+    "top_id": 63
+}
+Processing candidates with IDs: [63, 64, 65]
+Top candidate ID: 63
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 75 provides a detailed account of the political situation in Western Rome after its fall, including the roles of various leaders and the challenges they faced. It discusses the lack of significant achievements by the rulers and the influence of the Eastern Empire, which directly relates to what happened to Western Rome after its fall.",
+    "top_id": 75
+}
+Processing candidates with IDs: [75, 76, 77]
+Top candidate ID: 75
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 57 provides context about the period after the fall of Western Rome, discussing cultural continuities and the political collapse, which directly relates to what happened after its fall. It emphasizes the historical context and the aftermath of the fall, making it the most relevant candidate.",
+    "top_id": 57
+}
+Processing candidates with IDs: [57, 58, 59]
+Top candidate ID: 57
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 69 provides a detailed account of the events following the fall of Western Rome, including the actions of the Vandals and the rise of Avitus, which directly relates to what happened after the fall.",
+    "top_id": 69
+}
+Processing candidates with IDs: [69, 70, 71]
+Top candidate ID: 69
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 79 provides a detailed account of the events following the fall of Western Rome, including the rise and fall of various emperors and the influence of warlords, which directly addresses what happened to Western Rome after its fall.",
+    "top_id": 79
+}
+Processing candidates with IDs: [78, 79, 80]
+Top candidate ID: 79
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 25 provides a comprehensive overview of the events and circumstances following the fall of the Western Roman Empire, detailing the political fragmentation, civil wars, and the eventual loss of territories. It directly addresses what happened after the fall, making it the most relevant candidate.",
+    "top_id": 25
+}
+Processing candidates with IDs: [24, 25, 26]
+Top candidate ID: 25
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 85 provides a comprehensive overview of what happened to Western Rome after its fall, detailing the deposition of Romulus Augustulus, the rise of Odoacer, and the subsequent political changes. This directly addresses the question about the fate of Western Rome post-fall.",
+    "top_id": 85
+}
+Processing candidates with IDs: [84, 85, 86]
+Top candidate ID: 85
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 87 provides a comprehensive overview of the factors that contributed to the fall of Western Rome and discusses the division of its territory into successor polities, which directly addresses the question about what happened after its fall.",
+    "top_id": 87
+}
+Processing candidates with IDs: [87, 88, 89]
+Top candidate ID: 87
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 94 is the best candidate because it discusses the events following the fall of Western Rome, including the sack of Rome and the actions of Alaric, which are directly relevant to what happened after the fall.",
+    "top_id": 94
+}
+Processing candidates with IDs: [93, 94]
+Top candidate ID: 94
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 90 provides a comprehensive overview of the events following the fall of the Western Roman Empire, detailing the loss of power, the establishment of barbarian rule, and the lasting cultural influence of the Empire. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 90
+}
+Processing candidates with IDs: [90, 91, 92]
+Top candidate ID: 90
+Round 2: 32 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 79 provides a detailed account of the events that transpired in Western Rome after its fall, including the rise and fall of various emperors and the influence of warlords. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 79
+}
+Processing candidates with IDs: [73, 75, 79]
+Top candidate ID: 79
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content provides a detailed account of the events leading to the fall of the Western Roman Empire and its aftermath, including the loss of power and the establishment of barbarian rule. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 90
+}
+Processing candidates with IDs: [90, 94]
+Top candidate ID: 90
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 27 provides a comprehensive overview of the decline of the Western Roman Empire, mentioning the division of its territory into successor polities and various factors that contributed to its fall. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 27
+}
+Processing candidates with IDs: [27, 30, 34]
+Top candidate ID: 27
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 48 provides a timeline of events and details about the political instability and territorial losses that occurred in Western Rome after its fall, making it the most relevant candidate to answer the question.",
+    "top_id": 48
+}
+Processing candidates with IDs: [45, 48, 51]
+Top candidate ID: 48
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 39 provides a comprehensive overview of the aftermath of the fall of Western Rome, discussing the reactions of both Christians and pagans, as well as the political turmoil that followed. It addresses the broader implications of the fall and the societal changes that occurred, making it the most relevant candidate to the question.",
+    "top_id": 39
+}
+Processing candidates with IDs: [37, 39, 42]
+Top candidate ID: 39
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 85 provides a comprehensive overview of what happened to Western Rome after its fall, detailing the deposition of Romulus Augustulus, Odoacer's rise to power, and the subsequent division of the empire into successor states. This directly addresses the question about the fate of Western Rome post-fall.",
+    "top_id": 85
+}
+Processing candidates with IDs: [83, 85, 87]
+Top candidate ID: 85
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 63 provides a broad overview of the aftermath of the fall of Western Rome, mentioning the influence that remains today and the inability of the Western Empire to rise again. This directly addresses the question about what happened after the fall. The other candidates focus more on specific events or details rather than the overall consequences.",
+    "top_id": 63
+}
+Processing candidates with IDs: [63, 67, 69]
+Top candidate ID: 63
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 54 provides a detailed account of the political and military situation in the Western Roman Empire after its fall, discussing the deterioration of control and the rise of local powers, which directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 54
+}
+Processing candidates with IDs: [54, 57, 62]
+Top candidate ID: 54
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 provides a comprehensive overview of the events following the fall of the Western Roman Empire, detailing the decline in power, the division of territory, and the impact of barbarian invasions. It directly addresses what happened after the fall, making it the most relevant candidate.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 3, 6]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides a comprehensive overview of the continuity of Roman culture and political legitimacy after the fall of the Western Roman Empire, discussing the transformations and the idea that the fall was more of a complex cultural transformation rather than a complete collapse. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 12
+}
+Processing candidates with IDs: [9, 12, 15]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 provides a detailed account of the events and circumstances following the fall of the Western Roman Empire, including the rise of usurpers, loss of territories, and the political dynamics that ensued. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 21, 25]
+Top candidate ID: 18
+Round 3: 11 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 54 provides a concise statement about the aftermath of the fall of the Western Roman Empire, indicating that it never regained strength, which directly addresses the question of what happened after its fall.",
+    "top_id": 54
+}
+Processing candidates with IDs: [54, 63, 79]
+Top candidate ID: 54
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 85 provides a detailed account of the events following the fall of the Western Roman Empire, including the deposition of Romulus Augustulus and the rise of Odoacer as ruler. It directly addresses what happened after the fall, making it the most relevant candidate.",
+    "top_id": 85
+}
+Processing candidates with IDs: [85, 90]
+Top candidate ID: 85
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 27 provides a comprehensive overview of the decline of the Western Roman Empire, detailing the factors that contributed to its fall and the subsequent division of its territory into successor polities. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 27
+}
+Processing candidates with IDs: [27, 39, 48]
+Top candidate ID: 27
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 is the best candidate because it discusses the continuity of Roman culture and political legitimacy after the fall of the Western Roman Empire, addressing what happened to the region following its collapse. It emphasizes the transformations and cultural continuity that persisted, which directly relates to the question.",
+    "top_id": 12
+}
+Processing candidates with IDs: [2, 12, 18]
+Top candidate ID: 12
+Round 4: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides a comprehensive overview of the continuity of Roman culture and political legitimacy after the fall of the Western Roman Empire, discussing the transformations and cultural continuity that persisted. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 27, 54]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content provides a detailed account of the events following the fall of the Western Roman Empire, specifically focusing on the deposition of Romulus Augustulus and the rise of Odoacer as ruler. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 85
+}
+Processing candidates with IDs: [85]
+Top candidate ID: 85
+Round 5: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides a detailed explanation of the continuity of Roman culture and political legitimacy after the fall of the Western Roman Empire, discussing the transformations and cultural continuity that persisted. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 85]
+Top candidate ID: 12
+# of candidates in rank pool: 1
+top_1:  ('continuity of Roman culture', 100.0, 11)
+begin_index:  11
+end_index:  15
+fuzzy search text:  continuity of Roman culture
+===============Final Stats===================
+Original question           : what happened to western rome after it fell
+# of indexed chunks         : 191
+# of retrieved candidates   : 95
+# of grounded candidates    : 95
+Top1 long answer            : at least the time of Henri Pirenne scholars have described a continuity of Roman culture and political legitimacy long after 476 . Pirenne postponed the demise of classical civilization to the 8th century . He challenged the notion that Germanic barbarians had caused the Western Roman Empire to end , and he refused to equate the end of the Western Roman Empire with the end of the office of emperor in Italy . He pointed out the essential continuity of the economy of the Roman Mediterranean even after the barbarian invasions , and suggested that only the Muslim conquests represented a decisive break with antiquity . The more recent formulation of a historical period characterized as `` Late Antiquity '' emphasizes the transformations of ancient to medieval worlds within a cultural continuity . In recent decades archaeologically - based argument even extends the continuity in material culture and in patterns of settlement as late as the eleventh century . Observing the political reality of lost control , but also the cultural and archaeological continuities , the process has been described as a complex cultural transformation , rather than a fall . </P> <H2> Height of power , crises , and recoveries ( edit ) </H2> <H3> Height of power ( edit ) </H3> <P> The Roman Empire reached its greatest geographical extent under Trajan ( emperor 98 -- 117 ) , who ruled a prosperous state that stretched from Armenia
+Short answer                : continuity of Roman culture
+cut answer                  : continuity of Roman culture
+5
+**grounded truth**          : ['its vast territory was divided into several successor polities', 'divided into several successor polities']
+Final begin index           : 1611, Final end index: 1615
+All time: =============================
+indexing time: 14.705947637557983s
+retrieving time: 52.793970584869385s
+grounding time: 0.06799840927124023s
+ranking time: 15.767167568206787s
+finding long time: 0.0s
+refining time: 0.45781660079956055s
+answer2index time: 0.0019991397857666016s
+============================
+
+Example 5/10
+simplifying...
+char length: 3717
+token length: 698
+Round 1: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides the name of the actress, Hawk, who plays the character Abigail Baker on Blue Bloods, directly answering the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Hawk', 100.0, 40)
+begin_index:  40
+end_index:  41
+fuzzy search text:  Hawk
+===============Final Stats===================
+Original question           : who is the actress who plays baker on blue bloods
+# of indexed chunks         : 7
+# of retrieved candidates   : 2
+# of grounded candidates    : 2
+Top1 long answer            : a Bachelor of Fine Arts in Theatre from the University of Maryland , College Park in 2004 . After a number of small parts in productions including Law & Order : Special Victims Unit , and Across the Universe , Hawk was hired for her role on Blue Bloods . In that show , she plays Detective 2nd Grade Abigail Baker , a member of the Police Commissioner 's ( Detective ) Squad who serves as the primary aide to Police Commissioner Frank Reagan . Hawk 's character was introduced in the first season of the series ( although Detective Baker 's name was shown as `` Det . Melissa
+Short answer                : Hawk
+cut answer                  : Hawk
+5
+**grounded truth**          : ['Abigail Hawk', 'Abigail Hawk ( born Abigail Diane Gustafson )', 'Abigail Hawk', 'Abigail Hawk', 'Abigail Hawk ( born Abigail Diane Gustafson )']
+Final begin index           : 180, Final end index: 181
+All time: =============================
+indexing time: 0.0169985294342041s
+retrieving time: 2.1783218383789062s
+grounding time: 0.0s
+ranking time: 0.8889875411987305s
+finding long time: 0.0s
+refining time: 0.49332714080810547s
+answer2index time: 0.0s
+============================
+
+Example 6/10
+simplifying...
+char length: 46112
+token length: 8308
+# of candidates in rank pool: 1
+top_1:  ('artisans practised', 44.44444444444444, 18)
+begin_index:  18
+end_index:  20
+fuzzy search text:  artisans practised
+===============Final Stats===================
+Original question           : when did athens emerges as wealthiest greek city state
+# of indexed chunks         : 76
+# of retrieved candidates   : 1
+# of grounded candidates    : 1
+Top1 long answer            : artisans , who mainly worked in the textile industry . We also know from archaeological evidence that Minoan artisans practised a large range of craftsmanship jobs including : scribes , potters , metalworkers , leather workers , glass and faience artists , painters , sculptors , engravers and jewelers . Due to only a small amount of evidence about occupation , we do not know whether a worker might have mastered in several trades , or fully specialized in one profession . There was an area set aside for artisans and their workshops in every palace , and in town like Malia , they had both workshops in town and
+Short answer                : Wealthiest Greek city-state
+cut answer                  : artisans practised
+5
+**grounded truth**          : ['around the late 6th century BCE', 'around the late 6th century BCE', 'the late 6th century BCE', 'around the late 6th century BCE', 'around the late 6th century BCE']
+Final begin index           : 908, Final end index: 910
+All time: =============================
+indexing time: 2.3066115379333496s
+retrieving time: 20.1547634601593s
+grounding time: 0.0s
+ranking time: 0.0009989738464355469s
+finding long time: 0.0s
+refining time: 0.4739809036254883s
+answer2index time: 0.0010004043579101562s
+============================
+
+Example 7/10
+simplifying...
+char length: 20951
+token length: 4002
+Round 1: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it mentions the year 2010 in relation to the movie The Karate Kid, which is relevant to the question about when the movie came out.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('2010', 100.0, 51)
+begin_index:  51
+end_index:  52
+fuzzy search text:  2010
+===============Final Stats===================
+Original question           : when did the movie karate kid come out
+# of indexed chunks         : 41
+# of retrieved candidates   : 3
+# of grounded candidates    : 3
+Top1 long answer            : role , Smith won the award for Breakthrough Performance at the 2007 MTV Movie Awards . Smith next appeared as Jacob in the 2008 Scott Derrickson science fiction film , The Day the Earth Stood Still , a remake of the 1951 classic of the same name . </P> <P> In 2010 , along with Jackie Chan , Smith starred in The Karate Kid , a remake of the 1984 film . In May 2013 , Will Smith and Jaden starred together , playing father and son , in After Earth . In 2014 , it was announced that Smith will return for the sequel Karate Kid 2 with Jackie Chan . The movie will be directed by Breck Eisner
+Short answer                : 2010
+cut answer                  : 2010
+5
+**grounded truth**          : ['2010', '2010', '1984']
+Final begin index           : 601, Final end index: 602
+All time: =============================
+indexing time: 0.6080179214477539s
+retrieving time: 11.20193862915039s
+grounding time: 0.0s
+ranking time: 1.0241811275482178s
+finding long time: 0.0s
+refining time: 0.4054694175720215s
+answer2index time: 0.0009989738464355469s
+============================
+
+Example 8/10
+simplifying...
+char length: 42433
+token length: 8108
+Round 1: 15 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it provides a detailed list of the main cast members who starred in the movie 'Natural Born Killers', directly answering the question.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it includes the names of the main actors in 'Natural Born Killers', specifically mentioning Woody Harrelson and Juliette Lewis, who are the lead stars.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate as it includes a list of actors from the movie 'Natural Born Killers', which directly relates to the question about who starred in the movie.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about who starred in the movie 'Natural Born Killers.' However, ID 12 provides some context about the actors involved in the film, specifically mentioning Juliette Lewis, which is relevant to the question.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 8 is the best candidate because it includes the name 'Mallory Knox,' which is a character played by Juliette Lewis in 'Natural Born Killers,' indicating a connection to the movie and its cast.",
+    "top_id": 8
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 8
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions Juliette Lewis, who starred in 'Natural Born Killers' as Mallory Knox, which directly relates to the question about the cast of the movie.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it provides a list of the main cast members who starred in the movie 'Natural Born Killers', directly answering the question.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 3, 8]
+Top candidate ID: 2
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 provides a detailed list of the main cast members who starred in 'Natural Born Killers', directly answering the question about who starred in the movie.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 9]
+Top candidate ID: 2
+# of candidates in rank pool: 1
+top_1:  ('Woody Harrelson as', 69.38775510204081, 49)
+begin_index:  49
+end_index:  52
+fuzzy search text:  Woody Harrelson as
+===============Final Stats===================
+Original question           : who starred in the movie natural born killers
+# of indexed chunks         : 76
+# of retrieved candidates   : 15
+# of grounded candidates    : 15
+Top1 long answer            : dead while his unattended camera continues to roll . The couple is shown several years later , in an RV , with Mickey driving and a pregnant Mallory watching their two children play . </P> <H2> Cast </H2> Main article : List of Natural Born Killers characters <Ul> <Li> Woody Harrelson as Mickey Knox </Li> <Li> Juliette Lewis as Mallory Wilson Knox </Li> <Li> Robert Downey , Jr. as Wayne Gale </Li> <Li> Tom Sizemore as Detective Jack Scagnetti </Li> <Li> Tommy Lee Jones as Warden Dwight McClusky </Li> <Li> Rodney Dangerfield as Ed Wilson </Li> <Li> Edie McClurg as Mrs. Wilson </Li> <Li> Ross Malinger as Kevin Wilson </Li> <Li> Russell Means as Warren Red Cloud , Sr. aka
+Short answer                : Woody Harrelson, Juliette Lewis
+cut answer                  : Woody Harrelson as
+5
+**grounded truth**          : ['Woody Harrelson', 'Juliette Lewis', 'Robert Downey , Jr .', 'Tommy Lee Jones', 'Tom Sizemore', 'Woody Harrelson', 'Juliette Lewis', 'Robert Downey Jr.', 'Tom Sizemore', 'Tommy Lee Jones', 'Woody Harrelson', 'Juliette Lewis', 'Robert Downey , Jr .', 'Tommy Lee Jones', 'Tom Sizemore']
+Final begin index           : 2319, Final end index: 2322
+All time: =============================
+indexing time: 2.279552936553955s
+retrieving time: 106.52877736091614s
+grounding time: 0.003000497817993164s
+ranking time: 4.453881025314331s
+finding long time: 0.0s
+refining time: 0.4944326877593994s
+answer2index time: 0.00099945068359375s
+============================
+
+Example 9/10
+simplifying...
+char length: 25960
+token length: 4643
+Round 1: 17 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 14 is the best candidate because it discusses the motor command of skeletal muscles and specifies that it involves a monosynaptic connection with one motor neuron, which directly relates to the question about motor neurons controlling skeletal muscles.",
+    "top_id": 14
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 14
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 provides a comprehensive explanation of motor neurons, including their location, types, and functions, which directly relates to the question about motor neurons controlling skeletal muscles.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 15 is the best candidate as it includes information about motor neurons, specifically mentioning 'Lower motor neuron' and 'α motorneuron', which are relevant to the control of skeletal muscles.",
+    "top_id": 15
+}
+Processing candidates with IDs: [15, 16]
+Top candidate ID: 15
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides a clear explanation of lower motor neurons, which are the motor neurons that control skeletal muscles. It defines motor neurons and discusses their types, making it the most relevant candidate to answer the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 8 is the best candidate because it specifically discusses somatic motor neurons, which are directly related to the control of skeletal muscles, thus answering the question about motor neurons that control skeletal muscles.",
+    "top_id": 8
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 8
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it directly addresses the question about motor neurons controlling skeletal muscles, specifically mentioning lower motor neurons and their role in innervating muscles.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+Round 2: 6 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it directly addresses the question about motor neurons controlling skeletal muscles, specifically mentioning lower motor neurons and their role in innervating muscles.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 14, 15]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it specifically discusses somatic motor neurons, which are directly related to the control of skeletal muscles, thus answering the question about motor neurons that control skeletal muscles.",
+    "top_id": 3
+}
+Processing candidates with IDs: [2, 3, 8]
+Top candidate ID: 3
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it provides a comprehensive explanation of lower motor neurons, which are the motor neurons that control skeletal muscles, directly addressing the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 9]
+Top candidate ID: 3
+# of candidates in rank pool: 1
+top_1:  ('lower motor neurons', 100.0, 3)
+begin_index:  3
+end_index:  6
+fuzzy search text:  lower motor neurons
+===============Final Stats===================
+Original question           : all the motor neurons that control the skeletal muscles are
+# of indexed chunks         : 48
+# of retrieved candidates   : 17
+# of grounded candidates    : 17
+Top1 long answer            : axons from the lower motor neurons are efferent nerve fibers that carry signals from the spinal cord to the effectors . Types of lower motor neurons are alpha motor neurons , beta motor neurons , and gamma motor neurons . </P> <P> The term ' motor neuron ' is usually restricted to the lower motor neurons , the efferent nerves that directly innervate muscles . </P> <P> A single motor neuron may innervate many muscle fibres and a muscle fibre can undergo many action potentials in the time taken for a single muscle twitch . As a result , if an action potential arrives before a twitch has completed ,
+Short answer                : lower motor neurons
+cut answer                  : lower motor neurons
+5
+**grounded truth**          : ['Somatic', 'Somatic motor neurons', 'Somatic motor neurons', 'efferent nerves']
+Final begin index           : 293, Final end index: 296
+All time: =============================
+indexing time: 0.7991635799407959s
+retrieving time: 13.402246475219727s
+grounding time: 0.0020003318786621094s
+ranking time: 4.496363639831543s
+finding long time: 0.0s
+refining time: 0.9517605304718018s
+answer2index time: 0.0009999275207519531s
+============================
+
+Example 10/10
+simplifying...
+char length: 44155
+token length: 8755
+Round 1: 6 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it directly mentions Calpurnia and her son, Zeebo, providing the specific information requested in the question.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The best candidate is ID 4, which provides information about Zeebo, Calpurnia's son. Although it does not directly answer the question about Calpurnia's son, it is the only candidate that mentions Zeebo, who is indeed her son. The other candidates do not mention Calpurnia's son at all.",
+    "top_id": 4
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 4
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 4 is the best candidate because it explicitly mentions Zeebo as Calpurnia's son, directly answering the question.",
+    "top_id": 4
+}
+Processing candidates with IDs: [2, 4]
+Top candidate ID: 4
+# of candidates in rank pool: 1
+top_1:  ('Zeebo', 100.0, 45)
+begin_index:  45
+end_index:  46
+fuzzy search text:  Zeebo
+===============Final Stats===================
+Original question           : calpurnia son name in to kill a mockingbird
+# of indexed chunks         : 76
+# of retrieved candidates   : 6
+# of grounded candidates    : 6
+Top1 long answer            : , and using abusive and profane language in the presence and hearing of a female . '' He added the last charge after claiming that the teens had `` cussed so loud he was sure every lady in Maycomb heard them . '' </P> <H3> Zeebo ( edit ) </H3> <P> Zeebo is Calpurnia 's eldest son . He is one of just four people in First Purchase Church who can read , so he is the vocal leader , leading hymns in the Negro First Purchase Church by `` lining , '' reading a line of verse and having the congregation repeat it . Calpurnia taught Zeebo how to
+Short answer                : Zeebo
+cut answer                  : Zeebo
+5
+**grounded truth**          : ['Zeebo', 'Zeebo', 'James Zeebo', 'Zeebo', 'Zeebo']
+Final begin index           : 8075, Final end index: 8076
+All time: =============================
+indexing time: 2.500403642654419s
+retrieving time: 20.427186965942383s
+grounding time: 0.0009999275207519531s
+ranking time: 2.9116177558898926s
+finding long time: 0.0s
+refining time: 0.5042119026184082s
+answer2index time: 0.0009992122650146484s
+============================
+Two files are generated: 
+ data/v1.0-simplified_nq-dev-all_sample10_seed32_log.jsonl 
+ data/v1.0-simplified_nq-dev-all_sample10_seed32_predictions.json
+Make sure to rename the files unless you want to append to the end.

@@ -7,7 +7,7 @@ from typing import Dict, List
 from concurrent.futures import ThreadPoolExecutor
 from ratelimit import limits, sleep_and_retry
 from ratelimit.exception import RateLimitException
-
+import os
 # QPS and concurrency limits
 MAX_QPS = 10
 MAX_CONCURRENT_REQUESTS = 10
@@ -41,8 +41,8 @@ def get_llm_config(llm_provider=LLM_PROVIDER):
         "openai": {
             "config_list": [
                 {
-                    "model": "gpt-4o",
-                    "api_key": "your_openai_api_key",  # Replace with actual API key
+                    "model": "gpt-4o-mini",
+                    "api_key": os.getenv("OPENAI_API_KEY"),  # Replace with actual API key
                     "base_url": "https://api.openai.com/v1",
                     "temperature": 0.7,  # Set temperature for OpenAI
                 }

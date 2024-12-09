@@ -31,7 +31,6 @@ def get_nq_tokens(simplified_nq_example):
 
 def get_short_answers(nq_example):
     document_tokens = get_nq_tokens(nq_example)
-    print(len(nq_example['annotations']))
     short_answers = []
     for annotation in nq_example['annotations']:
         if annotation['short_answers']:
@@ -153,16 +152,16 @@ class BaseAgentSystem:
 
         return predictions
 
-    def predict_batch(self, examples: List[Dict], log_path: Optional[str] = None, verbose: bool = False) -> List[str]:
+    def predict_batch(self, examples: List[Dict], context_path: Optional[str] = None, verbose: bool = False) -> List[str]:
         """
         Make predictions for a batch of examples.
         """
         predictions = {'predictions': []}
         time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         self.time_str = time_str
-        if log_path is None:
-            log_path = f"{self.model}_{time_str}_log.jsonl"
-        self.log_path = log_path
+        if context_path is None:
+            context_path = f"{self.model}_{time_str}_context.jsonl"
+        self.context_path = context_path
         for i, raw_example in enumerate(examples):
             if verbose:
                 print(f"\nExample {i+1}/{len(examples)}")
@@ -180,9 +179,11 @@ class BaseAgentSystem:
                 # print("len(ids): ", len(ids))
                 # print(context['vectorstore'].get())
                 context['vectorstore'].delete(ids=ids)
+                context['vectorstore'] = None
             # save prediction context
-            with open(log_path, 'a') as f:
+            with open(context_path, 'a') as f:
                 f.write(json.dumps(context) + '\n')
+            # time.sleep(30)
 
 
 

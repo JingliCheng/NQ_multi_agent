@@ -5,8 +5,11 @@ from concurrent.futures import ThreadPoolExecutor
 from autogen import ConversableAgent
 import time
 import copy
+import os
 
 LLM_PROVIDER = "ollama"
+LLM_PROVIDERS = ["ollama", "openai"]
+
 
 def get_llm_config(llm_provider=LLM_PROVIDER):
     """
@@ -20,6 +23,16 @@ def get_llm_config(llm_provider=LLM_PROVIDER):
                     "api_key": "ollama",  # Replace with actual key if necessary
                     "base_url": "http://localhost:11434/v1",
                     "temperature": 0.0,  # Use 0.0 for deterministic results
+                }
+            ]
+        },
+        "openai": {
+            "config_list": [
+                {
+                    "model": "gpt-4o-mini",
+                    "api_key": os.getenv("OPENAI_API_KEY"),  # Replace with actual API key
+                    "base_url": "https://api.openai.com/v1",
+                    "temperature": 0.0,  # Set temperature for OpenAI
                 }
             ]
         },
