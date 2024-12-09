@@ -110,6 +110,7 @@ class BaseAgentSystem:
         """
         predictions = {'predictions': []}
         for i, raw_example in enumerate(examples):
+<<<<<<< Updated upstream
             if verbose:
                 print(f"\nExample {i+1}/{len(examples)}")
             if 'document_text' not in raw_example:
@@ -119,6 +120,25 @@ class BaseAgentSystem:
             pred_str, score = self.predict(example, verbose)
             pred_dict = self.format_prediction(example, pred_str, score)
             predictions['predictions'].append(pred_dict)
+=======
+            try:
+                if verbose:
+                    print(f"\nExample {i+1}/{len(examples)}")
+                if 'document_text' not in raw_example:
+                    print('simplifying...')
+                    example = text_utils.simplify_nq_example(raw_example)
+                    
+                else:
+                    example = raw_example
+                print('char length:', len(example['document_text']))
+                print('token length:', len(get_nq_tokens(example)))
+                pred_index, score, time_log = self.predict(example, verbose)
+                pred_dict = self.format_prediction(example, pred_index, score)
+                predictions['predictions'].append(pred_dict)
+            except Exception as e:
+                print(f"Error processing example {i+1}: {e}")
+                continue
+>>>>>>> Stashed changes
         time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         if save_path is None:
             save_path = f"predictions_{self.model}_{time_str}.jsonl"
