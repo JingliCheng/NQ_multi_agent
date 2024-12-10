@@ -134,11 +134,11 @@ class BaseAgentSystem:
 
         return prediction_dict
     
-    def read_log_and_format(self, log_path: str = None, save_path: str = None) -> List[Dict]:
-        if log_path is None:
-            log_path = self.log_path
+    def read_context_and_format(self, context_path: str = None, save_path: str = None) -> List[Dict]:
+        if context_path is None:
+            context_path = self.context_path
         predictions = {'predictions': []}
-        with open(log_path, 'r') as f:
+        with open(context_path, 'r') as f:
             for line in f:
                 context = json.loads(line)
                 pred_index, score = context["short_answer_index"], context["score"]
@@ -183,7 +183,7 @@ class BaseAgentSystem:
             # save prediction context
             with open(context_path, 'a') as f:
                 f.write(json.dumps(context) + '\n')
-            # time.sleep(30)
+            time.sleep(60)
 
 
 

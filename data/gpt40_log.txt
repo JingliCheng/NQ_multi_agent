@@ -1,0 +1,2845 @@
+
+Example 1/40
+simplifying...
+char length: 87220
+token length: 15522
+Round 1: 15 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 13 is the best candidate because it discusses the role of the presiding officer of Congress under the Articles of Confederation, indicating that this position held the most governmental power at that time, albeit limited compared to later executive roles.",
+    "top_id": 13
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 13
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it discusses the distribution of power under the Articles of Confederation, specifically mentioning that the states retained sovereignty over governmental functions not given to the national Congress, which indicates the limited power of the central government.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 10 is the best candidate because it discusses the limitations of the central government under the Articles of Confederation, specifically mentioning the lack of enforcement powers and the inability to tax, which directly relates to the question of who had the most governmental power during that time.",
+    "top_id": 10
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 10
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides relevant information about the Articles of Confederation and the powers of the central government, indicating that the states retained sovereignty over functions not specifically given to Congress. However, it does not directly answer the question of who had the most governmental power. ID 4 and ID 5 repeat similar content without adding clarity. Therefore, ID 3 is the best option available, as it discusses the structure of power under the Articles.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides information about the powers granted to Congress under the Articles of Confederation, indicating that Congress had significant governmental power, which is relevant to the question about who held the most power. However, it does not explicitly state that Congress was the most powerful entity. ID 8 discusses the limitations of Congress and the challenges it faced, which also relates to the question. Overall, ID 6 is the most relevant as it outlines the powers of Congress, which was the central governing body under the Articles.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 and ID 3 both provide relevant information about the powers of the national Congress under the Articles of Confederation. However, ID 2 specifically mentions that the states retained sovereignty over governmental functions not given to Congress, which implies that Congress had the most governmental power among the entities involved. Therefore, ID 2 is the best candidate as it directly addresses the question about who had the most governmental power.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 3, 6]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 10 provides relevant information about the limited power of the central government under the Articles of Confederation, indicating that the Confederation Congress had decision-making authority but lacked enforcement powers. This context is essential to understanding who had the most governmental power during that period, as it highlights the limitations of the central authority. ID 13 discusses the role of the President of Congress but does not directly address the question of who had the most power.",
+    "top_id": 10
+}
+Processing candidates with IDs: [10, 13]
+Top candidate ID: 10
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 provides relevant information about the structure of power under the Articles of Confederation, specifically mentioning that the states retained sovereignty and detailing the limited powers of the national Congress. This context helps to understand who had the most governmental power during that period.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 10]
+Top candidate ID: 2
+# of candidates in rank pool: 1
+top_1:  ('the states', 100.0, 53)
+begin_index:  53
+end_index:  55
+fuzzy search text:  the states
+===============Final Stats===================
+Original question           : who had the most governmental power under the articles of confederation
+# of indexed chunks         : 42
+# of retrieved candidates   : 15
+# of grounded candidates    : 15
+Top1 long answer            : February 2 , 1781 </Td> </Tr> </Table> <H2> Article summaries </H2> <P> The Articles of Confederation contain a preamble , thirteen articles , a conclusion , and a signatory section . The individual articles set the rules for current and future operations of the confederation 's central government . Under the Articles , the states retained sovereignty over all governmental functions not specifically relinquished to the national Congress , which was empowered to make war and peace , negotiate diplomatic and commercial agreements with foreign countries , and to resolve disputes between the states . The document also stipulates that its provisions `` shall be inviolably observed by every state
+Short answer                : the states
+cut answer                  : the states
+**grounded truth**          : ['the states', 'the states', 'the states']
+Final (begin index, end index): (1973, 1975)
+All time: =============================
+indexing time: 8.699670553207397s
+retrieving time: 14.648864507675171s
+grounding time: 0.008000612258911133s
+ranking time: 5.558711051940918s
+finding long time: 0.0s
+refining time: 0.5015041828155518s
+answer2index time: 0.0019989013671875s
+============================
+
+Example 2/40
+simplifying...
+char length: 41330
+token length: 7088
+Round 1: 15 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the assessment of muscle activity during voluntary contraction, which directly relates to the features of muscle contraction that can be determined from an EMG. It also mentions the analysis of electrical signals, which is crucial for understanding muscle contraction.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly address the specific features of muscle contraction that can be determined from an EMG. However, ID 12 mentions the use of EMG in various research contexts, which may imply its relevance to muscle activity, making it the most related option.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it describes how EMG detects action potentials during muscle contraction, detailing the relationship between muscle activity and the electrical signals recorded, which directly relates to the features of muscle contraction that can be determined from an EMG.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides relevant information about how EMG can assess muscle activation through maximal voluntary contraction and its correlation with muscle force. It directly addresses features of muscle contraction that can be determined from an EMG. ID 7 and ID 8, while informative, do not focus as directly on the features of muscle contraction as determined by EMG.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides a comprehensive overview of electromyography (EMG) and its ability to evaluate muscle activity, including the detection of medical abnormalities and analysis of biomechanics. This directly relates to the features of muscle contraction that can be determined from an EMG. ID 1 also discusses surface and intramuscular EMG, but ID 0 gives a broader context and more relevant information about the features of muscle contraction.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides detailed information about the features of muscle contraction that can be determined from an EMG, including the assessment of resting and insertional activity, as well as the analysis of electrical signals during voluntary contraction. This directly addresses the question about the features of muscle contraction observable through EMG.",
+    "top_id": 3
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 provides relevant information about EMG signals and their decomposition into motor unit action potentials (MUAPs), which relates directly to the features of muscle contraction that can be determined from an EMG. It discusses the analysis of EMG signals and their characteristics, making it the most suitable candidate.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12]
+Top candidate ID: 9
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the evaluation of muscle activity through EMG, including resting and insertional activity, and how muscle contraction is assessed during voluntary contraction, which directly relates to the features of muscle contraction that can be determined from an EMG.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 9]
+Top candidate ID: 3
+# of candidates in rank pool: 1
+top_1:  ('involuntary activation', 100.0, 60)
+begin_index:  60
+end_index:  62
+fuzzy search text:  involuntary activation
+===============Final Stats===================
+Original question           : what features of muscle contraction can be determined from an emg (electromyogram)
+# of indexed chunks         : 19
+# of retrieved candidates   : 15
+# of grounded candidates    : 15
+Top1 long answer            : relaxed muscle to evaluate both insertional activity and resting activity in the muscle . Normal muscles exhibit a brief burst of muscle fiber activation when stimulated by needle movement , but this rarely lasts more than 100ms . The two most common pathologic types of resting activity in muscle are fasciculation and fibrillation potentials . A fasciculation potential is an involuntary activation of a motor unit within the muscle , sometimes visible with the naked eye as a muscle twitch or by surface electrodes . Fibrillations , however , are only detected by needle EMG , and represent the isolated activation of individual muscle fibers , usually as the result of nerve or muscle disease . Often , fibrillations are triggered by needle movement ( insertional activity ) and persist for several seconds or more after the movement ceases . </P> <P> After assessing resting and insertional activity , the electromyographer assess the activity of muscle during voluntary contraction . The shape , size , and frequency of the resulting electrical signals are judged . Then the electrode is retracted a few millimetres , and again the activity is analyzed
+Short answer                : involuntary activation
+cut answer                  : involuntary activation
+**grounded truth**          : ['electric potential generated']
+Final (begin index, end index): (1650, 1652)
+All time: =============================
+indexing time: 1.849048376083374s
+retrieving time: 6.2371909618377686s
+grounding time: 0.0030012130737304688s
+ranking time: 6.471904039382935s
+finding long time: 0.0s
+refining time: 0.5256679058074951s
+answer2index time: 0.0009989738464355469s
+============================
+
+Example 3/40
+simplifying...
+char length: 15506
+token length: 2955
+Round 1: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it explicitly states that the theme song for 'Degrassi: The Next Generation' is performed by Jakalope.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content does not directly answer the question about who sings the theme song for 'Degrassi: The Next Generation'. However, it includes a list of songs and artists, which may imply that the answer could be found among them. Since none of the candidates explicitly state the artist for the theme song, I have to select the one that at least provides relevant information about artists.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3]
+Top candidate ID: 3
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The first candidate (ID 0) provides the name of the artist who sings the theme song for 'Degrassi: The Next Generation', which is Jakalope. This directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Jakalope', 100.0, 63)
+begin_index:  63
+end_index:  64
+fuzzy search text:  Jakalope
+===============Final Stats===================
+Original question           : who sings the theme song for degrassi the next generation
+# of indexed chunks         : 10
+# of retrieved candidates   : 4
+# of grounded candidates    : 4
+Top1 long answer            : The Next Generation . It was released as a digital download on 1 November 2005 , following the fourth season , and as a CD on 8 January 2007 . </P> <Table> <Tr> <Th> No . </Th> <Th> Title </Th> <Th> Artist </Th> <Th> Length </Th> </Tr> <Tr> <Td> 1 . </Td> <Td> `` Degrassi : The Next Generation Theme '' </Td> <Td> Jakalope </Td> <Td> 0 : 55 </Td> </Tr> <Tr> <Td> 2 . </Td> <Td> `` Heartbreaker '' </Td> <Td> Tuuli </Td> <Td> 3 : 20 </Td> </Tr> <Tr> <Td> 3 . </Td> <Td> `` Beautifully Undone '' </Td> <Td> Lindy </Td> <Td> 3 : 24 </Td> </Tr>
+Short answer                : Jakalope
+cut answer                  : Jakalope
+**grounded truth**          : ['Jakalope', 'Jakalope', 'Jakalope', 'The Degrassi Junior Strings']
+Final (begin index, end index): (383, 384)
+All time: =============================
+indexing time: 0.4413013458251953s
+retrieving time: 3.331310987472534s
+grounding time: 0.00099945068359375s
+ranking time: 2.7514827251434326s
+finding long time: 0.0s
+refining time: 0.5172364711761475s
+answer2index time: 0.001001119613647461s
+============================
+
+Example 4/40
+simplifying...
+char length: 115128
+token length: 21410
+Round 1: 47 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 45 provides a comprehensive overview of the events surrounding the fall of the Western Roman Empire, including the cultural continuities and the political collapse. It directly addresses the aftermath of the fall, making it the most relevant candidate.",
+    "top_id": 45
+}
+Processing candidates with IDs: [45, 46]
+Top candidate ID: 45
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 provides context about the political and military situation in Western Rome after its fall, discussing the impact of leadership changes and invasions, which is relevant to understanding what happened to Western Rome post-fall.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 8 is the best candidate because it discusses the loss of local control in Rome, the settlement of tribes, and the economic decline in regions like Gaul, which are relevant to the aftermath of the fall of Western Rome.",
+    "top_id": 8
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 8
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides a detailed explanation of the continuity of Roman culture and political legitimacy after the fall of the Western Roman Empire in 476, discussing the transformations and cultural continuity that persisted, which directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 36 provides a detailed account of the events following the fall of Western Rome, including the actions of the Vandals and the political turmoil that ensued. It directly addresses what happened after the fall, making it the most relevant candidate.",
+    "top_id": 36
+}
+Processing candidates with IDs: [36, 37, 38]
+Top candidate ID: 36
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides a detailed account of the events following the fall of the Western Roman Empire, including the political fragmentation, civil wars, and the ineffectiveness of military responses. This content directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 44 is the best candidate because it provides a comprehensive overview of what happened to the Western Roman Empire after its fall, including the rise of Odoacer, the continuation of Roman rule in various forms, and the emergence of new kingdoms. This directly addresses the question about the fate of Western Rome post-fall.",
+    "top_id": 44
+}
+Processing candidates with IDs: [42, 43, 44]
+Top candidate ID: 44
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 provides a detailed explanation of what happened to the Western Roman Empire after its fall, including the loss of power, the establishment of barbarian kingdoms, and the lasting cultural influence, making it the most relevant candidate.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 30 provides insight into the social and economic conditions in Western Rome after its fall, discussing the oppression, corruption, and the migration of people towards barbarian groups due to injustice. This content is relevant to understanding what happened to Western Rome after its fall.",
+    "top_id": 30
+}
+Processing candidates with IDs: [30, 31, 32]
+Top candidate ID: 30
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 40 provides a detailed account of the events following the fall of Western Rome, including the reign of Libius Severus and the political dynamics involving Ricimer and the Eastern Empire. This directly addresses the question about what happened to Western Rome after its fall.",
+    "top_id": 40
+}
+Processing candidates with IDs: [39, 40, 41]
+Top candidate ID: 40
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 16 provides relevant information about the final emperors of the Western Roman Empire and the state of affairs after its fall, indicating the presence of puppet rulers and the existence of rump states, which directly relates to what happened to Western Rome after it fell.",
+    "top_id": 16
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 16
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 24 provides a detailed account of the events following the fall of Western Rome, including the loss of territory, the rise of barbarian groups, and the political instability that ensued. This content directly addresses the question about what happened to Western Rome after its fall.",
+    "top_id": 24
+}
+Processing candidates with IDs: [24, 25, 26]
+Top candidate ID: 24
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 34 provides a detailed account of the events following the fall of Western Rome, including the invasions by Attila the Hun and the subsequent insecurity faced by the Romans. It discusses the impact of Attila's death on the Roman Empire and the challenges they faced, making it the most relevant candidate to answer the question.",
+    "top_id": 34
+}
+Processing candidates with IDs: [33, 34, 35]
+Top candidate ID: 34
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 19 provides a detailed account of the aftermath of the fall of Western Rome, discussing the reactions of the emperor Honorius, the military actions taken to re-establish control, and the societal implications of the fall. This content directly addresses what happened after the fall of Western Rome, making it the most relevant candidate.",
+    "top_id": 19
+}
+Processing candidates with IDs: [18, 19, 20]
+Top candidate ID: 19
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 21 provides a detailed account of the events following the fall of the Western Roman Empire, including the military, financial, and political ineffectiveness that characterized the period. It discusses the decline of centralized control, the rise of barbarian groups, and the internal conflicts that contributed to the disintegration of the Western Roman authority, making it the most relevant candidate to answer the question.",
+    "top_id": 21
+}
+Processing candidates with IDs: [21, 22, 23]
+Top candidate ID: 21
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 28 provides a detailed account of the political and military instability in the Western Roman Empire after its fall, including the roles of key figures like Aetius and the impact of barbarian invasions. It discusses the loss of territories and the decline of Roman authority, which directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 28
+}
+Processing candidates with IDs: [27, 28, 29]
+Top candidate ID: 28
+Round 2: 16 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 44 is the best candidate because it discusses the events following the fall of the Western Roman Empire, including the rise of Odoacer and the continuation of Roman traits in various regions, which directly addresses what happened after the fall.",
+    "top_id": 44
+}
+Processing candidates with IDs: [36, 40, 44]
+Top candidate ID: 44
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content provides a detailed account of the events surrounding the fall of the Western Roman Empire, including the loss of power, the impact of barbarian invasions, and the cultural continuities that followed. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 45
+}
+Processing candidates with IDs: [45]
+Top candidate ID: 45
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 provides a comprehensive overview of the events following the fall of the Western Roman Empire, detailing the political and military decline, the rise of barbarian powers, and the lasting cultural influence. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 3, 8]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content from ID 9 discusses the decline of local control in Rome and the rise of civil wars, which are relevant to understanding what happened to Western Rome after its fall. It provides context about the political and military challenges faced by the Western Roman Empire, making it the most relevant candidate.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12, 16]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 19 provides a detailed account of the events following the fall of Western Rome, including the sack of Rome by Alaric, the reactions of both Christians and pagans, and the political maneuvers that took place afterward. This directly addresses the question about what happened to Western Rome after its fall.",
+    "top_id": 19
+}
+Processing candidates with IDs: [19, 21, 24]
+Top candidate ID: 19
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 28 provides a detailed account of the social and political conditions in Western Rome after its fall, discussing the oppression, corruption, and the resulting societal changes. This content directly addresses the question of what happened to Western Rome after it fell, highlighting the consequences of its collapse.",
+    "top_id": 28
+}
+Processing candidates with IDs: [28, 30, 34]
+Top candidate ID: 28
+Round 3: 6 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 provides a comprehensive overview of the events following the fall of Western Rome, detailing the collapse of military and political power, the establishment of barbarian control, and the lasting cultural influence of the Western Empire. This directly addresses the question about what happened to Western Rome after it fell.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 9, 19]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 28 provides a comprehensive overview of what happened to the Western Roman Empire after its fall, detailing the transition of power to Odoacer and the continued existence of rump states. It also discusses the implications of the fall and the cultural influence that persisted, making it the most relevant candidate to answer the question.",
+    "top_id": 28
+}
+Processing candidates with IDs: [28, 44, 45]
+Top candidate ID: 28
+Round 4: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 provides a comprehensive overview of the events following the fall of the Western Roman Empire, detailing the political and military ineffectiveness, the rise of barbarian powers, and the eventual cultural continuity despite the collapse. This directly addresses the question of what happened to Western Rome after it fell.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 28]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('Invading barbarians had established their own power', 93.87755102040816, 83)
+begin_index:  83
+end_index:  90
+fuzzy search text:  Invading barbarians had established their own power
+===============Final Stats===================
+Original question           : what happened to western rome after it fell
+# of indexed chunks         : 53
+# of retrieved candidates   : 47
+# of grounded candidates    : 47
+Top1 long answer            : - scale irruption of Goths and others . In 395 , after winning two destructive civil wars , Theodosius I died , leaving a collapsing field army and the Empire , still plagued by Goths , divided between his two incapable sons . By 476 when Odoacer deposed the Emperor Romulus , the Western Roman Emperor wielded negligible military , political , or financial power and had no effective control over the scattered Western domains that could still be described as Roman . Invading barbarians had established their own power in most of the area of the Western Empire . While its legitimacy lasted for centuries longer and its cultural influence remains today , the Western Empire never had the strength to rise again . </P> <P> The Fall is not the only unifying concept for these events ; the
+Short answer                : invading barbarians established their own power
+cut answer                  : Invading barbarians had established their own power
+**grounded truth**          : ['its vast territory was divided into several successor polities', 'divided into several successor polities']
+Final (begin index, end index): (363, 370)
+All time: =============================
+indexing time: 15.65679931640625s
+retrieving time: 17.220839738845825s
+grounding time: 0.0362706184387207s
+ranking time: 16.54645800590515s
+finding long time: 0.0s
+refining time: 0.4736499786376953s
+answer2index time: 0.002000570297241211s
+============================
+
+Example 5/40
+simplifying...
+char length: 3717
+token length: 698
+Round 1: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides a clear answer to the question by stating that Abigail Hawk plays Detective Abigail Baker in Blue Bloods. It directly addresses the query about the actress's role.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Abigail Baker', 100.0, 41)
+begin_index:  41
+end_index:  43
+fuzzy search text:  Abigail Baker
+===============Final Stats===================
+Original question           : who is the actress who plays baker on blue bloods
+# of indexed chunks         : 2
+# of retrieved candidates   : 2
+# of grounded candidates    : 2
+Top1 long answer            : Abigail Hawk - wikipedia <H1> Abigail Hawk </H1> Jump to : navigation , search <P> Abigail Hawk ( born Abigail Diane Gustafson ) is an American actress known for playing Samantha Bonner in the 1995 TV series Reality Check , Detective Abigail Baker in Blue Bloods , Riley Thomas in the 2016 holiday TV movie , A Christmas in Vermont , and Ellie in Domenica Cameron - Scorsese 's 2017 directorial debut , Almost Paris . For her performance in Almost Paris , Hawk won the `` Best Actress '' award at the 2017 Golden Door Film Festival . </P> <P> Born in Marietta , Georgia , Hawk attended the
+Short answer                : Abigail Baker
+cut answer                  : Abigail Baker
+**grounded truth**          : ['Abigail Hawk', 'Abigail Hawk ( born Abigail Diane Gustafson )', 'Abigail Hawk', 'Abigail Hawk', 'Abigail Hawk ( born Abigail Diane Gustafson )']
+Final (begin index, end index): (41, 43)
+All time: =============================
+indexing time: 0.018999338150024414s
+retrieving time: 1.8857142925262451s
+grounding time: 0.0s
+ranking time: 0.8930833339691162s
+finding long time: 0.0s
+refining time: 0.43933653831481934s
+answer2index time: 0.0010018348693847656s
+============================
+
+Example 6/40
+simplifying...
+char length: 46112
+token length: 8308
+Round 1: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides a direct answer to the question about when Athens emerged as the wealthiest Greek city-state, specifically mentioning the late 6th century BCE and the factors contributing to its wealth.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('late 6th century BCE', 100.0, 59)
+begin_index:  59
+end_index:  63
+fuzzy search text:  late 6th century BCE
+===============Final Stats===================
+Original question           : when did athens emerges as wealthiest greek city state
+# of indexed chunks         : 22
+# of retrieved candidates   : 2
+# of grounded candidates    : 2
+Top1 long answer            : coinage and the degree of monetization of the Greek economy , the trade and its crucial role in the characterization of the economy ( modernism vs. primitivism ) , the invention of banking and the role of slavery in the production . </P> Athens ( edit ) <P> Athens emerged as the dominant economic power in Greece around the late 6th century BCE , this was further bolstered by the finding of several veins of silver in the neighbouring mountains which further added to their wealth . They facilitated an efficient trading system with other Greek city states . Again , pots and other forms of cooking utensils seem to
+Short answer                : late 6th century BCE
+cut answer                  : late 6th century BCE
+**grounded truth**          : ['around the late 6th century BCE', 'around the late 6th century BCE', 'the late 6th century BCE', 'around the late 6th century BCE', 'around the late 6th century BCE']
+Final (begin index, end index): (1949, 1953)
+All time: =============================
+indexing time: 2.4741663932800293s
+retrieving time: 6.452147960662842s
+grounding time: 0.0s
+ranking time: 1.030031681060791s
+finding long time: 0.0s
+refining time: 0.5403382778167725s
+answer2index time: 0.0s
+============================
+
+Example 7/40
+simplifying...
+char length: 20951
+token length: 4002
+Round 1: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it mentions the year 2010 when discussing the remake of The Karate Kid, which is relevant to the question about when the movie came out.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('2010', 100.0, 51)
+begin_index:  51
+end_index:  52
+fuzzy search text:  2010
+===============Final Stats===================
+Original question           : when did the movie karate kid come out
+# of indexed chunks         : 12
+# of retrieved candidates   : 3
+# of grounded candidates    : 3
+Top1 long answer            : role , Smith won the award for Breakthrough Performance at the 2007 MTV Movie Awards . Smith next appeared as Jacob in the 2008 Scott Derrickson science fiction film , The Day the Earth Stood Still , a remake of the 1951 classic of the same name . </P> <P> In 2010 , along with Jackie Chan , Smith starred in The Karate Kid , a remake of the 1984 film . In May 2013 , Will Smith and Jaden starred together , playing father and son , in After Earth . In 2014 , it was announced that Smith will return for the sequel Karate Kid 2 with Jackie Chan . The movie will be directed by Breck Eisner
+Short answer                : 2010
+cut answer                  : 2010
+**grounded truth**          : ['2010', '2010', '1984']
+Final (begin index, end index): (601, 602)
+All time: =============================
+indexing time: 0.6445293426513672s
+retrieving time: 3.66361141204834s
+grounding time: 0.0010001659393310547s
+ranking time: 1.1854991912841797s
+finding long time: 0.0s
+refining time: 0.4326436519622803s
+answer2index time: 0.0009992122650146484s
+============================
+
+Example 8/40
+simplifying...
+char length: 42433
+token length: 8108
+Round 1: 10 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions Woody Harrelson and Juliette Lewis as part of the cast of 'Natural Born Killers', which directly answers the question about who starred in the movie.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "Both ID 1 and ID 2 provide the same relevant information about the cast of 'Natural Born Killers', specifically mentioning Woody Harrelson, Juliette Lewis, Robert Downey Jr., Tom Sizemore, and Tommy Lee Jones. However, ID 1 is slightly more concise in its presentation. Therefore, ID 1 is chosen as the best candidate.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate as it provides a list of main cast members from the movie 'Natural Born Killers', directly answering the question about who starred in the movie.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it mentions actors associated with the film 'Natural Born Killers', including Juliette Lewis and Robert Downey Jr., which directly relates to the question about who starred in the movie.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+Round 2: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions Woody Harrelson and Juliette Lewis as part of the cast of 'Natural Born Killers', which directly answers the question about who starred in the movie.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 provides a comprehensive answer to the question by listing the main stars of the movie 'Natural Born Killers', including Woody Harrelson and Juliette Lewis, which directly addresses the user's inquiry.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 3, 6]
+Top candidate ID: 1
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it provides a comprehensive answer to the question by listing the main actors who starred in 'Natural Born Killers'.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 9]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('Woody Harrelson , Juliette Lewis , Robert Downey Jr. , Tom Sizemore , and Tommy', 88.75, 52)
+begin_index:  52
+end_index:  67
+fuzzy search text:  Woody Harrelson , Juliette Lewis , Robert Downey Jr. , Tom Sizemore , and Tommy
+===============Final Stats===================
+Original question           : who starred in the movie natural born killers
+# of indexed chunks         : 21
+# of retrieved candidates   : 10
+# of grounded candidates    : 10
+Top1 long answer            : <Ul> <Li> English </Li> <Li> Japanese </Li> <Li> Navajo </Li> </Ul> </Td> </Tr> <Tr> <Th> Budget </Th> <Td> $34 million </Td> </Tr> <Tr> <Th> Box office </Th> <Td> $50.3 million </Td> </Tr> </Table> <P> Natural Born Killers is a 1994 American satirical black comedy crime film directed by Oliver Stone and starring Woody Harrelson , Juliette Lewis , Robert Downey Jr. , Tom Sizemore , and Tommy Lee Jones . The film was released in the United States on August 26 , 1994 . The film tells the story of two victims of traumatic childhoods who became lovers and mass murderers , and are irresponsibly glorified by the mass media . </P> <P> The film is based on an original
+Short answer                : Woody Harrelson, Juliette Lewis, Robert Downey Jr., Tom Sizemore, Tommy Lee Jones
+cut answer                  : Woody Harrelson , Juliette Lewis , Robert Downey Jr. , Tom Sizemore , and Tommy
+**grounded truth**          : ['Woody Harrelson', 'Juliette Lewis', 'Robert Downey , Jr .', 'Tommy Lee Jones', 'Tom Sizemore', 'Woody Harrelson', 'Juliette Lewis', 'Robert Downey Jr.', 'Tom Sizemore', 'Tommy Lee Jones', 'Woody Harrelson', 'Juliette Lewis', 'Robert Downey , Jr .', 'Tommy Lee Jones', 'Tom Sizemore']
+Final (begin index, end index): (292, 307)
+All time: =============================
+indexing time: 2.372014284133911s
+retrieving time: 7.319301128387451s
+grounding time: 0.0019998550415039062s
+ranking time: 4.460171937942505s
+finding long time: 0.0s
+refining time: 0.6717100143432617s
+answer2index time: 0.00099945068359375s
+============================
+
+Example 9/40
+simplifying...
+char length: 25960
+token length: 4643
+Round 1: 13 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it provides a detailed explanation of somatic motor neurons, which are the motor neurons that control skeletal muscles, directly addressing the question.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 11 is the best candidate because it discusses the motor command of skeletal muscles being monosynaptic, which directly relates to the question about motor neurons controlling skeletal muscles.",
+    "top_id": 11
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 11
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content provided discusses various types of motor neurons, including α motor neurons, which are directly related to the control of skeletal muscles. Therefore, it is relevant to the question about motor neurons controlling skeletal muscles.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides a clear explanation of lower motor neurons, which are the motor neurons that control skeletal muscles, and describes their function and types.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about all the motor neurons that control skeletal muscles. However, ID 3 provides relevant information about the classification of motor neurons and their targets, which includes skeletal muscles. Therefore, it is the most relevant choice.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 11 is the best candidate because it discusses motor neurons and their role in controlling skeletal muscles, specifically mentioning monosynaptic connections which are relevant to the question.",
+    "top_id": 11
+}
+Processing candidates with IDs: [11, 12]
+Top candidate ID: 11
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it directly addresses the question by explaining that somatic motor neurons originate in the central nervous system and project their axons to skeletal muscles, which is relevant to the control of skeletal muscles.",
+    "top_id": 6
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 6
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it discusses somatic motor neurons, which are directly related to the control of skeletal muscles, thus addressing the question about motor neurons that control skeletal muscles.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 11]
+Top candidate ID: 6
+# of candidates in rank pool: 1
+top_1:  ('Somatic motor neurons', 100.0, 24)
+begin_index:  24
+end_index:  27
+fuzzy search text:  Somatic motor neurons
+===============Final Stats===================
+Original question           : all the motor neurons that control the skeletal muscles are
+# of indexed chunks         : 14
+# of retrieved candidates   : 13
+# of grounded candidates    : 13
+Top1 long answer            : further divided in sub-categories . </P> <P> According to their targets , motor neurons are classified into three broad categories : </P> <Ul> <Li> Somatic motor neurons </Li> <Li> Special visceral motor neurons </Li> <Li> General visceral motor neurons </Li> </Ul> <H3> Somatic motor neurons ( edit ) </H3> <P> Somatic motor neurons originate in the central nervous system , project their axons to skeletal muscles ( such as the muscles of the limbs , abdominal , and intercostal muscles ) , which are involved in locomotion . The three types of these neurons are the alpha efferent neurons , beta efferent neurons , and gamma efferent neurons . They are called efferent to indicate the flow of information from
+Short answer                : Somatic motor neurons
+cut answer                  : Somatic motor neurons
+**grounded truth**          : ['Somatic', 'Somatic motor neurons', 'Somatic motor neurons', 'efferent nerves']
+Final (begin index, end index): (1254, 1257)
+All time: =============================
+indexing time: 0.8654780387878418s
+retrieving time: 5.004500389099121s
+grounding time: 0.001999378204345703s
+ranking time: 4.200157165527344s
+finding long time: 0.0s
+refining time: 0.475475549697876s
+answer2index time: 0.0009987354278564453s
+============================
+
+Example 10/40
+simplifying...
+char length: 44155
+token length: 8755
+Round 1: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it directly mentions Calpurnia's son, Zeebo, and provides relevant information about him.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it directly mentions Calpurnia's son, Zeebo, providing the specific information requested in the question.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it directly mentions Calpurnia's son, Zeebo, and provides relevant information about him, which answers the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [1, 3]
+Top candidate ID: 3
+# of candidates in rank pool: 1
+top_1:  ('Zeebo', 100.0, 45)
+begin_index:  45
+end_index:  46
+fuzzy search text:  Zeebo
+===============Final Stats===================
+Original question           : calpurnia son name in to kill a mockingbird
+# of indexed chunks         : 21
+# of retrieved candidates   : 4
+# of grounded candidates    : 4
+Top1 long answer            : , and using abusive and profane language in the presence and hearing of a female . '' He added the last charge after claiming that the teens had `` cussed so loud he was sure every lady in Maycomb heard them . '' </P> <H3> Zeebo ( edit ) </H3> <P> Zeebo is Calpurnia 's eldest son . He is one of just four people in First Purchase Church who can read , so he is the vocal leader , leading hymns in the Negro First Purchase Church by `` lining , '' reading a line of verse and having the congregation repeat it . Calpurnia taught Zeebo how to read . He is also the garbage man of Maycomb , and took away the dead rabid dog , Tim Johnson . When a fellow church member , a woman named Lula , tries to make the children feel bad for attending church with his mother , Zeebo welcomes Scout and Jem with open arms . He is kind but very quiet . </P> <H2> References ( edit ) </H2>
+Short answer                : Zeebo
+cut answer                  : Zeebo
+**grounded truth**          : ['Zeebo', 'Zeebo', 'James Zeebo', 'Zeebo', 'Zeebo']
+Final (begin index, end index): (8075, 8076)
+All time: =============================
+indexing time: 2.5306694507598877s
+retrieving time: 6.217482805252075s
+grounding time: 0.0010001659393310547s
+ranking time: 2.539165496826172s
+finding long time: 0.0s
+refining time: 0.4931216239929199s
+answer2index time: 0.0010156631469726562s
+============================
+
+Example 11/40
+simplifying...
+char length: 20864
+token length: 3916
+Round 1: 11 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it provides specific information about the source of the water for the California aqueduct, mentioning the San Joaquin - Sacramento River Delta and the Banks Pumping Plant.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it explicitly states that the water from the California Aqueduct is collected from the Sierra Nevada Mountains and valleys of Northern and Central California, directly answering the question.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions the Clifton Court Forebay, which is a primary intake point for the California Aqueduct, indicating a source of water for the aqueduct.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides information about the California Aqueduct and mentions its branches, which indicates the sources of water supply, including Lake Cachuma and Lake Palmdale. This is relevant to the question about where the water from the California Aqueduct comes from.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+Round 2: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it provides a clear explanation that the water from the California Aqueduct comes from the Sierra Nevada Mountains and valleys of Northern and Central California.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 3, 6]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions the Clifton Court Forebay, which is a primary intake point for the California Aqueduct, thus providing relevant information about the source of water for the aqueduct.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it directly explains that the water from the California Aqueduct comes from the Sierra Nevada Mountains and valleys of Northern and Central California.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 9]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('Sierra Nevada Mountains', 100.0, 62)
+begin_index:  62
+end_index:  65
+fuzzy search text:  Sierra Nevada Mountains
+===============Final Stats===================
+Original question           : where does the water from the california aqueduct come from
+# of indexed chunks         : 11
+# of retrieved candidates   : 11
+# of grounded candidates    : 11
+Top1 long answer            : / s ( 13,000 cu ft / s ) </Td> </Tr> <Tr> <Th> Construction began </Th> <Td> 1963 </Td> </Tr> <Tr> <Th> Opening date </Th> <Td> Coastal Branch 1997 </Td> </Tr> <Tr> <Td_colspan="2"> References : </Td> </Tr> </Table> <P> The Governor Edmund G. Brown California Aqueduct is a system of canals , tunnels , and pipelines that conveys water collected from the Sierra Nevada Mountains and valleys of Northern and Central California to Southern California . Named after California Governor Edmund Gerald `` Pat '' Brown Sr. , the over 400 - mile ( 640 km ) aqueduct is the principal feature of the California State Water Project . </P> <P> The aqueduct begins at the Clifton Court Forebay at
+Short answer                : Sierra Nevada Mountains
+cut answer                  : Sierra Nevada Mountains
+**grounded truth**          : ['collected from the Sierra Nevada Mountains and valleys of Northern and Central California to Southern California .', 'the Sierra Nevada Mountains', 'valleys of Northern and Central California', 'Sierra Nevada Mountains', 'valleys of Northern and Central California to Southern California']
+Final (begin index, end index): (342, 345)
+All time: =============================
+indexing time: 0.5623126029968262s
+retrieving time: 6.708092212677002s
+grounding time: 0.0019991397857666016s
+ranking time: 4.435498952865601s
+finding long time: 0.0s
+refining time: 0.47090721130371094s
+answer2index time: 0.0010013580322265625s
+============================
+
+Example 12/40
+simplifying...
+char length: 38087
+token length: 7554
+Round 1: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides the most relevant information regarding the highest runs scored in the India-South Africa Test series 2018, specifically mentioning Virat Kohli's 286 runs and AB de Villiers' 211 runs.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides specific details about the highest runs scored in the India-South Africa Test series in 2018, mentioning Virat Kohli's score of 153, which is relevant to the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content does not provide information about the highest runs scored in the India-South Africa Test series in 2018. It mainly discusses Virat Kohli's achievements in ODIs and T20Is, which are not relevant to the question.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6]
+Top candidate ID: 6
+Round 2: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides the most relevant information regarding the highest runs scored in the India-South Africa Test series of 2018, specifically mentioning Virat Kohli and AB de Villiers along with their run totals.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Virat Kohli ( 286 )', 100.0, 60)
+begin_index:  60
+end_index:  65
+fuzzy search text:  Virat Kohli ( 286 )
+===============Final Stats===================
+Original question           : india south africa test series 2018 highest runs
+# of indexed chunks         : 22
+# of retrieved candidates   : 7
+# of grounded candidates    : 7
+Top1 long answer            : Captains </Th> <Td> Faf du Plessis ( Tests and ODIs ) JP Duminy ( T20Is ) </Td> <Td> Virat Kohli </Td> </Tr> <Tr> <Th_colspan="4"> Test series </Th> </Tr> <Tr> <Th> Result </Th> <Td_colspan="3"> South Africa won the 3 - match series 2 -- 1 </Td> </Tr> <Tr> <Th> Most runs </Th> <Td> AB de Villiers ( 211 ) </Td> <Td> Virat Kohli ( 286 ) </Td> </Tr> <Tr> <Th> Most wickets </Th> <Td> Vernon Philander ( 15 ) Kagiso Rabada ( 15 ) </Td> <Td> Mohammed Shami ( 15 ) </Td> </Tr> <Tr> <Th> Player of the series </Th> <Td_colspan="3"> Vernon Philander ( SA ) </Td> </Tr> <Tr> <Th_colspan="4"> One
+Short answer                : Virat Kohli ( 286 )
+cut answer                  : Virat Kohli ( 286 )
+**grounded truth**          : ['286', 'AB de Villiers']
+Final (begin index, end index): (140, 145)
+All time: =============================
+indexing time: 2.414199113845825s
+retrieving time: 6.576242446899414s
+grounding time: 0.0019998550415039062s
+ranking time: 2.8029417991638184s
+finding long time: 0.0s
+refining time: 0.6260945796966553s
+answer2index time: 0.0009989738464355469s
+============================
+
+Example 13/40
+simplifying...
+char length: 142874
+token length: 26207
+Round 1: 15 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it explicitly mentions Yahya Khan as the President of Pakistan during the 1971 war, directly answering the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 and ID 13 both mention Yahya Khan, who was the President of Pakistan during the 1971 war. However, ID 12 provides more context about the war and Yahya Khan's actions, making it slightly more relevant.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it mentions President Yahya Khan, who was the president of Pakistan during the 1971 war, and discusses the transition of power to Zulfiqar Ali Bhutto after the war.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it mentions President Yahya Khan, who was the president of Pakistan during the 1971 war, and provides context about his actions during that time.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about who was the president of Pakistan during the 1971 war. However, ID 9 provides context about Zulfikar Ali Bhutto, who was a significant political figure during that time, suggesting he was involved in the events surrounding the war. Therefore, ID 9 is the most relevant choice.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 and ID 3 both mention Yahya Khan as the President of Pakistan during the 1971 war, but ID 0 provides a more direct and clear identification of him in the context of the war. Therefore, ID 0 is the best candidate.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 provides context about the 1971 war and mentions Zulfikar Ali Bhutto, who was a key political figure during that time. However, it does not explicitly state who the president was. ID 12 discusses military strategies during the war but does not mention the president either. Since neither candidate directly answers the question, ID 9 is the closest as it references a significant figure from that period.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12]
+Top candidate ID: 9
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it explicitly mentions Yahya Khan as the President of Pakistan during the 1971 war, directly answering the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 9]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Yahya Khan', 100.0, 45)
+begin_index:  45
+end_index:  47
+fuzzy search text:  Yahya Khan
+===============Final Stats===================
+Original question           : who was the president of pakistan during 1971 war
+# of indexed chunks         : 67
+# of retrieved candidates   : 15
+# of grounded candidates    : 15
+Top1 long answer            : VAdm S.N. Kohli ( Cdr . Western Naval Command ) ACM Pratap C. Lal ( Chief of Air Staff ) Rameshwar Kao ( Director of RAW ) Tajuddin Ahmad ( PM Provisional Government ) Col. M.A.G. Osmani ( Commander , Mukti Bahini ) </Td> <Td> Yahya Khan ( President of Pakistan ) Nurul Amin ( Prime Minister of Pakistan ) Gen. A.H. Khan ( Chief of Staff , Army GHQ ) Lt. Gen A.A.K. Niazi ( Commander , Eastern Command ) Lt. Gen Gul Hassan Khan ( Chief of General Staff ) Lt. Gen Abdul Ali Malik ( Commander , I Corps ) Lt. Gen Tikka Khan ( Commander ,
+Short answer                : Yahya Khan
+cut answer                  : Yahya Khan
+**grounded truth**          : ['President Yahya Khan', 'Yahya Khan', 'Yahya Khan', 'Yahya Khan', 'Yahya Khan']
+Final (begin index, end index): (665, 667)
+All time: =============================
+indexing time: 24.346973180770874s
+retrieving time: 17.702888250350952s
+grounding time: 0.010000467300415039s
+ranking time: 4.865327596664429s
+finding long time: 0.0s
+refining time: 0.45839905738830566s
+answer2index time: 0.002002239227294922s
+============================
+
+Example 14/40
+simplifying...
+char length: 23428
+token length: 4784
+# of candidates in rank pool: 1
+top_1:  ('Terry Kath', 100.0, 67)
+begin_index:  67
+end_index:  69
+fuzzy search text:  Terry Kath
+===============Final Stats===================
+Original question           : who played lead guitar on 25 or 6 to 4
+# of indexed chunks         : 14
+# of retrieved candidates   : 1
+# of grounded candidates    : 1
+Top1 long answer            : 's writer , Robert Lamm , had recently written and sung another Chicago hit , `` Does Anybody Really Know What Time It Is ? '' , for which this song 's title can be seen to serve as an answer . </P> <H2> Composition ( edit ) </H2> <P> The original recording features an electric guitar solo using a wah - wah pedal by Chicago guitarist Terry Kath , and a lead vocal line in Aeolian mode . </P> <P> The song 's opening guitar riff has been compared to chord progressions and riffs in other songs . In the opinion of writer Melissa Locker : </P> <P> ... the opening guitar riff from Green Day 's ' Brain
+Short answer                : Terry Kath
+cut answer                  : Terry Kath
+**grounded truth**          : ['Terry Kath', 'Terry Kath', 'Terry Kath', 'Terry Kath']
+Final (begin index, end index): (947, 949)
+All time: =============================
+indexing time: 0.888831377029419s
+retrieving time: 4.328128099441528s
+grounding time: 0.0s
+ranking time: 0.00099945068359375s
+finding long time: 0.0s
+refining time: 0.4675600528717041s
+answer2index time: 0.0s
+============================
+
+Example 15/40
+simplifying...
+char length: 76131
+token length: 14078
+Round 1: 15 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 is the best candidate because it discusses the nucleus, which is the center of heredity in a cell, and explains its role in transcription and the processing of RNA, directly relating to the question.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides a detailed explanation of the nucleus, which is the center of heredity in a cell, describing its role in maintaining genetic material and regulating gene expression.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 10 is the best candidate because it discusses the nucleus, which is the center of heredity in a cell, and explains its role in controlling gene expression and containing genetic material.",
+    "top_id": 10
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 10
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it discusses the cell nucleus, which is the center of heredity in a cell, and mentions chromosomes, which contain genetic material. Although it does not explicitly state that the nucleus is the center of heredity, it provides relevant information about the structures involved in heredity.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the nucleus, which is the center of heredity in a cell, and explains its role in carrying genetic information.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 10 is the best candidate because it describes the nucleus as the center of heredity in a cell, detailing its role in controlling gene expression and containing the cell's genetic material.",
+    "top_id": 10
+}
+Processing candidates with IDs: [10, 12]
+Top candidate ID: 10
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides a comprehensive explanation of the nucleus, which is the center of heredity in a cell, detailing its role in maintaining genetic material and regulating gene expression.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 0
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides a detailed explanation of the nucleus, which is the center of heredity in a cell, describing its role in maintaining genetic material and regulating gene expression.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 10]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('the control center', 100.0, 127)
+begin_index:  127
+end_index:  130
+fuzzy search text:  the control center
+===============Final Stats===================
+Original question           : what is the center of heredity in a cell
+# of indexed chunks         : 38
+# of retrieved candidates   : 15
+# of grounded candidates    : 15
+Top1 long answer            : is a membrane - enclosed organelle found in eukaryotic cells . Eukaryotes usually have a single nucleus , but a few cell types , such as mammalian red blood cells , have no nuclei , and a few others have many . </P> <P> Cell nuclei contain most of the cell 's genetic material , organized as multiple long linear DNA molecules in complex with a large variety of proteins , such as histones , to form chromosomes . The genes within these chromosomes are the cell 's nuclear genome and are structured in such a way to promote cell function . The nucleus maintains the integrity of genes and controls the activities of the cell by regulating gene expression -- the nucleus is , therefore , the control center of the cell . The main structures making up the nucleus are the nuclear envelope , a double membrane that encloses the entire organelle and isolates its contents from the cellular cytoplasm , and the nuclear matrix ( which includes the nuclear lamina ) , a network within the nucleus
+Short answer                : the control center
+cut answer                  : the control center
+**grounded truth**          : ['nucleus', 'Cell nuclei', 'chromosome', 'the nucleus']
+Final (begin index, end index): (307, 310)
+All time: =============================
+indexing time: 7.063753366470337s
+retrieving time: 11.943809747695923s
+grounding time: 0.00599980354309082s
+ranking time: 5.550634860992432s
+finding long time: 0.0s
+refining time: 0.5214416980743408s
+answer2index time: 0.0009891986846923828s
+============================
+
+Example 16/40
+simplifying...
+char length: 77353
+token length: 12759
+Round 1: 24 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 is the best candidate because it mentions 'Hellenic polytheism,' which directly relates to the belief in Greek gods, making it the most relevant response to the question.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 19, 20]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it directly mentions the term 'Dodekatheism', which is specifically used to describe the belief in Greek gods, thus answering the question.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 16 is the best candidate as it references 'Ancient Greek gods' and mentions 'new believers', which suggests a connection to the belief in Greek gods, aligning with the question.",
+    "top_id": 16
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 16
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it discusses terms related to the belief in Greek gods, including 'Hellenic religion' and 'Hellenism', which directly relate to the question about what it is called when one believes in Greek gods.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it mentions 'Hellenic religion' and 'Hellenic polytheism', which are terms that refer to the belief in Greek gods. It also discusses related terms like 'Dodekatheism' and 'Olympianism', which further relate to the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 22 is the best candidate because it includes the term 'Polytheism,' which refers to the belief in multiple gods, including Greek gods. This directly relates to the question about believing in Greek gods.",
+    "top_id": 22
+}
+Processing candidates with IDs: [21, 22, 23]
+Top candidate ID: 22
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it directly addresses the question by defining Hellenism and mentioning its association with the belief in Greek gods. It also provides alternative names for the belief system, which adds to the completeness of the answer.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 and ID 13 both mention Hellenic Polytheism, which is the belief in Greek gods. However, ID 12 provides a clearer context about Hellenic Polytheism as a living, changing religion, making it more relevant to the question.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+Round 2: 8 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 is the best candidate because it mentions 'Hellenic polytheism,' which directly relates to the belief in Greek gods.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 22]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions 'Dodekatheism', which is a term used to describe the belief in the Greek gods, directly addressing the question.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12, 16]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it directly addresses the question by providing the term 'Hellenismos' and mentions related terms like 'Hellenic Polytheism' and 'Dodekatheism', which are all relevant to the belief in Greek gods.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 3, 6]
+Top candidate ID: 1
+Round 3: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it directly addresses the question by defining the belief in Greek gods as Hellenism, Hellenic Polytheism, Dodekatheism, or Olympianism.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 9, 18]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('Hellenismos', 100.0, 25)
+begin_index:  25
+end_index:  26
+fuzzy search text:  Hellenismos
+===============Final Stats===================
+Original question           : what is it called when you believe in greek gods
+# of indexed chunks         : 44
+# of retrieved candidates   : 24
+# of grounded candidates    : 24
+Top1 long answer            : <Td> History ( show ) <Ul> <Li> Mycenaean gods </Li> <Li> Decline of Hellenistic polytheism </Li> <Li> Julian restoration </Li> </Ul> </Td> </Tr> <Tr> <Td> Hellenismos portal </Td> </Tr> <Tr> <Td> <Ul> <Li> </Li> <Li> </Li> <Li> </Li> </Ul> </Td> </Tr> </Table> <P> Hellenism ( Greek : Ἑλληνισμός ) , the Hellenic ethnic religion ( Ἑλληνικὴ ἐθνική θρησκεία ) , also commonly known as Hellenismos , Hellenic Polytheism , Dodekatheism ( Δωδεκαθεϊσμός ) , or Olympianism ( Ὀλυμπιανισμός ) , refers to various religious movements that revive or reconstruct ancient Greek religious practices , publicly , emerging since the 1990s . </P> <P> The Hellenic religion is a traditional religion and way of life , revolving around the Greek Gods
+Short answer                : Hellenismos
+cut answer                  : Hellenismos
+**grounded truth**          : ['Hellenic Polytheism', 'Hellenic polytheist', 'Hellenism', 'Hellenism', 'Hellenism ( Greek : Ἑλληνισμός ) , the Hellenic ethnic religion ( Ἑλληνικὴ ἐθνική θρησκεία ) , also commonly known as Hellenismos , Hellenic Polytheism , Dodekatheism ( Δωδεκαθεϊσμός ) , or Olympianism ( Ὀλυμπιανισμός )']
+Final (begin index, end index): (735, 736)
+All time: =============================
+indexing time: 7.364365816116333s
+retrieving time: 13.532131671905518s
+grounding time: 0.009002685546875s
+ranking time: 6.09043025970459s
+finding long time: 0.0s
+refining time: 0.46538400650024414s
+answer2index time: 0.0009970664978027344s
+============================
+
+Example 17/40
+simplifying...
+char length: 17192
+token length: 3371
+Round 1: 6 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it discusses the philosophical origins of the question about a tree falling in the woods and mentions George Berkeley, who is often associated with this thought experiment.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the philosophical implications of the question about the tree falling in the woods, which is directly related to the inquiry about who said it. It provides context and references to the origins of the phrase, making it relevant to the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides a direct reference to the philosophical context of the question, mentioning George Berkeley's work which discusses the perception of objects, including trees. This aligns closely with the inquiry about who said the phrase regarding a tree falling in the woods.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('George Berkeley', 100.0, 50)
+begin_index:  50
+end_index:  52
+fuzzy search text:  George Berkeley
+===============Final Stats===================
+Original question           : who said if a tree falls in the woods and nobody hears it
+# of indexed chunks         : 9
+# of retrieved candidates   : 6
+# of grounded candidates    : 6
+Top1 long answer            : neng 's Flag </Li> <Li> 2.4. 2.2 Hui - neng Receives The Dharma </Li> </Ul> </Li> </Ul> </Li> <Li> 2.5 Hinduism </Li> </Ul> </Li> <Li> 3 In popular culture </Li> <Li> 4 See also </Li> <Li> 5 References </Li> </Ul> <P> </P> <H2> History ( edit ) </H2> <P> Philosopher George Berkeley , in his work , A Treatise Concerning the Principles of Human Knowledge ( 1710 ) , proposes , `` But , say you , surely there is nothing easier than for me to imagine trees , for instance , in a park ( ... ) and nobody by to perceive them . ( ... ) The objects of sense exist only when they are perceived ; the trees therefore are in the garden ( ... ) no longer than while there is somebody by to perceive them . '' ( It is worth noting that the quote from section 45 is arguably a statement of an objection to Berkeley 's view , and not a proclamation of it . ) Nevertheless , Berkeley never actually wrote about the question . </P> <P> Some years later , a similar question is posed . It is unknown whether the source of this question is Berkeley or not . In June 1883 in the magazine The Chautauquan , the question
+Short answer                : George Berkeley
+cut answer                  : George Berkeley
+**grounded truth**          : ['Charles Riborg Mann', 'George Ransom Twiss', 'Charles Riborg Mann and George Ransom Twiss', 'Philosopher George Berkeley']
+Final (begin index, end index): (200, 202)
+All time: =============================
+indexing time: 0.37604570388793945s
+retrieving time: 3.9012184143066406s
+grounding time: 0.0s
+ranking time: 7.1218907833099365s
+finding long time: 0.0s
+refining time: 0.5439343452453613s
+answer2index time: 0.0009989738464355469s
+============================
+
+Example 18/40
+simplifying...
+char length: 27753
+token length: 5414
+Round 1: 9 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it provides the specific date when 'Are You Smarter Than a 5th Grader?' first aired, which is February 27, 2007, directly answering the question.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 7 provides the most relevant information regarding the premiere date of 'Are You Smarter Than a 5th Grader?', stating that it began as a special on February 27, 2007, which directly answers the question.",
+    "top_id": 7
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 7
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides the most relevant information regarding the airing of 'Are You Smarter Than a 5th Grader', specifically mentioning that the first episode aired less than eight weeks after being pitched, which aligns with the question about when the show first aired.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+Round 2: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it provides the specific date when the show first aired, which is directly relevant to the question.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 3, 7]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('February 27 , 2007', 97.14285714285714, 55)
+begin_index:  55
+end_index:  59
+fuzzy search text:  February 27 , 2007
+===============Final Stats===================
+Original question           : when did are you smarter than a 5th grader first air
+# of indexed chunks         : 15
+# of retrieved candidates   : 9
+# of grounded candidates    : 9
+Top1 long answer            : , 2011 ( 2011 - 03 - 24 ) </Td> </Tr> </Table> <P> Are You Smarter than a 5th Grader ? is an American quiz game show on Fox . It is produced by Mark Burnett and is hosted by Jeff Foxworthy . The show premiered as a three - day special which began on February 27 , 2007 with the first two shows each a half - hour in length . Regular one - hour episodes began airing Thursdays from March 1 through May 10 , and the first season continued with new episodes beginning May 31 . Are You Smarter Than a 5th Grader ? was picked up
+Short answer                : February 27, 2007
+cut answer                  : February 27 , 2007
+**grounded truth**          : ['began on February 27 , 2007', 'February 27 , 2007', 'February 27 , 2007', 'February 27 , 2007', 'February 27 , 2007']
+Final (begin index, end index): (435, 439)
+All time: =============================
+indexing time: 1.0858452320098877s
+retrieving time: 5.013935327529907s
+grounding time: 0.0009996891021728516s
+ranking time: 2.7631869316101074s
+finding long time: 0.0s
+refining time: 0.4493424892425537s
+answer2index time: 0.0s
+============================
+
+Example 19/40
+simplifying...
+char length: 30248
+token length: 5864
+Round 1: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it explicitly mentions Daryl Sabara as the voice of the Hero Boy, who is the little boy in 'The Polar Express'.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it directly states that Dante Pastula played the Little Boy in 'Polar Express', which answers the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4]
+Top candidate ID: 3
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it mentions Daryl Sabara and Josh Hutcherson as the Hero Boy, who is the little boy in 'The Polar Express'.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 3]
+Top candidate ID: 2
+# of candidates in rank pool: 1
+top_1:  ('Daryl Sabara', 100.0, 86)
+begin_index:  86
+end_index:  88
+fuzzy search text:  Daryl Sabara
+===============Final Stats===================
+Original question           : who played the little boy in polar express
+# of indexed chunks         : 16
+# of retrieved candidates   : 5
+# of grounded candidates    : 5
+Top1 long answer            : his ear and shakes it ; his parents , not believing in Santa , lament how the bell is `` broken '' . </P> <H2> Cast ( edit ) </H2> This film marks the final performance of actor Michael Jeter ; Jeter died the year before the film 's release . <Ul> <Li> Tom Hanks as the Hero Boy ( motion - capture only ) , the Hero Boy 's father , the Conductor , the Hobo , Santa Claus , and the Narrator <Ul> <Li> Daryl Sabara as the Hero Boy ( voice ) </Li> <Li> Josh Hutcherson as the Hero Boy ( additional motion - capture ) </Li> </Ul> </Li> <Li> Leslie Zemeckis as Sister Sarah ( motion - capture only ) and the Hero Boy 's mother
+Short answer                : Daryl Sabara
+cut answer                  : Daryl Sabara
+**grounded truth**          : ['Daryl Sabara', 'Dante Pastula', 'Daryl Sabara']
+Final (begin index, end index): (1586, 1588)
+All time: =============================
+indexing time: 1.2673797607421875s
+retrieving time: 4.944914817810059s
+grounding time: 0.0009999275207519531s
+ranking time: 2.8654298782348633s
+finding long time: 0.0s
+refining time: 0.5391354560852051s
+answer2index time: 0.0010113716125488281s
+============================
+
+Example 20/40
+simplifying...
+char length: 37365
+token length: 6676
+Round 1: 12 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it discusses the continent of Laurentia, which is directly related to North America and its geological history, including its position on the equator about 300 million years ago.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about what land mass North America was a part of 300 million years ago. However, ID 6 mentions Pangaea, which is relevant as North America was part of Pangaea during that time. Therefore, ID 6 is the most relevant candidate.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it directly mentions Pangaea, which is the supercontinent that North America was a part of about 300 million years ago.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about what land mass North America was a part of 300 million years ago. However, ID 9 discusses Pangaea, which is relevant to the question as North America was part of Pangaea during that time. Therefore, ID 9 is the most relevant candidate.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+Round 2: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content from ID 0 provides a clear reference to Pangaea, which was the supercontinent that included North America about 300 million years ago. It directly addresses the question regarding the land mass North America was part of during that time.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content discusses Pangaea, which is relevant to the question about the land mass North America was part of 300 million years ago. However, it does not explicitly state that North America was part of Pangaea, making it less direct. Still, it is the only candidate that relates to the question.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it directly mentions Pangaea, which is the land mass that North America was a part of about 300 million years ago.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 9]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Pangaea', 100.0, 0)
+begin_index:  0
+end_index:  1
+fuzzy search text:  Pangaea
+===============Final Stats===================
+Original question           : what land mass was north america a part of about 300 million years ago
+# of indexed chunks         : 18
+# of retrieved candidates   : 12
+# of grounded candidates    : 12
+Top1 long answer            : Pangaea - wikipedia <H1> Pangaea </H1> Jump to : navigation , search For other uses , see Pangaea ( disambiguation ) . Map of Pangaea with modern continental outlines <P> Pangaea or Pangea ( / pænˈdʒiːə / ) was a supercontinent that existed during the late Paleozoic and early Mesozoic eras . It assembled from earlier continental units approximately 335 million years ago , and it began to break apart about 175 million years ago . In contrast to the present Earth and its distribution of continental mass , much of Pangaea was in the southern hemisphere and surrounded by
+Short answer                : Pangaea
+cut answer                  : Pangaea
+**grounded truth**          : ['Pangaea or Pangea', 'Pangaea', 'Pangaea', 'Pangaea']
+Final (begin index, end index): (0, 1)
+All time: =============================
+indexing time: 1.5143332481384277s
+retrieving time: 5.643012285232544s
+grounding time: 0.002991914749145508s
+ranking time: 5.424248933792114s
+finding long time: 0.0s
+refining time: 0.4952995777130127s
+answer2index time: 0.0010008811950683594s
+============================
+
+Example 21/40
+simplifying...
+char length: 83125
+token length: 15439
+Round 1: 21 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 11 is the best candidate because it mentions Freeman Field, which is where the first African American air force unit, the 477th, trained. This directly addresses the question.",
+    "top_id": 11
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 11
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 4 is the best candidate because it provides specific information about the training of the first African American air force unit at Tuskegee Army Air Field in Alabama, directly answering the question.",
+    "top_id": 4
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 4
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 is the best candidate because it mentions Freeman Field, which is where the first African American air force unit, the 477th, trained. This directly relates to the question about the training location.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it mentions the 99th Fighter Squadron, which was part of the Tuskegee Airmen, and indicates that they were trained at Tuskegee, directly addressing the question about where the first African American air force unit trained.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The best candidate is ID 0, as it directly mentions that all black military pilots trained at Moton Field and the Tuskegee Army Air Field, which are the locations relevant to the question about where the first African American Air Force unit trained.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content from ID 18 mentions Tuskegee and its training facilities, which is relevant to the question about where the first African American Air Force unit trained. It implies that Tuskegee was a significant location for training, making it the most relevant candidate.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 19, 20]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 15 is the best candidate because it mentions the Tuskegee Airmen and specifically states that the airfield where they trained is now the Tuskegee Airmen National Historic Site, which directly relates to the question about where the first African American Air Force unit trained.",
+    "top_id": 15
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 15
+Round 2: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 11 and ID 12 both mention Freeman Field, which is where the 477th, the first African American air force unit, trained. However, ID 12 provides additional context about the Tuskegee Airmen and their training, making it more relevant to the question.",
+    "top_id": 12
+}
+Processing candidates with IDs: [11, 12, 15]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions Tuskegee and its advantages for training, which implies that it is related to the first African American air force unit's training location. However, it does not explicitly state that Tuskegee is the training location. Still, it is the most relevant candidate available.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The best candidate is ID 0, as it provides specific information about the training locations of the first African American air force unit, mentioning Moton Field and the Tuskegee Army Air Field in Alabama, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 4, 6]
+Top candidate ID: 0
+Round 3: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The first candidate (ID 0) provides specific information about the training locations for the first African American air force unit, mentioning Moton Field and the Tuskegee Army Air Field, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 12, 18]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Moton Field', 100.0, 58)
+begin_index:  58
+end_index:  60
+fuzzy search text:  Moton Field
+===============Final Stats===================
+Original question           : where did the first african american air force unit train
+# of indexed chunks         : 40
+# of retrieved candidates   : 21
+# of grounded candidates    : 21
+Top1 long answer            : They formed the 332nd Fighter Group and the 477th Bombardment Group of the United States Army Air Forces . The name also applies to the navigators , bombardiers , mechanics , instructors , crew chiefs , nurses , cooks and other support personnel . </P> <P> All black military pilots who trained in the United States trained at Moton Field , the Tuskegee Army Air Field , and were educated at Tuskegee University , located near Tuskegee , Alabama . The group included five Haitians from the Haitian Air Force , and one pilot from Trinidad. . It also included a Hispanic or Latino airman born in the Dominican Republic . </P> <P> Although the 477th Bombardment Group trained with
+Short answer                : Moton Field
+cut answer                  : Moton Field
+**grounded truth**          : ['Moton Field , the Tuskegee Army Air Field']
+Final (begin index, end index): (278, 280)
+All time: =============================
+indexing time: 8.273263692855835s
+retrieving time: 11.176371335983276s
+grounding time: 0.008000850677490234s
+ranking time: 5.997116565704346s
+finding long time: 0.0s
+refining time: 0.5369052886962891s
+answer2index time: 0.0009999275207519531s
+============================
+
+Example 22/40
+simplifying...
+char length: 20112
+token length: 3825
+Round 1: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 mentions 'Celebrity Big Brother coming to CBS this winter for first time ever', which directly relates to the question about when winter Big Brother is starting.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 and ID 1 both provide information about the premiere date of Celebrity Big Brother, which is relevant to the question about when winter Big Brother is starting. However, ID 1 is more concise and directly states the premiere date, making it the better choice.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 provides specific information about the premiere date of the winter edition of Big Brother, stating it will start on February 7, 2018, which directly answers the question.",
+    "top_id": 1
+}
+Processing candidates with IDs: [1, 3]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('February 7 , 2018', 96.96969696969697, 50)
+begin_index:  50
+end_index:  54
+fuzzy search text:  February 7 , 2018
+===============Final Stats===================
+Original question           : when is winter big brother going to start
+# of indexed chunks         : 11
+# of retrieved candidates   : 5
+# of grounded candidates    : 5
+Top1 long answer            : have been confirmed to return for this edition along with live evictions . This series will be shown over a condensed run and will not last as long as a regular season of Big Brother . On December 1 , 2017 , CBS revealed that the series would premiere on February 7 , 2018 and wrap on February 25 , 2018 . </P> <H3> Broadcasts ( edit ) </H3> <P> The main television coverage of Celebrity Big Brother will be screened on CBS during the winter of the 2017 -- 18 network television season . Episodes will air on Sundays , Mondays , Wednesdays , and Fridays with two special
+Short answer                : February 7, 2018
+cut answer                  : February 7 , 2018
+**grounded truth**          : ['February 7 , 2018', 'February 7 , 2018', 'February 7 , 2018', 'set to premiere on February 7 , 2018', 'February 7 , 2018']
+Final (begin index, end index): (930, 934)
+All time: =============================
+indexing time: 0.5627529621124268s
+retrieving time: 3.587346315383911s
+grounding time: 0.0009996891021728516s
+ranking time: 2.834630012512207s
+finding long time: 0.0s
+refining time: 0.5536630153656006s
+answer2index time: 0.0010061264038085938s
+============================
+
+Example 23/40
+simplifying...
+char length: 142568
+token length: 27527
+Round 1: 10 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it directly mentions the winners of 'India's Next Superstars', which answers the question.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about who won 'India's Next Superstar.' However, ID 6 mentions a winner among the contestants, which could imply a connection to the competition, making it the most relevant choice.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 4 is the best candidate as it mentions the finale episode where the judges speculate about the possibilities of different winners, which is relevant to the question about who won 'India's Next Superstar'.",
+    "top_id": 4
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 4
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides the names of the winners of 'India's Next Superstars', specifically mentioning Aman Gandotra and Natasha Bharadwaj as winners, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+Round 2: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it directly mentions the winners of 'India's Next Superstars', which answers the question.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The best candidate is ID 0, as it provides specific information about the winners of 'India's Next Superstars', naming Aman Gandotra, Natasha Bharadwaj, and Shruti Sharma, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 4, 6]
+Top candidate ID: 0
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides the names of the winners of India's Next Superstars, specifically mentioning Aman Gandotra, Natasha Bharadwaj, and Shruti Sharma, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 9]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Aman Gandotra and Natasha Bharadwaj', 92.53731343283582, 46)
+begin_index:  46
+end_index:  51
+fuzzy search text:  Aman Gandotra and Natasha Bharadwaj
+===============Final Stats===================
+Original question           : who has won india's next super star
+# of indexed chunks         : 68
+# of retrieved candidates   : 10
+# of grounded candidates    : 10
+Top1 long answer            : links </Th> </Tr> <Tr> <Td_colspan="2"> Hotstar </Td> </Tr> </Table> <P> India 's Next Superstars is a talent - searcher Indian reality show , which premiered on Star Plus and is streamed on Hotstar . Karan Johar and Rohit Shetty are the judges for the show . Aman Gandotra and Natasha Bharadwaj are declared winners of 2018 season , alongside Shruti Sharma who won a ' Special Mention ' award . Runners up in the male category were Aashish Mehrotra and Harshvardhan Deo and in the female category were Naina Singh and Shruti Sharma . </P> <P> </P> <H2> Contents </H2> ( hide ) <Ul> <Li> 1 Concept </Li> <Li> 2
+Short answer                : Aman Gandotra, Natasha Bharadwaj
+cut answer                  : Aman Gandotra and Natasha Bharadwaj
+**grounded truth**          : ['Aman Gandotra', 'Natasha Bharadwaj', 'Aman Gandotra', 'Natasha Bharadwaj', 'Aman Gandotra', 'Natasha Bharadwaj', 'Aman Gandotra', 'Natasha Bharadwaj']
+Final (begin index, end index): (346, 351)
+All time: =============================
+indexing time: 26.42700958251953s
+retrieving time: 19.56323790550232s
+grounding time: 0.008000612258911133s
+ranking time: 4.306919813156128s
+finding long time: 0.0s
+refining time: 0.5123269557952881s
+answer2index time: 0.002512693405151367s
+============================
+
+Example 24/40
+simplifying...
+char length: 12868
+token length: 2396
+# of candidates in rank pool: 1
+top_1:  ('% SystemRoot % \\ System32 \\ drivers \\ etc \\ hosts', 100.0, 55)
+begin_index:  55
+end_index:  66
+fuzzy search text:  % SystemRoot % \ System32 \ drivers \ etc \ hosts
+===============Final Stats===================
+Original question           : where is the hosts file located in windows 10
+# of indexed chunks         : 7
+# of retrieved candidates   : 1
+# of grounded candidates    : 1
+Top1 long answer            : <Tr> <Td> Microsoft Windows </Td> <Td> 3.1 </Td> <Td> % WinDir % \ HOSTS </Td> </Tr> <Tr> <Td> 95 , 98 , ME </Td> <Td> % WinDir % \ hosts </Td> </Tr> <Tr> <Td> NT , 2000 , XP , 2003 , Vista , 2008 , 7 , 2012 , 8 , 10 </Td> <Td> % SystemRoot % \ System32 \ drivers \ etc \ hosts </Td> </Tr> <Tr> <Td> Windows Mobile , Windows Phone </Td> <Td> </Td> <Td> Registry key under HKEY_LOCAL_MACHINE \ Comm \ Tcpip \ Hosts </Td> </Tr> <Tr> <Td> Apple Macintosh </Td> <Td> 9 and earlier </Td> <Td> Preferences or System folder </Td> </Tr> <Tr> <Td>
+Short answer                : % SystemRoot % \ System32 \ drivers \ etc \ hosts
+cut answer                  : % SystemRoot % \ System32 \ drivers \ etc \ hosts
+**grounded truth**          : ['% SystemRoot % \\ System32 \\ drivers \\ etc \\ hosts', '% SystemRoot % \\ System32 \\ drivers \\ etc \\ hosts', '% SystemRoot % \\ System32 \\ drivers \\ etc \\ hosts', '% SystemRoot % \\ System32 \\ drivers \\ etc \\ hosts', '% SystemRoot % \\ System32 \\ drivers \\ etc \\ hosts']
+Final (begin index, end index): (725, 736)
+All time: =============================
+indexing time: 0.21561050415039062s
+retrieving time: 2.160717010498047s
+grounding time: 0.0009987354278564453s
+ranking time: 0.0s
+finding long time: 0.0s
+refining time: 0.5242166519165039s
+answer2index time: 0.0009984970092773438s
+============================
+
+Example 25/40
+simplifying...
+char length: 157581
+token length: 31354
+Round 1: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The provided content does not directly answer the question about who sold the most records between Elvis and The Beatles. It contains sales figures for various artists but lacks a clear comparison or conclusion regarding Elvis and The Beatles specifically.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides a clear comparison between Elvis Presley and The Beatles, stating that The Beatles are considered the highest-selling band while Elvis is the highest-selling individual artist. This directly addresses the question of who sold more records.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content provides a comparison of record sales between Elvis Presley and The Beatles, stating that Elvis has 600 million certified units and The Beatles have 500 million. This directly answers the question of who sold more records.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+Round 2: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides a clear comparison between Elvis Presley and The Beatles, stating that The Beatles are considered the highest-selling band while Elvis is the highest-selling individual artist. This directly addresses the question of who sold more records.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('The Beatles', 100.0, 55)
+begin_index:  55
+end_index:  57
+fuzzy search text:  The Beatles
+===============Final Stats===================
+Original question           : who sold the most records elvis or the beatles
+# of indexed chunks         : 90
+# of retrieved candidates   : 7
+# of grounded candidates    : 7
+Top1 long answer            : , music videos as well as downloads of singles and full - length albums . Sales figures , such as those from Soundscan , which are sometimes published by Billboard magazine , have not been included in the certified units column . As of 2017 , based on both sales claims and certified units , The Beatles are considered the highest - selling band . Elvis Presley is considered the highest - selling individual artist based on sales claims and Rihanna is the highest - selling individual artist based on certified units . </P> <P> </P> <H2> Contents </H2> ( hide ) <Ul> <Li> 1 Definitions </Li> <Li> 2 Artists by reputed sales <Ul> <Li> 2.1 250 million or more records </Li> <Li> 2.2 200 million to 249 million records
+Short answer                : The Beatles
+cut answer                  : The Beatles
+**grounded truth**          : ['The Beatles', 'The Beatles', 'The Beatles', 'The Beatles']
+Final (begin index, end index): (185, 187)
+All time: =============================
+indexing time: 43.5636203289032s
+retrieving time: 23.658986568450928s
+grounding time: 0.006000041961669922s
+ranking time: 3.0740294456481934s
+finding long time: 0.0s
+refining time: 0.539046049118042s
+answer2index time: 0.002000093460083008s
+============================
+
+Example 26/40
+simplifying...
+char length: 12993
+token length: 2407
+# of candidates in rank pool: 1
+top_1:  ('son of Hans', 100.0, 37)
+begin_index:  37
+end_index:  40
+fuzzy search text:  son of Hans
+===============Final Stats===================
+Original question           : where does the last name hansen come from
+# of indexed chunks         : 7
+# of retrieved candidates   : 1
+# of grounded candidates    : 1
+Top1 long answer            : Hansen ( surname ) - wikipedia <H1> Hansen ( surname ) </H1> Jump to : navigation , search <P> Hansen or Hanssen ( Danish pronunciation : ( ˈhænsn̩ ) ) is a Scandinavian patronymic surname , meaning son of Hans . As of 2008 , it is the third most common surname in Denmark , shared by 4.3 % of the population . As of 2000 , Hansen is the single most common surname in Norway , not counting spelling variations such as Hanssen , which are also quite common
+Short answer                : son of Hans
+cut answer                  : son of Hans
+**grounded truth**          : ['Denmark', 'Norway', 'the Faroe Islands', 'the North German federal states of Schleswig - Holstein and Hamburg', 'Scandinavian', 'Scandinavian', 'a Scandinavian patronymic surname , meaning son of Hans']
+Final (begin index, end index): (37, 40)
+All time: =============================
+indexing time: 0.21923136711120605s
+retrieving time: 2.3559114933013916s
+grounding time: 0.0s
+ranking time: 0.0s
+finding long time: 0.0s
+refining time: 0.44460606575012207s
+answer2index time: 0.0009984970092773438s
+============================
+
+Example 27/40
+simplifying...
+char length: 62261
+token length: 11274
+Round 1: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it mentions the first Prime Minister of Australia, Edmund Barton, and provides context about the year 1901, which is relevant to the question about when the first Australian Prime Minister was elected.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it provides context about the first Prime Minister of Australia, Edmund Barton, and mentions the circumstances surrounding his appointment, which relates to the question about when the first Australian Prime Minister was elected.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content provided does not directly answer the question about when the first Australian Prime Minister was elected. However, it includes dates related to various Prime Ministers, which may imply some historical context. Since there is no clear answer, I will select the candidate with the most relevant content, which is ID 6, as it contains information about early Australian Prime Ministers.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6]
+Top candidate ID: 6
+Round 2: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 provides context about the first Prime Minister of Australia, Edmund Barton, and mentions the circumstances surrounding his appointment, which is relevant to the question about when the first Australian Prime Minister was elected.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 3, 6]
+Top candidate ID: 2
+# of candidates in rank pool: 1
+top_1:  ('Edmund Barton', 100.0, 49)
+begin_index:  49
+end_index:  51
+fuzzy search text:  Edmund Barton
+===============Final Stats===================
+Original question           : when was the first australian prime minister elected
+# of indexed chunks         : 33
+# of retrieved candidates   : 7
+# of grounded candidates    : 7
+Top1 long answer            : known as the Hopetoun Blunder , the governor - general , Lord Hopetoun , invited Sir William Lyne , the premier of the most populous state , New South Wales , to form a government . Lyne was unable to do so and returned his commission in favour of Edmund Barton , who became the first Prime Minister and led the inaugural government into and beyond the election . </Li> <Li> During the second parliament , three parties ( Free Trade , Protectionist and Labor ) had roughly equal representation in the House of Representatives . The leaders of the three parties , Alfred Deakin , George Reid and Chris
+Short answer                : Edmund Barton
+cut answer                  : Edmund Barton
+**grounded truth**          : ['Sir Edmund Barton', '1901']
+Final (begin index, end index): (2249, 2251)
+All time: =============================
+indexing time: 5.050739765167236s
+retrieving time: 9.000317096710205s
+grounding time: 0.0030014514923095703s
+ranking time: 3.0351738929748535s
+finding long time: 0.0s
+refining time: 0.5340712070465088s
+answer2index time: 0.0009999275207519531s
+============================
+
+Example 28/40
+simplifying...
+char length: 42351
+token length: 8495
+Round 1: 24 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 is the best candidate because it mentions Wilt Chamberlain, who is known for having the most 70-point games in NBA history, directly addressing the question.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 21 mentions Michael Jordan, who is known for having the most 70-point games in NBA history, making it the most relevant candidate to the question.",
+    "top_id": 21
+}
+Processing candidates with IDs: [21, 22, 23]
+Top candidate ID: 21
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9, ID 10, and ID 11 all mention Wilt Chamberlain, who is known for having the most 70-point games in NBA history. However, ID 9 provides the most context by mentioning a specific game date and score, making it the most relevant choice.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3, 4, and 5 all mention Wilt Chamberlain, who is known for having the most 70-point games in NBA history. However, ID 3 provides the most direct reference to Wilt Chamberlain's performance, making it the best choice.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 is the best candidate because it mentions Wilt Chamberlain, who is known for having the most 70-point games in NBA history, although it does not explicitly state the number of games.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 19, 20]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 and ID 13 both mention Wilt Chamberlain, who is known for having the most 70-point games in NBA history. However, ID 12 provides a more complete context with a specific game date and details, making it the stronger candidate.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 15 mentions Wilt Chamberlain, who is known for having the most 70-point games in NBA history, making it the most relevant candidate to the question.",
+    "top_id": 15
+}
+Processing candidates with IDs: [15, 16, 17]
+Top candidate ID: 15
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions Wilt Chamberlain and Kobe Bryant, who are both known for their high-scoring games in NBA history. However, it does not explicitly state who has the most 70-point games. Based on historical knowledge, Wilt Chamberlain holds the record for the most 70-point games in NBA history, making the references to him relevant. Therefore, ID 0 is the best candidate as it mentions Chamberlain, who is the correct answer.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+Round 2: 8 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 18 mentions Wilt Chamberlain, who is known for having the most 70-point games in NBA history, making it the most relevant candidate.",
+    "top_id": 18
+}
+Processing candidates with IDs: [18, 21]
+Top candidate ID: 18
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions Wilt Chamberlain multiple times, indicating he is a key player associated with high-scoring games. However, it does not explicitly state who has the most 70-point games. Based on historical knowledge, Wilt Chamberlain is known to hold this record, making the references to him relevant. Therefore, ID 0 is the best candidate as it contains the most mentions of Chamberlain, who is likely the answer.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9, ID 12, and ID 15 all mention Wilt Chamberlain, who is known for having the most 70-point games in NBA history. However, none of the candidates explicitly state that he holds the record for the most 70-point games. Since ID 9 is the first mention of Wilt Chamberlain in the context of a game, it is the most relevant candidate.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12, 15]
+Top candidate ID: 9
+Round 3: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions Wilt Chamberlain and Kobe Bryant, both of whom are known for having multiple 70-point games in NBA history. However, it does not clearly state who has the most. Based on historical knowledge, Wilt Chamberlain holds the record for the most 70-point games. Therefore, the best candidate is the one mentioning Wilt Chamberlain, which is ID 0.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 9, 18]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Wilt Chamberlain', 100.0, 54)
+begin_index:  54
+end_index:  56
+fuzzy search text:  Wilt Chamberlain
+===============Final Stats===================
+Original question           : who has the most 70 point games in nba history
+# of indexed chunks         : 29
+# of retrieved candidates   : 24
+# of grounded candidates    : 24
+Top1 long answer            : Team </Th> <Th> Opponent </Th> <Th> Score </Th> <Th> MP </Th> <Th> FGM </Th> <Th> FGA </Th> <Th> 3PM </Th> <Th> 3PA </Th> <Th> FTM </Th> <Th> FTA </Th> <Th> Notes </Th> <Th> Ref . </Th> </Tr> <Tr> <Th_colspan="4"> Scoring by quarter </Th> </Tr> <Tr> <Td> </Td> <Td> 100 </Td> <Td> Chamberlain , Wilt Wilt Chamberlain * </Td> <Td> 000000001962 - 03 - 02 - 0000 March 2 , 1962 </Td> <Td> 23 </Td> <Td> 18 </Td> <Td> 28 </Td> <Td> 31 </Td> <Td> Philadelphia Warriors </Td> <Td> New York Knicks </Td> <Td> 169 -- 147 </Td> <Td> 48 </Td> <Td> 36 </Td> <Td> 63 </Td> <Td> -- </Td> <Td> -- </Td> <Td> 28 </Td> <Td> 32 </Td> <Td> </Td> <Td> </Td> </Tr> <Tr> <Td> </Td> <Td> 81 </Td> <Td> Bryant , Kobe Kobe Bryant </Td> <Td> 000000002006 - 01
+Short answer                : Wilt Chamberlain
+cut answer                  : Wilt Chamberlain
+**grounded truth**          : ['Wilt Chamberlain', 'Wilt Chamberlain *', 'Chamberlain , Wilt', 'Booker , Devin', 'Wilt Chamberlain']
+Final (begin index, end index): (454, 456)
+All time: =============================
+indexing time: 3.485265016555786s
+retrieving time: 8.830154180526733s
+grounding time: 0.005999326705932617s
+ranking time: 6.24657940864563s
+finding long time: 0.0s
+refining time: 0.5274677276611328s
+answer2index time: 0.0010006427764892578s
+============================
+
+Example 29/40
+simplifying...
+char length: 36553
+token length: 6832
+Round 1: 15 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions the states that use the most natural gas for electricity production, which implies where natural gas is found and utilized in the US.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides specific information about the leading gas-producing areas in the United States, including Texas, Pennsylvania, and Louisiana, which directly answers the question about where natural gas is found in the US.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 4 is the best candidate because it provides specific information about the top producing gas fields in the United States, including their locations, which directly answers the question about where natural gas is found in the US.",
+    "top_id": 4
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 4
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides information about gas fields in the US, including coalbed methane wells and the Eagle Ford trend, which are relevant to the question about where natural gas is found. ID 7 discusses shale gas as a key source of natural gas, which is also pertinent. However, ID 6 gives a broader context about various gas fields, making it slightly more relevant.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 12 provides historical context about natural gas discoveries and mentions that natural gas was usually found near gas wells, which is relevant to the question about where natural gas is found in the US. However, it does not provide specific locations. ID 13 discusses the pipeline network and imports/exports of natural gas, which indirectly relates to its availability in the US. ID 14 mentions liquefied natural gas and proposed export terminals, but does not directly answer the question. Therefore, ID 12 is the most relevant despite its limitations.",
+    "top_id": 12
+}
+Processing candidates with IDs: [12, 13, 14]
+Top candidate ID: 12
+Round 2: 5 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides specific information about the leading gas-producing areas in the United States, including Texas, Pennsylvania, and Louisiana, which directly answers the question about where natural gas is found in the US.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 4, 6]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions the states that use the most natural gas for electricity production, which implies where natural gas is found and utilized in the US.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 12]
+Top candidate ID: 9
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides specific information about the leading gas-producing areas in the United States, directly addressing the question of where natural gas is found.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 9]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Texas', 100.0, 54)
+begin_index:  54
+end_index:  55
+fuzzy search text:  Texas
+===============Final Stats===================
+Original question           : where is natural gas found in the us
+# of indexed chunks         : 17
+# of retrieved candidates   : 15
+# of grounded candidates    : 15
+Top1 long answer            : </P> <P> The US has been the world 's largest producer of natural gas since 2009 , when US production surpassed Russia 's . In 2013 , the US produced 30.0 trillion cubic feet ( TCF ) of marketed gas . The leading gas - producing area in the United States in 2013 was Texas ( 7,545 Billion cubic feet ( BCF ) , followed by Pennsylvania ( 3,259 BCF ) , and Louisiana ( 2,407 BCF ) . </P> <P> US Natural gas production achieved new record highs for each year from 2011 through 2015 . Marketed natural gas production in 2015 was 28.8 trillion cubic feet , a 5.4 % increase over 2014 , and a 52 %
+Short answer                : Texas
+cut answer                  : Texas
+**grounded truth**          : ['Texas', 'Louisiana', 'Arkansas', 'New Mexico', 'Colorado', 'Pennsylvania', 'West Virginia', 'Wyoming', 'Pennsylvania', 'West Virginia', 'Texas', 'Louisiana', 'Arkansas', 'New Mexico', 'Colorado', 'Wyoming']
+Final (begin index, end index): (224, 225)
+All time: =============================
+indexing time: 1.5801808834075928s
+retrieving time: 7.897969007492065s
+grounding time: 0.003000497817993164s
+ranking time: 4.890902042388916s
+finding long time: 0.0s
+refining time: 0.4376208782196045s
+answer2index time: 0.0s
+============================
+
+Example 30/40
+simplifying...
+char length: 61664
+token length: 12329
+Round 1: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 contains the specific air date for The Flash Season 4 Episode 3, which is October 24, 2017, making it the most relevant candidate to answer the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('October 24 , 2017', 96.96969696969697, 58)
+begin_index:  58
+end_index:  62
+fuzzy search text:  October 24 , 2017
+===============Final Stats===================
+Original question           : when does the flash season 4 episode 3 air
+# of indexed chunks         : 32
+# of retrieved candidates   : 2
+# of grounded candidates    : 2
+Top1 long answer            : Gypsy . Wondering how Deacon gained his powers being absent during the particle accelerator incident , Barry and Joe learn from Deacon that there are `` others '' . </Td> </Tr> <Tr> <Th> 72 </Th> <Td> </Td> <Td> `` Luck Be a Lady '' </Td> <Td> Armen V. Kevorkian </Td> <Td> Sam Chalsen & Judalina Neira </Td> <Td> October 24 , 2017 ( 2017 - 10 - 24 ) </Td> <Td> T27. 13403 </Td> <Td> 2.62 </Td> </Tr> <Tr> <Td_colspan="8"> In flashbacks , the Thinker observes Becky Sharpe , a woman with seemingly unending bad luck , and determines that she will be easily manipulated . In the present , Becky robs a bank , and gets away when Barry
+Short answer                : October 24, 2017
+cut answer                  : October 24 , 2017
+**grounded truth**          : ['October 24 , 2017', 'October 24 , 2017', 'October 24 , 2017', 'October 24 , 2017', 'October 24 , 2017']
+Final (begin index, end index): (1068, 1072)
+All time: =============================
+indexing time: 5.531169176101685s
+retrieving time: 10.528641700744629s
+grounding time: 0.00099945068359375s
+ranking time: 0.9977340698242188s
+finding long time: 0.0s
+refining time: 0.48767662048339844s
+answer2index time: 0.0010004043579101562s
+============================
+
+Example 31/40
+simplifying...
+char length: 33903
+token length: 6489
+Round 1: 12 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about the largest bill in American money. However, ID 9 provides context about large denomination currency and mentions that large bills were used for significant transactions, which is somewhat relevant to the topic.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate as it mentions the $5,000 bill, which is one of the largest denominations of American currency ever issued. However, it does not explicitly state that it is the largest bill, but it is the closest relevant information available.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions various denominations of American currency, including the $100,000 bill, which is the largest denomination ever issued. Therefore, it is relevant to the question about the largest bill in American money.",
+    "top_id": 8
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 8
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about the largest bill in American money. However, ID 0 provides relevant information about high-denomination banknotes, which includes notes of $500 or higher, hinting at the existence of large bills. Therefore, it is the most relevant choice.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+Round 2: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides relevant information about high-denomination banknotes in the United States, including the existence of $500 and higher notes, which directly relates to the question about the largest bill in American money.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 3, 8]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content does not directly answer the question about the largest bill in American money. It discusses the history and context of large denomination bills but does not specify which bill is the largest.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "Neither candidate directly answers the question about the largest bill in American money. However, ID 0 provides relevant historical context about large-denomination currency, which includes bills of $500 or higher, suggesting that these are among the largest bills. ID 9 discusses the use of large bills but does not specify which is the largest. Therefore, ID 0 is the more relevant choice.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 9]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('$500', 100.0, 60)
+begin_index:  60
+end_index:  61
+fuzzy search text:  $500
+===============Final Stats===================
+Original question           : what is the largest bill in american money
+# of indexed chunks         : 20
+# of retrieved candidates   : 12
+# of grounded candidates    : 12
+Top1 long answer            : High - denomination United States banknotes </Li> <Li> 7 See also </Li> <Li> 8 References <Ul> <Li> 8.1 Footnotes </Li> <Li> 8.2 Notes </Li> <Li> 8.3 Bibliography </Li> </Ul> </Li> <Li> 9 External links </Li> </Ul> <P> </P> <H2> Overview and history ( edit ) </H2> <P> Large - denomination currency ( i.e. , banknotes with a face value of $500 or higher ) had been used in the United States since the late 18th century . The first $500 note was issued by the Province of North Carolina , authorized by legislation dated May 10 , 1780 . Virginia quickly followed suit and authorized the printing of $500 and $1,000 notes on October 16 , 1780 and $2,000 notes on May 7 , 1781 . High - denomination treasury
+Short answer                : $500
+cut answer                  : $500
+**grounded truth**          : ['$100', '$100', '$100', '$100']
+Final (begin index, end index): (230, 231)
+All time: =============================
+indexing time: 1.8578665256500244s
+retrieving time: 6.1194212436676025s
+grounding time: 0.0020008087158203125s
+ranking time: 4.641511678695679s
+finding long time: 0.0s
+refining time: 0.48069000244140625s
+answer2index time: 0.0010006427764892578s
+============================
+
+Example 32/40
+simplifying...
+char length: 12210
+token length: 2347
+Round 1: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 1 is the best candidate because it explicitly states that Bette Midler portrayed Mary Rose Foster in the film 'The Rose', directly answering the question.",
+    "top_id": 1
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 1
+# of candidates in rank pool: 1
+top_1:  ('The Rose', 100.0, 70)
+begin_index:  70
+end_index:  72
+fuzzy search text:  The Rose
+===============Final Stats===================
+Original question           : who did bette midler portray in the rose
+# of indexed chunks         : 7
+# of retrieved candidates   : 3
+# of grounded candidates    : 3
+Top1 long answer            : </Li> <Li> 3 Production </Li> <Li> 4 Reception </Li> <Li> 5 Awards and honors <Ul> <Li> 5.1 Others </Li> </Ul> </Li> <Li> 6 Home video </Li> <Li> 7 See also </Li> <Li> 8 References </Li> <Li> 9 External links </Li> </Ul> <P> </P> <H2> Plot ( edit ) </H2> <P> In late 1969 , Mary Rose Foster ( Bette Midler ) is a famous rock and roll diva known as The Rose . Although a success , she is burnt out and lonely but is kept working by her gruff , greedy manager and promoter Rudge Campbell ( Alan Bates ) . Though loud and brassy , Rose is an
+Short answer                : The Rose
+cut answer                  : The Rose
+**grounded truth**          : ['Mary Rose Foster', 'Mary Rose Foster ( Bette Midler ) is a famous rock and roll diva known as The Rose', 'Mary Rose Foster', 'Mary Rose Foster']
+Final (begin index, end index): (520, 522)
+All time: =============================
+indexing time: 0.22057271003723145s
+retrieving time: 4.40381932258606s
+grounding time: 0.0010013580322265625s
+ranking time: 1.224684476852417s
+finding long time: 0.0s
+refining time: 0.47232937812805176s
+answer2index time: 0.0s
+============================
+
+Example 33/40
+simplifying...
+char length: 44103
+token length: 8326
+Round 1: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides the most relevant information regarding the 2017 national championship in volleyball, specifically mentioning that Ohio State won against BYU with a score of 3-0.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('Ohio State', 100.0, 51)
+begin_index:  51
+end_index:  53
+fuzzy search text:  Ohio State
+===============Final Stats===================
+Original question           : who won the national championship in volleyball 2017
+# of indexed chunks         : 28
+# of retrieved candidates   : 3
+# of grounded candidates    : 3
+Top1 long answer            : 2 ) </Td> <Td> 3 - 2 </Td> <Td> Lewis ( 27 - 4 ) </Td> <Td_colspan="3"> 3rd -- UC Irvine and Penn State 5th -- Hawaii and Pfeiffer </Td> </Tr> <Tr> <Td> 2016 Details </Td> <Td> University Park , Pennsylvania ( Penn State ) </Td> <Td> Rec Hall </Td> <Td> Ohio State ( 31 - 2 ) </Td> <Td> 3 - 0 </Td> <Td> BYU ( 27 - 4 ) </Td> <Td_colspan="3"> 3rd -- UCLA and Long Beach State 5th -- Erskine and George Mason </Td> </Tr> <Tr> <Td> 2017 Details </Td> <Td> Columbus , Ohio ( Ohio State ) </Td> <Td> St. John Arena </Td> <Td> Ohio State ( 32 -- 2 ) </Td> <Td> 3 - 0 </Td> <Td> BYU ( 26 - 5 ) </Td> <Td_colspan="3"> 3rd -- Hawaii and Long Beach State 5th -- Barton and Penn State </Td> </Tr> <Tr> <Td> 2018 Details </Td> <Td> Los Angeles ( UCLA ) </Td> <Td> Pauley Pavilion </Td> <Td> </Td> <Td> </Td> <Td> </Td> <Td_colspan="3"> </Td> </Tr>
+Short answer                : Ohio State
+cut answer                  : Ohio State
+**grounded truth**          : ['Ohio State', 'Ohio State', 'Ohio State', 'Ohio State', 'Ohio State']
+Final (begin index, end index): (3651, 3653)
+All time: =============================
+indexing time: 3.0167970657348633s
+retrieving time: 11.181521892547607s
+grounding time: 0.0s
+ranking time: 1.167940378189087s
+finding long time: 0.0s
+refining time: 0.47678494453430176s
+answer2index time: 0.0010004043579101562s
+============================
+
+Example 34/40
+simplifying...
+char length: 58284
+token length: 10726
+Round 1: 7 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it provides a direct answer to the question by stating that the Nobel Prize in Literature was first awarded in 1901, along with additional context about the first laureate.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content does not provide a clear answer to the question about when the Nobel Prize for Literature was first awarded. However, it does mention the year 1901, which is relevant as it is the year the prize was first awarded. Therefore, ID 6 is the most relevant candidate.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "None of the candidates directly answer the question about when the Nobel Prize for Literature was first awarded. However, ID 3 and ID 4 mention the year 1900, which is relevant to the establishment of the Nobel Prize. ID 3 is slightly more relevant as it discusses the Royal Swedish Academy's role in awarding the Prize in Literature, which is directly related to the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+Round 2: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it explicitly states that the first Nobel Prize in Literature was awarded in 1901 to Sully Prudhomme, directly answering the question.",
+    "top_id": 2
+}
+Processing candidates with IDs: [2, 3, 6]
+Top candidate ID: 2
+# of candidates in rank pool: 1
+top_1:  ('1901', 100.0, 49)
+begin_index:  49
+end_index:  50
+fuzzy search text:  1901
+===============Final Stats===================
+Original question           : when was the nobel prize for literature first awarded
+# of indexed chunks         : 28
+# of retrieved candidates   : 7
+# of grounded candidates    : 7
+Top1 long answer            : Nobel Laureate selections </Li> <Li> 5.2 Nationality - based criticism </Li> <Li> 5.3 Overlooked literary achievements </Li> </Ul> </Li> <Li> 6 Similar international prizes </Li> <Li> 7 See also </Li> <Li> 8 References </Li> <Li> 9 External links </Li> </Ul> <P> </P> <H2> Background ( edit ) </H2> In 1901 , French poet and essayist Sully Prudhomme ( 1839 -- 1907 ) was the first person to be awarded the Nobel Prize in Literature , `` in special recognition of his poetic composition , which gives evidence of lofty idealism , artistic perfection and a rare combination of the qualities of both heart and intellect . '' <P> Alfred Nobel stipulated in his last will and testament that his money be used to create a series of prizes for those who confer the `` greatest benefit on mankind '' in physics , chemistry , peace , physiology or medicine ,
+Short answer                : 1901
+cut answer                  : 1901
+**grounded truth**          : ['1901', '1901', '1901', '1901', '1901']
+Final (begin index, end index): (699, 700)
+All time: =============================
+indexing time: 3.9764373302459717s
+retrieving time: 7.9872119426727295s
+grounding time: 0.0019996166229248047s
+ranking time: 3.010162353515625s
+finding long time: 0.0s
+refining time: 0.5251860618591309s
+answer2index time: 0.0010023117065429688s
+============================
+
+Example 35/40
+simplifying...
+char length: 28337
+token length: 5451
+Round 1: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it specifically mentions Scarlett Johansson as the voice of Ash, directly answering the question.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+# of candidates in rank pool: 1
+top_1:  ('Scarlett Johansson', 100.0, 44)
+begin_index:  44
+end_index:  46
+fuzzy search text:  Scarlett Johansson
+===============Final Stats===================
+Original question           : who does the voice of ash in sing
+# of indexed chunks         : 15
+# of retrieved candidates   : 3
+# of grounded candidates    : 3
+Top1 long answer            : pig who gave up her teenage music dreams to become a devoted wife to Norman , and mother to their 25 piglets . </Li> <Li> Seth MacFarlane as Mike , an arrogant street musician mouse with a big Frank Sinatra-esque voice . </Li> <Li> Scarlett Johansson as Ash , a teenage porcupine punk rocker who takes part in an alternative - rock music duo with her boyfriend Lance . </Li> <Li> John C. Reilly as Eddie Noodleman , a sheep and Buster 's friend who doubts the future of the theater . </Li> <Li> Tori Kelly as Meena , a teenage elephant with an exquisite singing voice and severe stage
+Short answer                : Scarlett Johansson
+cut answer                  : Scarlett Johansson
+**grounded truth**          : ['Scarlett Johansson', 'Scarlett Johansson', 'Scarlett Johansson', 'Scarlett Johansson']
+Final (begin index, end index): (1494, 1496)
+All time: =============================
+indexing time: 1.0719966888427734s
+retrieving time: 9.021863222122192s
+grounding time: 0.0s
+ranking time: 1.4261565208435059s
+finding long time: 0.0s
+refining time: 0.45497965812683105s
+answer2index time: 0.0s
+============================
+
+Example 36/40
+simplifying...
+char length: 31028
+token length: 5647
+Round 1: 12 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 5 is the best candidate because it mentions Stephen Colbert, who is known for being a host of 'The Late Show' and was a correspondent on 'The Daily Show'.",
+    "top_id": 5
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 5
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it mentions Trevor Noah, who is the current host of The Daily Show and was a correspondent during Jon Stewart's tenure, directly answering the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The best candidate is ID 6, which discusses Stephen Colbert's tenure as a correspondent on The Daily Show and mentions his role as the host of The Late Show. This directly answers the question about the host of the Late Show who was once a correspondent for The Daily Show.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 9 is the best candidate because it mentions John Oliver, who is known for being a correspondent on The Daily Show and later became the host of Last Week Tonight, which is a late-night show. This aligns with the question about the host of a late show who was once a correspondent.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9, 10, 11]
+Top candidate ID: 9
+Round 2: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "The content mentions John Oliver, who is known for being a host of 'The Late Show' and was a correspondent on 'The Daily Show'. This makes ID 9 the most relevant candidate to the question.",
+    "top_id": 9
+}
+Processing candidates with IDs: [9]
+Top candidate ID: 9
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 5 is the best candidate because it provides detailed information about Stephen Colbert, who is a former correspondent for The Daily Show and is currently the host of The Late Show.",
+    "top_id": 5
+}
+Processing candidates with IDs: [0, 5, 6]
+Top candidate ID: 5
+Round 3: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 5 is the best candidate because it mentions Stephen Colbert, who is known for being a host of 'The Late Show' and was a correspondent on 'The Daily Show'.",
+    "top_id": 5
+}
+Processing candidates with IDs: [5, 9]
+Top candidate ID: 5
+# of candidates in rank pool: 1
+top_1:  ('Stephen Colbert', 100.0, 49)
+begin_index:  49
+end_index:  51
+fuzzy search text:  Stephen Colbert
+===============Final Stats===================
+Original question           : host of the late show who was once a correspondent for the daily show
+# of indexed chunks         : 18
+# of retrieved candidates   : 12
+# of grounded candidates    : 12
+Top1 long answer            : 18 , 2014 </Td> <Td> Left to co-anchor `` Weekend Update '' on Saturday Night Live . Shortest correspondent tenure as of 2015 . Was among the former correspondents who made an appearance on Jon Stewart 's final episode on August 6 , 2015 . </Td> </Tr> <Tr> <Td> Stephen Colbert </Td> <Td> June 26 , 1997 </Td> <Td> September 26 , 2005 </Td> <Td> `` Even Stephven '' , `` This Week In God '' , `` The Jobbing of America '' . Stephen Colbert hosted The Daily Show six times ( January 24 , 2001 ; February 20 and 22 , 2001 ; March 26 -- 27 , 2001 ; April 3 and 5 , 2001 ; May 2 -- 3 , 2001 ; March 6 , 2003 ; July 6 , 2004 ) . Although Colbert left The Daily Show team in mid-2005 , through 2010 Stewart frequently `` tossed '' to him at The Colbert Report at the end of a show . Colbert has also made a number of Daily Show cameos since 2005 , particularly in reference to his mock `` presidential campaigns '' in 2007 / 08 and 2011 / 12 , and Stewart 's stewardship of Colbert SuperPAC in 2011 . With
+Short answer                : Stephen Colbert
+cut answer                  : Stephen Colbert
+**grounded truth**          : ['Craig Kilborn', 'Stephen Colbert', 'Stephen Colbert', 'Stephen Colbert', 'Stephen Colbert']
+Final (begin index, end index): (1419, 1421)
+All time: =============================
+indexing time: 1.2599236965179443s
+retrieving time: 5.714338302612305s
+grounding time: 0.0019991397857666016s
+ranking time: 4.880919694900513s
+finding long time: 0.0s
+refining time: 0.5512964725494385s
+answer2index time: 0.0010018348693847656s
+============================
+
+Example 37/40
+simplifying...
+char length: 9887
+token length: 1739
+Round 1: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 provides relevant historical context about tug-of-war being contested in the Summer Olympics from 1900 to 1920, which directly relates to the question about when it was last an official Olympic sport.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1]
+Top candidate ID: 0
+# of candidates in rank pool: 1
+top_1:  ('1920', 100.0, 60)
+begin_index:  60
+end_index:  61
+fuzzy search text:  1920
+===============Final Stats===================
+Original question           : when was the last time tug-of-war was an official olympic sport
+# of indexed chunks         : 7
+# of retrieved candidates   : 2
+# of grounded candidates    : 2
+Top1 long answer            : <Li> 2000 </Li> </Ul> <Ul> <Li> </Li> <Li> 2008 </Li> <Li> 2012 </Li> <Li> 2016 </Li> <Li> 2020 </Li> </Ul> </Td> </Tr> <Tr> <Td_colspan="2"> <Ul> <Li> Medalists </Li> </Ul> </Td> </Tr> </Table> Tug of war competition in 1904 Summer Olympics <P> Tug of war was contested as a team event in the Summer Olympics at every Olympiad from 1900 to 1920 . Originally the competition was entered by groups called clubs . A country could enter more than one club in the competition , making it possible for one country to earn multiple medals . This happened in 1904 , when the United States won all three medals , and
+Short answer                : 1920
+cut answer                  : 1920
+**grounded truth**          : ['1920', '1920', '1920', '1920', '1920']
+Final (begin index, end index): (200, 201)
+All time: =============================
+indexing time: 0.15599966049194336s
+retrieving time: 2.8462438583374023s
+grounding time: 0.0010006427764892578s
+ranking time: 1.9573652744293213s
+finding long time: 0.0s
+refining time: 0.5557963848114014s
+answer2index time: 0.0s
+============================
+
+Example 38/40
+simplifying...
+char length: 57347
+token length: 11245
+Round 1: 9 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 0 is the best candidate because it provides the specific information that zinc was added to pennies starting in 1982, which directly answers the question.",
+    "top_id": 0
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 0
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 provides relevant information about the change in the composition of pennies, specifically mentioning that the cent's composition was changed in 1982 to include zinc. This directly answers the question about when zinc was added to pennies.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3, 4, 5]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 6 provides relevant information about the change in composition of pennies, specifically mentioning that the composition changed to copper-plated zinc in mid-1982, which indicates when zinc was added to pennies. This directly addresses the question.",
+    "top_id": 6
+}
+Processing candidates with IDs: [6, 7, 8]
+Top candidate ID: 6
+Round 2: 3 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it provides information about the change in composition of the penny in 1982, specifically mentioning the introduction of zinc and the context behind it.",
+    "top_id": 3
+}
+Processing candidates with IDs: [0, 3, 6]
+Top candidate ID: 3
+# of candidates in rank pool: 1
+top_1:  ('1982', 100.0, 55)
+begin_index:  55
+end_index:  56
+fuzzy search text:  1982
+===============Final Stats===================
+Original question           : when did they start adding zinc to pennies
+# of indexed chunks         : 29
+# of retrieved candidates   : 9
+# of grounded candidates    : 9
+Top1 long answer            : radiologists pointed out that the radiodensity of the metal inside the respiratory and gastrointestinal tracts was close to that of soft tissue , and the coins would therefore be difficult to detect in X-ray imaging . One aluminum cent was donated to the Smithsonian Institution . </P> <P> The cent 's composition was changed in 1982 because the value of the copper in the coin started to rise above one cent . Some 1982 pennies used the 97.5 % zinc composition , while others used the 95 % copper composition . With the exception of 2009 bicentennial cents minted specifically for collectors , United States cents minted after 1982 have been zinc with copper - plating . In Fiscal Year 2013 , the average one - cent piece minted cost the U.S. Mint 1.83 cents , down from 2.41 cents apiece in FY 2011 . </P> <P> The bronze and copper cents can be distinguished from the newer zinc cents
+Short answer                : 1982
+cut answer                  : 1982
+**grounded truth**          : ['1864', '1943', '1864', '1864 -- 1942', '1864']
+Final (begin index, end index): (1385, 1386)
+All time: =============================
+indexing time: 4.365201711654663s
+retrieving time: 7.847691059112549s
+grounding time: 0.0019986629486083984s
+ranking time: 3.438225507736206s
+finding long time: 0.0s
+refining time: 0.7233383655548096s
+answer2index time: 0.0009989738464355469s
+============================
+
+Example 39/40
+simplifying...
+char length: 30755
+token length: 5640
+Round 1: 4 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it provides a detailed answer about the specific location where a microchip is implanted in dogs, directly addressing the question.",
+    "top_id": 3
+}
+Processing candidates with IDs: [3]
+Top candidate ID: 3
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 2 is the best candidate because it provides information about the implantation process of a microchip in animals, including dogs, and mentions that it is placed under the skin, which directly relates to the question.",
+    "top_id": 2
+}
+Processing candidates with IDs: [0, 1, 2]
+Top candidate ID: 2
+Round 2: 2 candidates remaining.
+================================
+Attempt 1/1 
+Raw response from LLM: {
+    "reasoning": "ID 3 is the best candidate because it specifically mentions the location where microchips are inserted in dogs, stating that they are usually inserted below the skin at the back of the neck between the shoulder blades.",
+    "top_id": 3
+}
+Processing candidates with IDs: [2, 3]
+Top candidate ID: 3
+# of candidates in rank pool: 1
+top_1:  ('back of the neck', 100.0, 64)
+begin_index:  64
+end_index:  68
+fuzzy search text:  back of the neck
+===============Final Stats===================
+Original question           : where does the microchip go in a dog
+# of indexed chunks         : 15
+# of retrieved candidates   : 4
+# of grounded candidates    : 4
+Top1 long answer            : . </P> Example of an RFID scanner used with animal microchip implants . <P> These components are encased in biocompatible soda lime or borosilicate glass and hermetically sealed . Barring rare complications , dogs and cats are unaffected by them . </P> <H2> Implant location ( edit ) </H2> <P> In dogs and cats , chips are usually inserted below the skin at the back of the neck between the shoulder blades on the dorsal midline . According to one reference , continental European pets get the implant in the left side of the neck . The chip can often be felt under the skin . Thin layers of connective tissue form around the implant and hold it in place . </P> <P> Horses are microchipped on the left side of the neck , halfway between the poll and withers and approximately one inch below the midline of the mane , into the nuchal ligament . </P> <P> Birds are implanted in their breast muscles . Proper restraint is necessary
+Short answer                : back of the neck
+cut answer                  : back of the neck
+**grounded truth**          : ['usually inserted below the skin at the back of the neck between the shoulder blades on the dorsal midline', 'below the skin at the back of the neck between the shoulder blades on the dorsal midline', 'below the skin at the back of the neck between the shoulder blades on the dorsal midline', 'usually inserted below the skin at the back of the neck between the shoulder blades on the dorsal midline']
+Final (begin index, end index): (1144, 1148)
+All time: =============================
+indexing time: 1.1079275608062744s
+retrieving time: 4.349907159805298s
+grounding time: 0.0009984970092773438s
+ranking time: 2.4156529903411865s
+finding long time: 0.0s
+refining time: 0.49926042556762695s
+answer2index time: 0.0010006427764892578s
+============================
+
+Example 40/40
+simplifying...
+char length: 4402
+token length: 875
+# of candidates in rank pool: 1
+top_1:  ('Loop', 100.0, 0)
+begin_index:  0
+end_index:  1
+fuzzy search text:  Loop
+===============Final Stats===================
+Original question           : an edge that is between a vertex and itself is a
+# of indexed chunks         : 3
+# of retrieved candidates   : 1
+# of grounded candidates    : 1
+Top1 long answer            : Loop ( graph Theory ) - wikipedia <H1> Loop ( graph Theory ) </H1> Jump to : navigation , search A graph with a loop on vertex 1 <P> In graph theory , a loop ( also called a self - loop or a `` buckle '' ) is an edge that connects a vertex to itself . A simple graph contains no loops . </P> <P> Depending on the context , a graph or a multigraph may be defined so as to either allow or disallow the presence of loops ( often in concert with allowing or disallowing multiple
+Short answer                : Loop
+cut answer                  : Loop
+**grounded truth**          : ["loop ( also called a self - loop or a `` buckle '' )", 'loop', 'loop', 'loop', 'loop']
+Final (begin index, end index): (0, 1)
+All time: =============================
+indexing time: 0.030998706817626953s
+retrieving time: 1.4606189727783203s
+grounding time: 0.0s
+ranking time: 0.000997781753540039s
+finding long time: 0.0s
+refining time: 0.4713912010192871s
+answer2index time: 0.00099945068359375s
+============================
+Two files are generated: 
+ data/gpt40_context.jsonl 
+ data/gpt40_predictions.json
+Make sure to rename the files unless you want to append to the end.

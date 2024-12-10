@@ -34,7 +34,7 @@ def get_llm_config(llm_provider=LLM_PROVIDER):
                     "model": "llama3.2:latest",
                     "api_key": "ollama",  # Replace with actual key if necessary
                     "base_url": "http://localhost:11434/v1",
-                    "temperature": 0.7,  # Use 0.0 for deterministic results
+                    "temperature": 0.0,  # Use 0.0 for deterministic results
                 }
             ]
         },
@@ -44,7 +44,7 @@ def get_llm_config(llm_provider=LLM_PROVIDER):
                     "model": "gpt-4o-mini",
                     "api_key": os.getenv("OPENAI_API_KEY"),  # Replace with actual API key
                     "base_url": "https://api.openai.com/v1",
-                    "temperature": 0.7,  # Set temperature for OpenAI
+                    "temperature": 0.0,  # Set temperature for OpenAI
                 }
             ]
         },
