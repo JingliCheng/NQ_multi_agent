@@ -4,6 +4,9 @@ import datetime
 import json
 from natural_questions import text_utils
 from abc import ABC, abstractmethod
+import tiktoken
+import time
+
 
 
 def strip_end_punctuation(text):
@@ -28,7 +31,6 @@ def get_nq_tokens(simplified_nq_example):
 
 def get_short_answers(nq_example):
     document_tokens = get_nq_tokens(nq_example)
-    print(len(nq_example['annotations']))
     short_answers = []
     for annotation in nq_example['annotations']:
         if annotation['short_answers']:
@@ -39,6 +41,35 @@ def get_short_answers(nq_example):
                     )
                 short_answers.append(short_answer_text)
     return short_answers
+
+
+class TimeLogger:
+    def __init__(self):
+        self.start_time = time.time()
+        self.time_log = {}
+        self.start_log = {}
+
+    def start(self, message):
+        self.start_log[message] = time.time()
+
+    def end(self, message):
+        self.time_log[message] = time.time() - self.start_log.get(message, self.start_time)
+
+    def show_time(self, message=None):
+        if message is None:
+            print('All time: =============================')
+            for message in self.time_log:
+                print(f"{message} time: {self.time_log[message]}s")
+            print('============================')
+        elif message in self.time_log:
+            print(f"{message} time: {self.time_log[message]}s")
+        elif message in self.start_log:
+            print(f"{message} time continuing: {time.time() - self.start_log[message]}s")
+        else:
+            print(f"{message} not found")
+
+    def get_log(self):
+        return self.time_log
 
 
 class BaseAgentSystem:
@@ -57,7 +88,7 @@ class BaseAgentSystem:
         end_token = start_token + len(seq.split(' '))
         return start_token, end_token
 
-    def format_prediction(self, example: Dict, prediction: str, score: float) -> Dict:
+    def format_prediction(self, example: Dict, prediction: List, score: float) -> Dict:
         """
         Format the prediction into the format of Natural Questions evaluation
         
@@ -86,6 +117,7 @@ class BaseAgentSystem:
             }, ... ]
         }
         """
+        pred_str = ' '.join(example['document_text'].split(" ")[prediction[0]:prediction[1]])
         prediction_dict = {
             'example_id': example['example_id'],
             'long_answer': {'start_byte': -1, 'end_byte': -1, 'start_token': -1, 'end_token': -1},
@@ -93,39 +125,66 @@ class BaseAgentSystem:
             'short_answers': [{'start_byte': -1, 'end_byte': -1, 'start_token': -2, 'end_token': -1}],
             'short_answers_score': -1,
             'yes_no_answer': 'NONE',
-            'prediction': prediction
+            'prediction': pred_str
         }
         
-        if prediction in example['document_text']:
-            start_token, end_token = self._find_seq_index(example['document_text'], prediction)
-            prediction_dict['short_answers'][0]['start_token'] = start_token
-            prediction_dict['short_answers'][0]['end_token'] = end_token
-            prediction_dict['short_answers_score'] = score
+        prediction_dict['short_answers'][0]['start_token'] = prediction[0]
+        prediction_dict['short_answers'][0]['end_token'] = prediction[1]
+        prediction_dict['short_answers_score'] = score
 
         return prediction_dict
+    
+    def read_context_and_format(self, context_path: str = None, save_path: str = None) -> List[Dict]:
+        if context_path is None:
+            context_path = self.context_path
+        predictions = {'predictions': []}
+        with open(context_path, 'r') as f:
+            for line in f:
+                context = json.loads(line)
+                pred_index, score = context["short_answer_index"], context["score"]
+                pred_dict = self.format_prediction(context['example'], pred_index, score)
+                predictions['predictions'].append(pred_dict)
 
-    def predict_batch(self, examples: List[Dict], save_path: Optional[str] = None, verbose: bool = False) -> List[str]:
+        if save_path is None:
+            save_path = f"predictions_{self.model}_{time_str}.jsonl"
+        with open(save_path, 'w') as f:
+            f.write(json.dumps(predictions) + '\n')
+
+        return predictions
+
+    def predict_batch(self, examples: List[Dict], context_path: Optional[str] = None, verbose: bool = False) -> List[str]:
         """
         Make predictions for a batch of examples.
         """
         predictions = {'predictions': []}
+        time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.time_str = time_str
+        if context_path is None:
+            context_path = f"{self.model}_{time_str}_context.jsonl"
+        self.context_path = context_path
         for i, raw_example in enumerate(examples):
             if verbose:
                 print(f"\nExample {i+1}/{len(examples)}")
             if 'document_text' not in raw_example:
+                print('simplifying...')
                 example = text_utils.simplify_nq_example(raw_example)
+                
             else:
                 example = raw_example
-            pred_str, score = self.predict(example, verbose)
-            pred_dict = self.format_prediction(example, pred_str, score)
-            predictions['predictions'].append(pred_dict)
-        time_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        if save_path is None:
-            save_path = f"predictions_{self.model}_{time_str}.jsonl"
-        with open(save_path, 'w') as f:
-            json.dump(predictions, f)
-            
-        return predictions
+            print('char length:', len(example['document_text']))
+            print('token length:', len(get_nq_tokens(example)))
+            context, time_log = self.predict(example, verbose)
+            if context['vectorstore'] is not None:
+                ids = context['vectorstore'].get()['ids']
+                # print("len(ids): ", len(ids))
+                # print(context['vectorstore'].get())
+                context['vectorstore'].delete(ids=ids)
+                context['vectorstore'] = None
+            # save prediction context
+            with open(context_path, 'a') as f:
+                f.write(json.dumps(context) + '\n')
+            time.sleep(60)
+
 
 
 class NQMultiAgent(BaseAgentSystem):

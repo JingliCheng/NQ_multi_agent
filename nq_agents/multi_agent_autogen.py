@@ -15,7 +15,7 @@ from nq_agents.multi_agent import BaseAgentSystem
 
 
 # Set up OpenAI API key
-os.environ["OPENAI_API_KEY"] = "placeholder" # Replace with your actual API key
+# os.environ["OPENAI_API_KEY"] = "placeholder" # Replace with your actual API key
 
 # QPS and concurrency limits
 MAX_QPS = 2  # 每秒最多请求数
